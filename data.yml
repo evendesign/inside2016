@@ -1,0 +1,15 @@
+# 全站資訊
+site-url: "http://www.inside.com.tw/"
+site-name: "Inside 硬塞的網路趨勢觀察"
+site-title: "Inside 硬塞的網路趨勢觀察"
+site-keywords: "社群媒體, 行動網路, 網路行銷, 技術與創業"
+site-description: "社群媒體、行動網路、網路行銷、技術與創業"
+
+# fb 專用
+og-type: "website"
+og-image: "http://www.inside.com.tw/images/og-image.png"
+fb-admins: "612130717"
+fb-app-id: ""
+
+# ga code
+ga-code: ""
