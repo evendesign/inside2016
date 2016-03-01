@@ -1,8 +1,8 @@
 // ---- susy setting ----
 // basic for susy
 $total-columns: 6
-$column-width: 5em
-$gutter-width: 1em
+$column-width: 60px
+$gutter-width: 24px
 $grid-padding: $gutter-width
 
 // add media
@@ -17,5 +17,15 @@ $page-container: ".page"
 // @import "layout-debug";
 
 // ---- container setting ----
+$container-style: fluid
+
 #{$page-container}
-  +container($phone, $pad, $desktop)
+  +container()
+
+  +at-breakpoint($pad)
+    $grid-padding: $gutter-width * 2
+    +container()
+
+  +at-breakpoint($desktop)
+    $container-style: magic
+    +container()
