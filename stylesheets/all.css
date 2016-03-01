@@ -182,10 +182,12 @@ hr, .divider { margin-top: 24px; margin-bottom: 24px; border-top: 1px solid #ddd
 
 img { max-width: 100%; margin-bottom: 24px; }
 
-.page { max-width: 35em; padding-left: 1em; padding-right: 1em; margin-left: auto; margin-right: auto; }
+.page { padding-left: 24px; padding-right: 24px; margin-left: auto; margin-right: auto; }
 .page:after { content: ""; display: table; clear: both; }
-@media (min-width: 47em) { .page { max-width: 47em; } }
-@media (min-width: 71em) { .page { max-width: 71em; } }
+@media (min-width: 648px) { .page { padding-left: 48px; padding-right: 48px; margin-left: auto; margin-right: auto; }
+  .page:after { content: ""; display: table; clear: both; } }
+@media (min-width: 984px) { .page { max-width: 984px; padding-left: 48px; padding-right: 48px; margin-left: auto; margin-right: auto; }
+  .page:after { content: ""; display: table; clear: both; } }
 
 .btn { display: inline-block; margin-bottom: 0; padding: 5px 23px; border: 1px solid #dddddd; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px; font-size: 15px; line-height: 24px; background-image: none; text-align: center; text-shadow: none; cursor: pointer; outline: none; white-space: nowrap; -webkit-user-select: none; -moz-user-select: none; user-select: none; color: #444444; background-color: #dddddd; }
 .btn:hover { text-decoration: none; color: #444444; border-color: #dddddd; background-color: #dddddd; }
@@ -239,4 +241,4 @@ img { max-width: 100%; margin-bottom: 24px; }
 .pagination a:hover, .pagination span:hover { text-decoration: none; color: white; background-color: #444444; }
 .pagination a.is-current, .pagination span.is-current { color: white; background-color: #444444; }
 .pagination a.is-disabled, .pagination span.is-disabled { color: #919191; background-color: transparent; cursor: default; }
-@media (min-width: 47em) { .pagination a, .pagination span { font-size: 16px; line-height: 24px; } }
+@media (min-width: 648px) { .pagination a, .pagination span { font-size: 16px; line-height: 24px; } }
