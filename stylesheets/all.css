@@ -242,3 +242,5 @@ img { max-width: 100%; margin-bottom: 24px; }
 .pagination a.is-current, .pagination span.is-current { color: white; background-color: #444444; }
 .pagination a.is-disabled, .pagination span.is-disabled { color: #919191; background-color: transparent; cursor: default; }
 @media (min-width: 648px) { .pagination a, .pagination span { font-size: 16px; line-height: 24px; } }
+
+.hero, .page_header, .post_list, .subscribe_block, .post, .ad_block, .block { height: 300px; border: 1px dashed #aaaaaa; margin-bottom: 48px; }
