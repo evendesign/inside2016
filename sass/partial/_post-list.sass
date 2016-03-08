@@ -1,2 +1,141 @@
 .post_list
-  @extend %block_holder
+  margin: 0 -24px
+
+  .post_list_item
+    +box-sizing(border-box)
+    +trailer(1)
+    padding: 23px
+    border: 1px solid white
+
+  .post_list_item_header
+    position: relative
+    +trailer(1.25)
+
+  .post_cover
+    display: block
+    background-color: #e3e3e3
+    width: 100%
+    padding-top: 75%
+    +background-size(cover)
+    background-repeat: no-repeat
+    background-position: center center
+    // +transition(opacity 0.25s)
+    // &:hover
+    //   opacity: 0.9
+
+
+  .post_category
+    position: absolute
+    left: 0px
+    bottom: -12px
+    display: block
+    padding: 3px 9px
+    background-color: #999
+    +adjust-font-size-to(13px, 1)
+    color: white
+    +transition(opacity 0.25s)
+
+    &:hover
+      text-decoration: none
+      +opacity(0.8)
+
+  .post_title
+    +adjust-font-size-to(18px, 1)
+    +trailer(0.5)
+    a
+      color: black
+      +transition(color .25s)
+
+      &:hover
+        color: $color-primary
+        text-decoration: none
+
+  .post_description
+    display: none
+    max-height: 72px
+    overflow: hidden
+
+  .post_meta
+    +reset-box-model
+    list-style: none
+    +pie-clearfix
+    +adjust-font-size-to(13px, 3/4)
+
+    li
+      display: inline
+      color: #aaa
+      &:after
+        content: '。'
+        display: inline-block
+      &:last-child:after
+        display: none
+
+    .post_author, .post_tag
+      color: #aaa
+      display: inline-block
+
+    .post_tag
+      margin-right: 3px
+
+
+
+  // 贊助商樣式
+  .post_list_item-sponsor
+    background-color: rgba(red, 0.05)
+
+    .post_author
+      color: $color-primary
+
+
+  // 廣告樣式
+  .post_list_item-ad
+    background-color: rgba(black, 0.05)
+    a
+      display: block
+      width: 100%
+      img
+        display: block
+        width: 100%
+        +trailer(0)
+
+
+  // 顏色定義
+  @for $i from 1 through length($color-list)
+    .post_list_item-color#{$i} .post_category
+      background-color: nth($color-list, $i)
+
+
+  +at-breakpoint($pad)
+    display: flex
+    flex-flow: row wrap
+    margin: 0 -12px
+
+    .post_list_item
+      padding: 11px
+      flex: 1 0 50%
+      max-width: 50%
+
+    .post_title
+      +trailer(0.75)
+
+    .post_description
+      display: block
+      +trailer(0.75)
+
+    .lte-ie9 &
+      display: block
+
+      .post_list_item
+        +inline-block(top)
+        width: 50%
+
+
+  +at-breakpoint($desktop)
+    .post_list_item
+      flex: 1 0 33.3333%
+      max-width: 33.3333%
+
+    .lte-ie9 &
+
+      .post_list_item
+        width: 33.333%
