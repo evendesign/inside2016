@@ -1,39 +1,26 @@
 .post_list.post_list-grid_style
   - 9.times do |i|
 
-    / 模擬文章列表中有廣告的情形
+    / 假設第六個文章項目是贊助商文章的情形
+    - sponsor_class = i == 5 ? 'post_list_item-sponsor' : ''
+
+    / 模擬第二個文章項目是廣告
     - if i == 2
       .post_list_item.post_list_item-ad
         a.ad href="": img src="/images/ad.jpg"
 
-    / 模擬文章列表中有贊助商文章的情形
-    - elsif i == 6
-      .post_list_item.post_list_item-sponsor
-        a.post_cover href=""
-          .post_cover_inner
-        .post_list_item_content
-          a.post_category.badge class="badge-color#{i+1}" href="/category/"= zh_lorem_words(2)
-          h3.post_title: a href=""= zh_lorem_sentence
-          p.post_description= zh_lorem_paragraph
-          ul.post_meta
-            li: span.post_date= lorem_date("%Y/%m/%d")
-            li: a.post_author href="/author/"= lorem_name
-            li
-              - (rand(4)+1).times do|i|
-                a.post_tag href=""= zh_lorem_words(2)
-
     - else
-      .post_list_item
-        a.post_cover href=""
-          .post_cover_inner
+      .post_list_item class="#{sponsor_class}"
+        a.post_cover href="/post/"
+          .post_cover_inner style=""
         .post_list_item_content
-          a.post_category.badge class="badge-color#{i+1}" href="/category/"= zh_lorem_words(2)
-          h3.post_title: a href=""= zh_lorem_sentence
+          / 文章標籤的顏色，跟隨者 .badge-color1, .badge-color2 ...等 class 來呈現
+          a.post_category.badge class="badge-color#{rand(10)}" href="/category/"= zh_lorem_words(2)
+          h3.post_title: a href="/post/"= zh_lorem_sentence
           p.post_description= zh_lorem_paragraph
           ul.post_meta
             li: span.post_date= lorem_date("%Y/%m/%d")
-            li: a.post_author href="/author/"= lorem_name
+            li: a.post_author href="/author/"= zh_lorem_name
             li
               - (rand(4)+1).times do|i|
                 a.post_tag href=""= zh_lorem_words(2)
-
