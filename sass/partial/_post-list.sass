@@ -1,2 +1,241 @@
+// 1 文章列表
 .post_list
-  @extend %block_holder
+  margin: 0 -24px
+
+  .post_list_item
+    +box-sizing(border-box)
+    padding: 24px
+    &:first-child
+      +leader(0)
+
+  .post_cover
+    display: block
+
+  .post_cover_inner
+    width: 100%
+    padding-top: 75%
+    background-color: #e3e3e3
+    +background-size(cover)
+    background-repeat: no-repeat
+    background-position: center center
+    +border-radius(2px)
+
+  .post_list_item_content
+    +leader(-0.5)
+
+  .post_category
+    float: left
+    display: block
+    +trailer(0.5)
+
+  .post_title
+    clear: both
+    +adjust-font-size-to(18px, 1)
+    +trailer(0.5)
+    a
+      color: black
+      +transition(color .25s)
+
+      &:hover
+        color: $color-primary
+        text-decoration: none
+
+  .post_description
+    display: none
+    max-height: 72px
+    overflow: hidden
+    +adjust-font-size-to(15px)
+    +trailer(0.5)
+
+  .post_meta
+    +reset-box-model
+    list-style: none
+    +pie-clearfix
+    +adjust-font-size-to(13px, 3/4)
+
+    li
+      display: inline
+      color: #aaa
+      &:after
+        content: '。'
+        display: inline-block
+      &:last-child:after
+        display: none
+
+    .post_author, .post_tag
+      color: #aaa
+      display: inline-block
+
+    .post_tag
+      margin-right: 3px
+
+  // 文章列表項目的贊助商樣式
+  .post_list_item-sponsor
+    margin: 0
+    background-color: rgba(red, 0.05)
+
+    .post_author
+      color: $color-primary
+
+  // 文章列表項目的廣告樣式
+  .post_list_item-ad
+    margin: 0
+    background-color: rgba(black, 0.05)
+    .ad
+      margin: 0 auto
+      display: block
+      width: 100%
+    img
+      display: block
+      width: 100%
+      +trailer(0)
+
+
+  +at-breakpoint(480px)
+    .post_list_item
+      display: flex
+
+    .post_cover
+      flex: 1
+
+    .post_list_item-ad
+      .ad
+        max-width: 320px
+
+    .post_list_item_content
+      margin: 0 0 0 12px
+      flex: 2
+
+  +at-breakpoint($pad)
+    margin: 0 -12px
+
+    .post_list_item-sponsor, .post_list_item-ad
+      +border-radius(2px)
+
+    .post_list_item-ad
+      .ad
+        max-width: none
+
+    .post_title
+      +trailer(0.5)
+
+    .post_description
+      display: block
+      +trailer(0.5)
+
+// 1.1 文章列表的格欄樣式
+.post_list-grid_style
+
+  +at-breakpoint($pad)
+    display: flex
+    flex-flow: row wrap
+    margin: 0 -12px
+
+    .post_list_item
+      display: block
+      margin: 0 0 24px
+      border: 1px solid white
+      padding: 11px
+      flex: 1 0 50%
+      max-width: 50%
+
+    .post_list_item_content
+      margin: -12px auto 0
+
+    // == 文章列表項目的頭條樣式
+    .post_list_item-hero_style
+      flex: 1 0 100%
+      max-width: 100%
+      display: flex
+
+      .post_cover
+        flex: 1 0 50%
+        max-width: 50%
+        padding-right: 12px
+        +box-sizing(border-box)
+
+      .post_cover_inner
+        padding-top: 100%
+
+      .post_list_item_content
+        flex: 1 0 50%
+        max-width: 50%
+        margin-top: 0
+        padding-left: 12px
+        +box-sizing(border-box)
+
+      .post_category
+        +trailer(1)
+
+      .post_title
+        +adjust-font-size-to(28px, 1.5)
+        +trailer(1)
+
+      .post_description
+        +adjust-font-size-to(16px)
+        +trailer(1)
+
+      &.post_list_item-sponsor
+        background-color: transparent
+
+    .lte-ie9 &
+      display: block
+
+      .post_list_item
+        +inline-block(top)
+        width: 50%
+
+
+  +at-breakpoint($desktop)
+    .post_list_item
+      flex: 1 0 33.3333%
+      max-width: 33.3333%
+
+    .post_list_item-hero_style
+      flex: 1 0 100%
+      max-width: 100%
+      display: flex
+
+      .post_cover
+        flex: 1 0 66.6667%
+        max-width: 66.6667%
+
+      .post_cover_inner
+        padding-top: 62.25%
+
+      .post_list_item_content
+        flex: 1 0 33.3333%
+        max-width: 33.3333%
+
+    .lte-ie9 &
+      .post_list_item
+        width: 33.333%
+
+
+// 1.2 文章列表的列表樣式
+.post_list-list_style
+
+  +at-breakpoint($pad)
+
+    .post_list_item
+      padding: 12px
+      +trailer(1)
+
+    .post_list_item_content
+      position: relative
+      margin-left: 48px
+
+    .post_category
+      position: absolute
+      left: -70px
+
+  +at-breakpoint(768px)
+
+    .post_title
+      +adjust-font-size-to(24px, 1.25)
+      margin-top: -2px
+      +trailer(0.75)
+
+    .post_description
+      +adjust-font-size-to(16px, 1)
+      +trailer(0.75)
