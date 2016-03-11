@@ -6,3 +6,51 @@
   +replace-text-with-scalable-svg("line")
 .icon-comment
   +replace-text-with-scalable-svg("comment")
+
+
+
+
+.icon-hanburger
+  $hamburger-layer-width                     : 24px !default
+  $hamburger-layer-height                    : 2px !default
+  $hamburger-layer-spacing                   : 6px !default
+  $hamburger-layer-color                     : $color-gray-dark !default
+  $hamburger-layer-border-radius             : 2px !default
+
+  padding: 15px 12px
+  width: $hamburger-layer-width
+  height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2
+  display: inline-block
+  position: relative
+
+  &.is-active .icon-hanburger-line
+    &:before
+      transform: translate3d($hamburger-layer-width * -0.2, 1px, 0) rotate(-45deg) scale(0.8, 1)
+    &:after
+      transform: translate3d($hamburger-layer-width * -0.2, -1px, 0) rotate(45deg) scale(0.8, 1)
+
+  .icon-hanburger-line
+    display: block
+    top: 50%
+    margin-top: $hamburger-layer-height / -2
+    &,
+    &:before,
+    &:after
+      width: $hamburger-layer-width
+      height: $hamburger-layer-height
+      background-color: $hamburger-layer-color
+      border-radius: $hamburger-layer-border-radius
+      position: absolute
+      transition-property: transform
+      transition-duration: 0.15s
+      transition-timing-function: ease
+    &:before,
+    &:after
+      content: ""
+      display: block
+    &:before
+      top: ($hamburger-layer-spacing + $hamburger-layer-height) * -1
+    &:after
+      bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1
+
+
