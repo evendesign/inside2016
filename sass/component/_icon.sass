@@ -7,9 +7,6 @@
 .icon-comment
   +replace-text-with-scalable-svg("comment")
 
-
-
-
 .icon-hanburger
   $hamburger-layer-width                     : 24px !default
   $hamburger-layer-height                    : 2px !default
@@ -23,13 +20,13 @@
   display: inline-block
   position: relative
 
-  &.is-active .icon-hanburger-line
+  &.is-active .icon-hanburger_line
     &:before
       transform: translate3d($hamburger-layer-width * -0.2, 1px, 0) rotate(-45deg) scale(0.8, 1)
     &:after
       transform: translate3d($hamburger-layer-width * -0.2, -1px, 0) rotate(45deg) scale(0.8, 1)
 
-  .icon-hanburger-line
+  .icon-hanburger_line
     display: block
     top: 50%
     margin-top: $hamburger-layer-height / -2
