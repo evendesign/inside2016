@@ -1,0 +1,39 @@
+.header
+  background-color: #f6f6f6
+  margin: 0 -24px 24px
+  +pie-clearfix
+
+  .logo
+    float: left
+    +trailer(0)
+    a
+      display: block
+      +replace-text-with-svg("logo")
+      text-indent: 110%
+      white-space: nowrap
+      overflow: hidden
+
+  .menu-btn
+    display: block
+    +reset-box-model
+    float: right
+    cursor: pointer
+    outline: none
+    font: inherit
+    color: inherit
+    text-transform: none
+    background-color: transparent
+    overflow: visible
+
+  .menu-btn-title
+    display: block
+    float: left
+    +adjust-font-size-to(13px, 2)
+    margin-right: 12px
+    color: $color-black-light
+
+  .icon-hanburger
+    display: block
+    float: right
+    background-color: $color-gray-white
+
