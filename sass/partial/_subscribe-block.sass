@@ -1,2 +1,61 @@
 .subscribe_block
-  @extend %block_holder
+  padding: 40px 0
+  border-width: 1px 0px
+  border-style: solid
+  border-color: lighten(#000, 50%)
+
+  .subscribe_block_title
+    font-weight: bold
+    +adjust-font-size-to(22px)
+
+  .subscribe_block_social_list
+    margin-left: -8px
+
+  .subscribe_block_social_item
+    display: inline-block
+    width: 30px
+    height: 30px
+
+  .subscribe_block_email
+
+    input
+      padding: 9px 14px
+      width: 170px
+      border: none
+      +adjust-font-size-to(13px)
+      line-height: 13px
+      background-color: lighten(#000, 95%)
+
+      &:focus
+        outline: none
+
+    button
+      padding: 10px 25px
+      border: none
+      margin-left: -2px
+      +border-radius (2px)
+      +adjust-font-size-to(13px)
+      line-height: 13px
+      vertical-align: middle
+      font-weight: bold
+      background-color: lighten(#000, 40%)
+      color: #fff
+
+  +at-breakpoint($pad)
+    +pie-clearfix
+
+    .subscribe_block_social_list
+      float: left
+      display: inline-block
+      margin-top: 18px
+
+    .subscribe_block_email
+      float: left
+      margin: 18px 0 0 36px
+
+  +at-breakpoint($desktop)
+    padding: 36px 12px
+
+    .subscribe_block_email
+      input
+        width: 240px
