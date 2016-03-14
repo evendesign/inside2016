@@ -6,12 +6,12 @@
     display: block
     width: 48px
     margin-bottom: 14px
+    +border-radius (2px)
     +adjust-font-size-to(13px)
     line-height: 26px
     text-align: center
     color: #fff
     background-color: #34ACAC
-    +border-radius (2px)
 
   .post_header_title
     margin: 0px 0px 16px 0px
@@ -20,8 +20,8 @@
 
   .post_header_meta
     +pie-clearfix
-    +adjust-font-size-to(13px)
     margin-bottom: 20px
+    +adjust-font-size-to(13px)
     color: rgba(0, 0, 0, 0.35)
 
   %dot_square
@@ -46,8 +46,9 @@
   .post_share_toolbox
     +pie-clearfix
     margin-bottom: 24px
-    p
-      display: none
+
+  .post_share_toolbox_title
+    display: none
 
   .post_share_toolbox_item
     float: left
@@ -60,15 +61,16 @@
     +border-radius (2px)
     background-color: lighten(#000, 90%)
 
-  .comment
+  .icon-comment
     position: relative
     text-indent: 0px
     padding-right: 44px
-    span
-      position: absolute
-      top: 8px
-      right: 18px
-      +adjust-font-size-to(12px)
+
+  .post_share_toolbox_item_title
+    position: absolute
+    top: 8px
+    right: 18px
+    +adjust-font-size-to(12px)
 
   .post_content
     margin-bottom: 48px
@@ -88,28 +90,41 @@
         border-bottom: 2px solid #C03A3A
         margin-bottom: 28px
 
-      .post_share_toolbox
-        position: absolute
+    .post_share_toolbox
+      position: absolute
+      margin: 100px auto 0 -80px
+      width: 50px
+      transition: margin-top .3s
+
+      &.is-top
         top: 204px
-        left: 10px
-        width: 50px
-        p
-          display: block
-          text-align: center
-          margin: 0px
-          padding: 3px 0px
-          +border-radius (2px 2px 0px 0px)
-          background-color: lighten(#000, 90%)
+        margin-top: 0
+
+      &.is-sticky
+        position: fixed
+        top: 0
+
+      &.is-bottom
+        bottom: 0
+
+    .post_share_toolbox_title
+      display: block
+      text-align: center
+      margin: 0px
+      padding: 3px 0px
+      background-color: lighten(#000, 90%)
+      +border-radius (2px 2px 0px 0px)
 
     .post_share_toolbox_item
       float: left
       padding: 10px
 
-    .comment
+    .icon-comment
       padding-bottom: 26px
-      span
-        top: 32px
-        right: 13px
+
+    .post_share_toolbox_item_title
+      top: 32px
+      right: 13px
 
     .post_header_title
       padding: 8px 0px
