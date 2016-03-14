@@ -73,12 +73,12 @@ var checkShareToolBoxPosition = function() {
   if (currentStatus == status) return;
 
   currentStatus = status;
-  marginBottom = status == 'bottom' ? authorBlockHeight + 'px' : 0;
+  positionBottom = status == 'bottom' ? authorBlockHeight + 'px' : 0;
 
   $postShareToolbox
     .removeClass('is-sticky is-bottom is-top')
     .addClass('is-' + currentStatus)
-    .css('margin-bottom', marginBottom);
+    .css('bottom', positionBottom);
 }
 
 var updateAuthorBlockHeight = function() {
