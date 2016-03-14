@@ -3,19 +3,19 @@
   +pie-clearfix
   background: rgba(0, 0, 0, 0.05)
   margin: 0 -24px 36px -24px
-  padding: 110px 24px 24px 24px
+  padding: 36px 24px
 
   .author_avatar
-    position: absolute
-    top: 24px
-    left: 50%
-    margin-left: -43px
-    width: 80px
-    +border-radius (100%)
-    border: 3px solid #C13B3B
+    text-align: center
+
+    img
+      width: 80px
+      height: 80px
+      +border-radius (100%)
+      border: 3px solid #C13B3B
 
   .author_title
-    margin-bottom: 24px
+    margin: -24px 0 24px 0
     text-align: center
     font-weight: bold
 
@@ -43,13 +43,27 @@
     color: lighten(#000, 60%)
 
   +at-breakpoint($pad)
+    padding: 30px 120px
+
+  +at-breakpoint($desktop)
     margin: 0 0px 36px 0px
-    padding: 30px 30px 18px 170px
+    padding: 48px 100px
 
     .author_avatar
-      width: 100px
-      top: 30px
-      left: 74px
+      float: left
+      height: 100%
+      margin-right: 36px
+
+      img
+        width: 100px
+        height: 100px
+
+    .author-warp
+      overflow: hidden
 
     .author_title
+      margin-top: 0px
       text-align: left
+
+    .author_description
+      max-width: 540px
