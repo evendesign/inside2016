@@ -1,0 +1,186 @@
+.header
+  background-color: #f6f6f6
+  margin: 0 -24px 24px
+  +pie-clearfix
+
+  .logo
+    float: left
+    +trailer(0)
+    a
+      display: block
+      +replace-text-with-svg("logo")
+      text-indent: 110%
+      white-space: nowrap
+      overflow: hidden
+
+  .menu_btn
+    display: block
+    +reset-box-model
+    float: right
+    cursor: pointer
+    outline: none
+    font: inherit
+    color: inherit
+    text-transform: none
+    background-color: transparent
+    overflow: visible
+
+  .menu_btn_title
+    display: block
+    float: left
+    +adjust-font-size-to(13px, 2)
+    margin-right: 12px
+    color: $color-black-light
+
+  .menu_btn_icon
+    display: block
+    float: right
+    background-color: $color-gray-white
+
+  .search
+    position: relative
+    border-bottom: 1px solid $color-gray-white
+
+  .search_input
+    display: block
+    outline: none
+    margin: 0
+    border: none
+    padding: 12px 24px 12px 60px
+    background-color: transparent
+    +adjust-font-size-to(15px, 1)
+
+  .search_submit
+    position: absolute
+    left: 12px
+    top: 0
+    outline: none
+    margin: 0
+    border: none
+    padding: 0
+    background-color: transparent
+    opacity: 0.3
+
+  .primary_nav
+    +reset-list-style
+
+  .primary_nav_item
+    border-bottom: 1px solid $color-gray-white
+    a
+      display: block
+      padding: 12px 24px
+      color: $text-black
+      &:hover
+        text-decoration: none
+
+  .header_subscribe_block_title
+    +trailer(0)
+    padding: 12px 24px
+    +adjust-font-size-to(16px, 1)
+    color: black
+
+  .header_subscribe_block_description
+    +trailer(0)
+    border-bottom: 1px solid $color-gray-white
+    padding: 0 24px 12px
+    +adjust-font-size-to(13px, 3/4)
+
+  .social_btns
+    +reset-list-style
+    li
+      border-bottom: 1px solid $color-gray-white
+
+  .social_btn
+    +pie-clearfix
+    display: block
+    padding: 0 24px
+    color: $text-gray
+
+  .social-facebook,
+  .social-twitter
+    padding: 0 24px 0 12px
+
+  .social_btn_icon
+    float: left
+    display: block
+    width: 36px
+    opacity: 0.3
+    &.icon-line
+      margin-right: 10px
+
+  .social_btn_text
+    float: left
+    display: block
+    +adjust-font-size-to(15px, 2)
+
+  +at-breakpoint($pad)
+    margin: 0 -48px 24px
+
+  +at-breakpoint($desktop)
+    margin: 0 auto 24px
+
+    .menu_btn
+      display: none
+
+    .search
+      float: right
+      border-bottom: none
+      background-color: $color-gray-white
+
+    .search_submit
+      float: none
+      position: static
+
+    .search_input
+      display: none
+
+    .primary_nav
+      float: left
+
+    .primary_nav_item
+      float: left
+      border-bottom: none
+      a
+        padding: 12px 18px
+
+    .header_subscribe_block
+      float: right
+
+    .header_subscribe_block_title
+      float: left
+      margin-right: 3px
+      padding: 12px 0
+      +adjust-font-size-to(15px, 1)
+      color: $text-black
+      &:after
+        content: '：'
+        display: inline
+
+    .header_subscribe_block_description
+      display: none
+
+    .social_btns
+      float: left
+      li
+        border-bottom: none
+        float: left
+
+    .social_btn
+      display: block
+      padding: 0
+
+    .social-facebook,
+    .social-twitter
+      padding: 0
+
+    .social_btn_icon
+      float: none
+      width: 36px
+      &.icon-twitter
+        margin-right: 8px
+      &.icon-line
+        margin-right: 14px
+
+    .social_btn_text
+      display: none
+

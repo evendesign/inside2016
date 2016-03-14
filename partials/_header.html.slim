@@ -1,15 +1,28 @@
 .header
   h1.logo: a href="/" INSIDE 硬塞的網路趨勢觀察
-  .menu
+  button.menu_btn.js-menu_btn
+    span.menu_btn_title 選單
+    span.menu_btn_icon.icon-hanburger.js-menu_icon
+      span.icon-hanburger_line
+  .menu.off_canvas_menu
+    .search
+      input.search_submit.icon-search type="submit"
+      input.search_input type="text" placeholder="搜尋"
     ul.primary_nav
       li.primary_nav_item: a href="/category/" 新創
       li.primary_nav_item: a href="/category/" 趨勢
       li.primary_nav_item: a href="/category/" 娛樂
       li.primary_nav_item: a href="/category/" 評論
-    ul.tooltip
-      li.tooltip_item: a href="" Search
-      li.tooltip_item: a href="" Facebook
-      li.tooltip_item: a href="" Twitter
-      li.tooltip_item: a href="" Line
-      li.tooltip_item: a href="" RSS
-
+    .header_subscribe_block
+      h4.header_subscribe_block_title 訂閱
+      p.header_subscribe_block_description 隨時關注最新創業、科技、網路、工作訊息。
+      ul.social_btns
+        li: a.social_btn.social-facebook href=""
+          span.social_btn_icon.icon-facebook
+          span.social_btn_text 追蹤 FB 粉絲團
+        li: a.social_btn.social-twitter href=""
+          span.social_btn_icon.icon-twitter
+          span.social_btn_text 追蹤 Twitter
+        li: a.social_btn.social-line href=""
+          span.social_btn_icon.icon-line
+          span.social_btn_text 加 Line 好友

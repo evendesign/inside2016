@@ -1,8 +1,46 @@
+// Global Variables
+// ------------------------------------------------------
+
+$window = $(window);
+
 function xx(a) {
   console.log(a);
 }
 
-var $window = $(window);
+
+// Menu
+// ------------------------------------------------------
+
+var $menuSwitch = $('.js-menu_btn, .js-off_canvas_mask');
+var $menuIcon = $('.js-menu_icon');
+var $offCanvasTarget = $('.js-off_canvas');
+
+var isMenuOpen = false;
+
+var toggleMenu = function() {
+  $menuIcon.toggleClass('is-active', isMenuOpen);
+  $offCanvasTarget.toggleClass('is-menu_open', isMenuOpen);
+}
+
+var menu = {
+  close: function() {
+    if (!isMenuOpen) return;
+    isMenuOpen = false;
+    toggleMenu();
+  },
+  toggle: function() {
+    isMenuOpen = !isMenuOpen;
+    toggleMenu();
+  }
+}
+
+$menuSwitch.on('click', menu.toggle);
+$window.on('resize', menu.close);
+
+
+// Sticky share toolblox
+// -----------------------------------------------------
+
 var $postShareToolbox = $('.js-post_share_toolbox');
 
 var postHeader = document.querySelectorAll('.js-post_header')[0];
@@ -54,3 +92,6 @@ $window.on('resize', updateAuthorBlockHeight);
 $window.on('scroll', checkShareToolBoxPosition);
 
 checkShareToolBoxPosition();
+
+
+

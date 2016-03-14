@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="125px" height="48px" viewBox="0 0 125 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="index" transform="translate(-211.000000, -77.000000)">
+            <g id="logo-copy" transform="translate(211.000000, 77.000000)">
+                <rect id="Rectangle-1-Copy" fill="#F6F6F6" x="23.5655738" y="0" width="101.434426" height="48" rx="1.92"></rect>
+                <text id="SIDE" opacity="0.896047108" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="30.6382979" font-weight="bold" fill="#3F3F3F">
+                    <tspan x="42.5204918" y="35.5557447">SIDE</tspan>
+                </text>
+                <rect id="Rectangle-1" fill="#C13B3B" x="0" y="0" width="48.1557377" height="48" rx="1.92"></rect>
+                <text id="IN" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="30.6382979" font-weight="bold" fill="#FFFFFF">
+                    <tspan x="9.73360656" y="35.5557447">IN</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
