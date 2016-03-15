@@ -1,0 +1,20 @@
+.badge
+  display: inline-block
+  padding: 0px 9px
+  min-width: 2em
+  text-align: center
+  background-color: #999
+  +adjust-font-size-to(13px, 1)
+  color: white
+  +transition(opacity 0.25s)
+  +border-radius(2px)
+
+  &:hover
+    color: white
+    text-decoration: none
+    +opacity(0.8)
+
+// 定義標籤背景顏色
+@for $i from 1 through length($color-list)
+  .badge-color#{$i}
+    background-color: nth($color-list, $i)

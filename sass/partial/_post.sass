@@ -1,0 +1,142 @@
+.post
+  a
+    color: #000
+
+  .post_header_catagory
+    display: block
+    width: 48px
+    margin-bottom: 14px
+    +border-radius (2px)
+    +adjust-font-size-to(13px)
+    line-height: 26px
+    text-align: center
+    color: #fff
+    background-color: #34ACAC
+
+  .post_header_title
+    margin: 0px 0px 16px 0px
+    +adjust-font-size-to(20px)
+    font-weight: bold
+
+  .post_header_meta
+    +pie-clearfix
+    margin-bottom: 20px
+    +adjust-font-size-to(13px)
+    color: rgba(0, 0, 0, 0.35)
+
+  %dot_square
+    float: left
+    &:after
+      content: ''
+      display: inline-block
+      width: 4px
+      height: 4px
+      margin: 5px 6px 2px 4px
+      background-color: rgba(0, 0, 0, 0.15)
+
+  .post_header_meta_data
+    @extend %dot_square
+
+  .post_header_meta_author
+    @extend %dot_square
+
+  .post_header_meta_tags
+    float: left
+
+  .post_share_toolbox
+    +pie-clearfix
+    margin-bottom: 24px
+
+  .post_share_toolbox_title
+    display: none
+
+  .post_share_toolbox_item
+    float: left
+    opacity: 0.5
+    height: 30px
+    width: 30px
+    margin-right: 2px
+    padding: 5px 14px
+    cursor: pointer
+    +border-radius (2px)
+    background-color: lighten(#000, 90%)
+
+  .icon-comment
+    position: relative
+    text-indent: 0px
+    padding-right: 44px
+
+  .post_share_toolbox_item_title
+    position: absolute
+    top: 8px
+    right: 18px
+    +adjust-font-size-to(12px)
+
+  .post_content
+    margin-bottom: 48px
+
+  .poster_footer
+    .post_share_toolbox
+      margin-bottom: 48px
+
+  +at-breakpoint($pad)
+    padding: 0px 92px
+    position: relative
+
+    .post_header
+      &:after
+        content: ''
+        display: block
+        border-bottom: 2px solid #C03A3A
+        margin-bottom: 28px
+
+    .post_share_toolbox
+      position: absolute
+      margin: 100px auto 0 -80px
+      width: 50px
+
+      &.is-top
+        top: 204px
+        margin-top: 0
+
+      &.is-sticky
+        position: fixed
+        top: 0
+
+      &.is-bottom
+        bottom: 0
+
+    .post_share_toolbox_title
+      display: block
+      text-align: center
+      margin: 0px
+      padding: 3px 0px
+      background-color: lighten(#000, 90%)
+      +border-radius (2px 2px 0px 0px)
+
+    .post_share_toolbox_item
+      float: left
+      padding: 10px
+
+    .icon-comment
+      padding-bottom: 26px
+
+    .post_share_toolbox_item_title
+      top: 32px
+      right: 13px
+
+    .post_header_title
+      padding: 8px 0px
+      +adjust-font-size-to(36px)
+
+    .post_header_meta
+      padding: 0px
+      margin-bottom: 12px
+
+    .post_share_toolbox_item
+      &:hover
+        background: lighten(#000, 10%)
+
+    .poster_footer
+      .post_share_toolbox
+        display: none

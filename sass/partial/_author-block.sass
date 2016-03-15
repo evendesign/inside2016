@@ -1,0 +1,55 @@
+.author_block
+  position: relative
+  +pie-clearfix
+  background: rgba(0, 0, 0, 0.05)
+  margin: 0 -24px 36px -24px
+  padding: 110px 24px 24px 24px
+
+  .author_avatar
+    position: absolute
+    top: 24px
+    left: 50%
+    margin-left: -43px
+    width: 80px
+    +border-radius (100%)
+    border: 3px solid #C13B3B
+
+  .author_title
+    margin-bottom: 24px
+    text-align: center
+    font-weight: bold
+
+  .author_description
+    margin-bottom: 12px
+
+  .author_social_tool
+    width: auto
+    float: left
+
+  .author_social_tool_item
+    display: inline-block
+    margin-left: -6px
+    opacity: 0.5
+    height: 30px
+    width: 30px
+
+  .author_more_article
+    display: inline-block
+    float: right
+    padding: 4px 0px 0px 24px
+    +adjust-font-size-to(13px)
+    text-decoration: underline
+    cursor: pointer
+    color: lighten(#000, 60%)
+
+  +at-breakpoint($pad)
+    margin: 0 0px 36px 0px
+    padding: 30px 30px 18px 170px
+
+    .author_avatar
+      width: 100px
+      top: 30px
+      left: 74px
+
+    .author_title
+      text-align: left

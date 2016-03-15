@@ -1,0 +1,37 @@
+.off_canvas
+  +transition(transform 0.5s)
+
+  .off_canvas_menu
+    position: fixed
+    background-color: #f6f6f6
+    width: 260px
+    top: 0
+    bottom: 0
+    left: 100%
+
+  .off_canvas_mask
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    cursor: pointer
+
+  &.is-menu_open
+    +translate(-260px, 0, 0)
+
+    .off_canvas_mask
+      bottom: 0
+
+  +at-breakpoint($desktop)
+    .off_canvas_menu
+      position: static
+      width: auto
+      top: auto
+      bottom: auto
+      left: auto
+
+    &.is-menu_open
+      +transform(none)
+
+      .off_canvas_mask
+        bottom: auto
