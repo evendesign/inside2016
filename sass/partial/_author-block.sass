@@ -1,7 +1,7 @@
 .author_block
   position: relative
   +pie-clearfix
-  background: rgba(0, 0, 0, 0.05)
+  background: $color-white-dark
   margin: 0 -24px 36px -24px
   padding: 36px 24px
 
@@ -27,20 +27,23 @@
     float: left
 
   .author_social_tool_item
-    display: inline-block
-    margin-left: -6px
-    opacity: 0.5
-    height: 30px
-    width: 30px
+    float: left
+    display: block
+    margin-right: 12px
+    opacity: 0.4
+    height: 24px
+    &.icon-twitter
+      width: 18px
+    &.icon-facebook
+      width: 10px
 
   .author_more_article
     display: inline-block
     float: right
-    padding: 4px 0px 0px 24px
     +adjust-font-size-to(13px)
     text-decoration: underline
     cursor: pointer
-    color: lighten(#000, 60%)
+    color: $color-gray
 
   +at-breakpoint($pad)
     padding: 30px 120px
@@ -67,3 +70,4 @@
 
     .author_description
       max-width: 540px
+      text-align: left
