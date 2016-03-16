@@ -144,36 +144,25 @@
 
     // == 文章列表項目的頭條樣式
     .post_list_item-hero_style
+      position: relative
       flex: 1 0 100%
       max-width: 100%
-      display: flex
-
-      .post_cover
-        flex: 1 0 50%
-        max-width: 50%
-        padding-right: 12px
-        +box-sizing(border-box)
 
       .post_cover_inner
-        padding-top: 100%
+        padding-top: 62.25%
 
       .post_list_item_content
-        flex: 1 0 50%
-        max-width: 50%
-        margin-top: 0
-        padding-left: 12px
-        +box-sizing(border-box)
-
-      .post_category
-        +trailer(1)
+        position: absolute
+        bottom: 0
+        padding: 36px
 
       .post_title
         +adjust-font-size-to(28px, 1.5)
-        +trailer(1)
+        a
+          color: white
 
       .post_description
-        +adjust-font-size-to(16px)
-        +trailer(1)
+        display: none
 
       &.post_list_item-sponsor
         background-color: transparent
@@ -194,18 +183,31 @@
     .post_list_item-hero_style
       flex: 1 0 100%
       max-width: 100%
-      display: flex
+      padding: 0
+
+      .post_cover, .post_list_item_content
+        float: left
 
       .post_cover
-        flex: 1 0 66.6667%
-        max-width: 66.6667%
-
-      .post_cover_inner
-        padding-top: 62.25%
+        +box-sizing(border-box)
+        width: 66.6667%
+        padding: 12px
 
       .post_list_item_content
-        flex: 1 0 33.3333%
-        max-width: 33.3333%
+        +box-sizing(border-box)
+        position: static
+        vertical-align: top
+        width: 33.3333%
+        margin-top: 0
+        padding: 12px
+
+      .post_title
+        a
+          color: black
+
+      .post_description
+        display: block
+        +adjust-font-size-to(16px, 1)
 
     .lte-ie9 &
       .post_list_item
