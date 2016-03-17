@@ -5,8 +5,6 @@
   .post_list_item
     +box-sizing(border-box)
     padding: 24px
-    &:first-child
-      +leader(0)
 
   .post_cover
     display: block
@@ -93,18 +91,24 @@
 
   +at-breakpoint(480px)
     .post_list_item
-      display: flex
-
-    .post_cover
-      flex: 1
+      +pie-clearfix
 
     .post_list_item-ad
       .ad
         max-width: 320px
 
+    .post_cover, .post_list_item_content
+      +box-sizing(border-box)
+      float: left
+
+    .post_cover
+      width: 33.3333%
+
     .post_list_item_content
-      margin: 0 0 0 12px
-      flex: 2
+      width: 66.6667%
+      margin-top: 0
+      padding-left: 12px
+
 
   +at-breakpoint($pad)
     margin: 0 -12px
@@ -115,6 +119,9 @@
     .post_list_item-ad
       .ad
         max-width: none
+
+    .post_list_item_content
+      padding-left: 0px
 
     .post_title
       +trailer(0.5)
@@ -132,15 +139,21 @@
     margin: 0 -12px
 
     .post_list_item
-      display: block
       margin: 0 0 24px
       border: 1px solid white
       padding: 11px
       flex: 1 0 50%
       max-width: 50%
 
+    .post_cover, .post_list_item_content
+      float: none
+
+    .post_cover
+      width: 100%
+
     .post_list_item_content
       margin: -12px auto 0
+      width: 100%
 
     // == 文章列表項目的頭條樣式
     .post_list_item-hero_style
@@ -225,19 +238,29 @@
 
     .post_list_item_content
       position: relative
-      margin-left: 48px
+      padding-left: 24px
 
     .post_category
       position: absolute
-      left: -70px
+      left: -28px
 
   +at-breakpoint(768px)
 
+    .post_list_item_content
+      padding-left: 36px
+
     .post_title
-      +adjust-font-size-to(24px, 1.25)
-      margin-top: -2px
+      +adjust-font-size-to(21px, 1)
       +trailer(0.75)
 
     .post_description
       +adjust-font-size-to(16px, 1)
       +trailer(0.75)
+
+  +at-breakpoint($desktop)
+    .post_list_item_content
+      padding-left: 48px
+
+    .post_title
+      margin-top: -2px
+      +adjust-font-size-to(24px, 1.25)
