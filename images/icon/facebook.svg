@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="12px" height="22px" viewBox="0 0 12 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="9px" height="17px" viewBox="0 0 9 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
     <title>facebook</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Artboard-1" transform="translate(-141.000000, -25.000000)" fill="#000000">
-            <path d="M148.7,25 C146.3919,25 144.457143,26.8941683 144.3,29.4 L144.3,31.6 L141,31.6 L141,34.9 L144.3,34.9 L144.3,47 L147.6,47 L147.6,34.9 L152,34.9 L153.1,31.6 L147.6,31.6 L147.6,29.4 C147.914286,28.7634808 148.301216,28.3846154 148.7,28.3 L153.1,28.3 L153.1,25 L148.7,25 L148.7,25 Z" id="Shape"></path>
+        <g id="Artboard-1" transform="translate(-143.000000, -28.000000)" fill="#000000">
+            <path d="M148.727273,28 C147.010504,28 145.571429,29.4636755 145.454545,31.4 L145.454545,33.1 L143,33.1 L143,35.65 L145.454545,35.65 L145.454545,45 L147.909091,45 L147.909091,35.65 L151.181818,35.65 L152,33.1 L147.909091,33.1 L147.909091,31.4 C148.142857,30.9081442 148.430656,30.6153846 148.727273,30.55 L152,30.55 L152,28 L148.727273,28 L148.727273,28 Z" id="Shape"></path>
         </g>
     </g>
 </svg>
