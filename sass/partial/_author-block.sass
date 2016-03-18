@@ -2,8 +2,9 @@
   position: relative
   +pie-clearfix
   background: $color-white-dark
-  margin: 0 -24px 36px -24px
+  margin: 24px auto
   padding: 36px 24px
+  +border-radius(2px)
 
   .author_avatar
     text-align: center
@@ -47,10 +48,10 @@
     color: $color-gray
 
   +at-breakpoint($pad)
-    padding: 30px 120px
+    margin: 48px auto
+    padding: 48px
 
   +at-breakpoint($desktop)
-    margin: 0 0px 36px 0px
     padding: 48px 96px 48px 84px
 
     .author_avatar
