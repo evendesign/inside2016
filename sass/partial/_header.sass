@@ -72,49 +72,54 @@
     a
       display: block
       padding: 12px 24px
-      color: $text-black
+      color: black
       &:hover
         text-decoration: none
 
+  .header_subscribe_block
+    padding: 24px
+
   .header_subscribe_block_title
-    +trailer(0)
-    padding: 24px 24px 12px
+    +trailer(0.5)
     +adjust-font-size-to(16px, 1)
 
   .header_subscribe_block_description
-    +trailer(0)
-    border-bottom: 1px solid $color-gray-white
-    padding: 0 24px 24px
+    +trailer(0.75)
     +adjust-font-size-to(13px, 3/4)
 
   .social_btns
     +reset-list-style
+    +pie-clearfix
     li
-      border-bottom: 1px solid $color-gray-white
+      float: left
+      margin-right: 16px
 
   .social_btn
-    +pie-clearfix
     display: block
-    padding: 0 24px
     color: $text-gray
+    opacity: 0.5
+    +transition(opacity 0.25s)
+
+    &:hover
+      opacity: 0.75
 
   .social_btn_icon
-    float: left
     display: block
-    opacity: 0.25
-    height: 48px
-    margin-right: 12px
-    &.icon-facebook
-      width: 10px
-    &.icon-twitter
-      width: 18px
-    &.icon-line
-      width: 36px
-
-  .social_btn_text
-    float: left
-    display: block
-    +adjust-font-size-to(13px, 2)
+    text-indent: 110%
+    white-space: nowrap
+    overflow: hidden
+    background-position: center center
+    @include background-size(contain)
+    background-repeat: no-repeat
+    width: 32px
+    height: 32px
+    &.social_btn_icon-twitter
+      background-image: image-url('icon/border-twitter')
+    &.social_btn_icon-facebook
+      background-image: image-url('icon/border-facebook')
+    &.social_btn_icon-line
+      width: 55px
+      background-image: image-url('icon/border-line')
 
   +at-breakpoint($pad)
     margin: 0 -48px 24px
@@ -165,8 +170,6 @@
         opacity: 1
         +transition(width 0.25s, opacity 0.25s)
 
-
-
     .primary_nav
       float: left
 
@@ -178,9 +181,11 @@
 
     .header_subscribe_block
       float: right
+      padding: 0
 
     .header_subscribe_block_title
       float: left
+      +trailer(0)
       padding: 12px 0
       +adjust-font-size-to(15px, 1)
       color: $text-black
@@ -193,18 +198,25 @@
 
     .social_btns
       float: left
-      margin-right: 6px
+      padding: 12px 8px 12px 4px
       li
+        margin-right: 0
         border-bottom: none
         float: left
 
     .social_btn
       display: block
-      padding: 0 9px
+      padding: 0 8px
 
     .social_btn_icon
       margin-right: auto
-
-    .social_btn_text
-      display: none
-
+      height: 24px
+      &.social_btn_icon-twitter
+        width: image-width("icon/twitter.png")
+        background-image: image-url('icon/twitter')
+      &.social_btn_icon-facebook
+        width: image-width("icon/facebook.png")
+        background-image: image-url('icon/facebook')
+      &.social_btn_icon-line
+        width: image-width("icon/line.png")
+        background-image: image-url('icon/line')
