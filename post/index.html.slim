@@ -2,10 +2,12 @@
   .post_header.js-post_header
     a.post_category.badge class="badge-color3" href="/category/"= zh_lorem_words(2)
     h2.post_header_title Facebook 推新 WordPress 插件，部落客能在 FB 上發高品質即時文章！
-    .post_header_meta
-      .post_header_meta_data 3/14/2015
-      .post_header_meta_author Even wu
-      .post_header_meta_tags 新創, 設計
+    ul.post_meta
+      li: span.post_date= lorem_date("%Y/%m/%d")
+      li: a.post_author href="/author/"= zh_lorem_name
+      li
+        - (rand(4)+1).times do|i|
+          a.post_tag href=""= zh_lorem_words(2)
     .post_toolbox.js-post_toolbox
       p.post_toolbox_title 分享
       a.post_toolbox_item

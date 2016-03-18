@@ -45,28 +45,6 @@
     +adjust-font-size-to(15px)
     +trailer(0.5)
 
-  .post_meta
-    +reset-box-model
-    list-style: none
-    +pie-clearfix
-    +adjust-font-size-to(13px, 3/4)
-
-    li
-      display: inline
-      color: #aaa
-      &:after
-        content: '。'
-        display: inline-block
-      &:last-child:after
-        display: none
-
-    .post_author, .post_tag
-      color: #aaa
-      display: inline-block
-
-    .post_tag
-      margin-right: 3px
-
   // 文章列表項目的贊助商樣式
   .post_list_item-sponsor
     margin: 0
@@ -136,7 +114,7 @@
   +at-breakpoint($pad)
     display: flex
     flex-flow: row wrap
-    margin: 0 -12px
+    margin: 0 -12px -24px
 
     .post_list_item
       margin: 0 0 24px

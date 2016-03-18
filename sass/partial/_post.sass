@@ -1,4 +1,6 @@
 .post
+  margin: 24px auto
+
   .post_category
     +trailer(0.5)
 
@@ -7,30 +9,8 @@
     +adjust-font-size-to(24px, 1.25)
     color: black
 
-  .post_header_meta
-    +pie-clearfix
+  .post_meta
     margin-bottom: 16px
-    +adjust-font-size-to(13px)
-    color: rgba(0, 0, 0, 0.35)
-
-  %dot_square
-    float: left
-    &:after
-      content: ''
-      display: inline-block
-      width: 4px
-      height: 4px
-      margin: 5px 6px 2px 4px
-      background-color: rgba(0, 0, 0, 0.15)
-
-  .post_header_meta_data
-    @extend %dot_square
-
-  .post_header_meta_author
-    @extend %dot_square
-
-  .post_header_meta_tags
-    float: left
 
   .post_toolbox
     +pie-clearfix
@@ -72,7 +52,8 @@
       margin-bottom: 48px
 
   +at-breakpoint($pad)
-    padding: 0px 96px
+    margin: 48px auto
+    padding: 0px 72px
     position: relative
 
     .post_header
@@ -132,5 +113,6 @@
         display: none
 
   +at-breakpoint($desktop)
+    padding: 0px 120px
     .post_header_title
       +adjust-font-size-to(36px)
