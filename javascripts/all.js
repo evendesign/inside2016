@@ -45,7 +45,7 @@ $window.on('resize', menu.close);
 // Sticky share toolblox
 // -----------------------------------------------------
 
-var $postShareToolbox = $('.js-post_share_toolbox');
+var $postShareToolbox = $('.js-post_toolbox');
 
 (function(){
   if (!$postShareToolbox.length) return;
@@ -54,7 +54,7 @@ var $postShareToolbox = $('.js-post_share_toolbox');
   var authorBlock = document.querySelectorAll('.js-author_block')[0];
 
   var postShareToolboxHeight = $postShareToolbox.height();
-  var postShareToolboxMargin = parseInt($postShareToolbox.css('margin-top'), 10)
+  var postShareToolboxOffsetTop = 48
   var authorBlockHeight = authorBlock.offsetHeight;
 
   var currentStatus = '';
@@ -65,8 +65,8 @@ var $postShareToolbox = $('.js-post_share_toolbox');
 
   var getStatus = function () {
     var status;
-    if (postHeader.getBoundingClientRect().bottom - postShareToolboxMargin < 0) {
-      if (authorBlock.getBoundingClientRect().top < postShareToolboxHeight + postShareToolboxMargin) {
+    if (postHeader.getBoundingClientRect().bottom - postShareToolboxOffsetTop < 0) {
+      if (authorBlock.getBoundingClientRect().top < postShareToolboxHeight + postShareToolboxOffsetTop) {
         return status = 'bottom';
       }
       return status = 'sticky';
