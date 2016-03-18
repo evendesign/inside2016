@@ -29,13 +29,14 @@
   .author_social_tool_item
     float: left
     display: block
-    margin-right: 12px
-    opacity: 0.4
-    height: 24px
-    &.icon-twitter
-      width: 18px
-    &.icon-facebook
-      width: 10px
+    opacity: 0.3
+    &:hover
+      opacity: 0.5
+    .icon
+      display: block
+      height: 24px
+      margin-right: 12px
+
 
   .author_more_article
     display: inline-block
@@ -50,7 +51,7 @@
 
   +at-breakpoint($desktop)
     margin: 0 0px 36px 0px
-    padding: 48px 100px
+    padding: 48px 96px 48px 84px
 
     .author_avatar
       float: left
