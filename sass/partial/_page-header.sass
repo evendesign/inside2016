@@ -1,2 +1,15 @@
 .page_header
-  @extend %block_holder
+
+  .page_header_title
+    +adjust-font-size-to(21px, 1)
+    +trailer(0)
+
+  @for $i from 1 through length($color-list)
+    .page_header_title-color#{$i}
+      color: nth($color-list, $i)
+
+  +at-breakpoint($pad)
+    margin: 36px auto 12px
+
+    .page_header_title
+      +adjust-font-size-to(28px, 1.5)
