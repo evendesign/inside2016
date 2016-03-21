@@ -1,10 +1,10 @@
 .post
   .post_header.js-post_header
-    a.post_category.badge class="badge-color3" href="/category/"= zh_lorem_words(2)
+    a.post_category.badge class="badge-color3" href="/categories/"= zh_lorem_words(2)
     h2.post_header_title Facebook 推新 WordPress 插件，部落客能在 FB 上發高品質即時文章！
     ul.post_meta
       li: span.post_date= lorem_date("%Y/%m/%d")
-      li: a.post_author href="/author/"= zh_lorem_name
+      li: a.post_author href="/authors/"= zh_lorem_name
       li
         - (rand(4)+1).times do|i|
           a.post_tag href=""= zh_lorem_words(2)
