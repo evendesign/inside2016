@@ -1,0 +1,51 @@
+.job_feed_block
+
+  .job_feed_block_title
+    +adjust-font-size-to(16px, 1)
+    color: black
+    +trailer(0.25)
+
+  .job_feed
+    +reset-list-style
+    border: 1px solid $color-gray-light
+    border-right: none
+    overflow: auto
+    white-space: nowrap
+    -webkit-overflow-scrolling: touch
+    li
+      width: 25%
+      min-width: 240px
+      display: inline-block
+      +box-sizing(border-box)
+      border-right: 1px solid $color-gray-light
+
+  .job_feed_item
+    display: block
+    color: $text-black
+    text-align: center
+    padding: 32px 24px 24px
+    white-space: normal
+    +transition(background-color 0.25s)
+
+    &:hover
+      background-color: $color-white-dark
+      text-decoration: none
+
+  .job_cover
+    display: block
+    margin: 0 auto 12px
+
+  .job_title
+    margin-bottom: 3px
+    +adjust-font-size-to(15px, 3/4)
+
+  .job_info
+    margin-bottom: 0px
+    +adjust-font-size-to(13px, 3/4)
+    color: $text-gray
+
+  +at-breakpoint($desktop)
+    .job_feed
+      overflow: visible
+      li
+        min-width: 0

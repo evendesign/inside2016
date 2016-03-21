@@ -1,8 +1,14 @@
 .post_list.post_list-list_style
-  - 9.times do |i|
+  - 6.times do |i|
+
+    / 模擬有徵才廣告插入的情形
+    - if i == 3
+      .post_list_item
+        = render "/partials/job_feed_block"
+
 
     / 模擬第六個文章項目是贊助商文章的情形
-    - sponsor_class = i == 5 ? 'post_list_item-sponsor' : ''
+    - sponsor_class = i == 4 ? 'post_list_item-sponsor' : ''
 
     .post_list_item class="#{sponsor_class}"
       a.post_cover href="/posts/"
