@@ -15,7 +15,7 @@
     - else
       .post_list_item class="#{sponsor_class} #{hero_class}"
         a.post_cover href="/posts/"
-          .post_cover_inner style=""
+          .post_cover_inner style="background-image: url(https://placeimg.com/640/480/#{rand(10)});"
         .post_list_item_content
           a.post_category.badge class="badge-color#{i+1}" href="/categories/"= zh_lorem_words(2)
           h3.post_title: a href="/posts/"= zh_lorem_sentence

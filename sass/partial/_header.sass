@@ -73,7 +73,10 @@
       display: block
       padding: 12px 24px
       color: black
+      +transition(color 0.25s)
+
       &:hover
+        color: darken($color-primary, 5%)
         text-decoration: none
 
   .header_subscribe_block
