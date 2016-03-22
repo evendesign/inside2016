@@ -51,11 +51,11 @@ var $postShareToolbox = $('.js-post_toolbox');
   if (!$postShareToolbox.length) return;
 
   var postHeader = document.querySelectorAll('.js-post_header')[0];
-  var authorBlock = document.querySelectorAll('.js-author_block')[0];
+  var authorBlock = document.querySelectorAll('.js-post_footer')[0];
 
   var postShareToolboxHeight = $postShareToolbox.height();
   var postShareToolboxOffsetTop = 48
-  var authorBlockHeight = authorBlock.offsetHeight;
+  var authorBlockHeight = authorBlock.offsetHeight + 48;
 
   var currentStatus = '';
 
@@ -66,7 +66,7 @@ var $postShareToolbox = $('.js-post_toolbox');
   var getStatus = function () {
     var status;
     if (postHeader.getBoundingClientRect().bottom - postShareToolboxOffsetTop < 0) {
-      if (authorBlock.getBoundingClientRect().top < postShareToolboxHeight + postShareToolboxOffsetTop) {
+      if (authorBlock.getBoundingClientRect().top < postShareToolboxHeight + postShareToolboxOffsetTop + 48) {
         return status = 'bottom';
       }
       return status = 'sticky';

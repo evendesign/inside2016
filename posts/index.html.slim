@@ -48,22 +48,7 @@
       li 工作的意義：我們做的事對每一個成員來說都很重要嗎？
       li 工作的影響力：我們真心相信正在做的事能造成影響嗎？
 
-    h1 這是h1
-    h2 這是h2
-    h3 這是h3
-    h4 這是h4
-    h5 這是h5
-    h6 這是h6
-    ul
-      li 一個
-      li 兩個
-      li 三個
-    ol
-      li 第一個
-      li 第二個
-      li 第三個
-
-  .poster_footer
+  .post_footer.js-post_footer
     .post_toolbox
       p.post_toolbox_title 分享
       a.post_toolbox_item
@@ -75,17 +60,36 @@
       a.post_toolbox_item
         span.icon.icon-comment href="#"
         span.text 評論
-
     .poster_footer_author
-      = render "/partials/author-block"
+      = render "/partials/author_block"
+
+= render "/partials/ad_block"
 
 = render "/partials/subscribe_block"
 
-.block
-  h2 相關文章區塊
+.block.block-relative-articles
+  h2.block_title 相關文章
+  .block_content
+    .post_list.post_list-grid_style
+      - 3.times do |i|
+        .post_list_item
+          a.post_cover href="/posts/"
+            .post_cover_inner style="background-image: url(https://placeimg.com/640/480/#{rand(10)});"
+          .post_list_item_content
+            / 文章標籤的顏色，跟隨者 .badge-color1, .badge-color2 ...等 class 來呈現
+            a.post_category.badge class="badge-color#{rand(10)}" href="/categories/"= zh_lorem_words(2)
+            h3.post_title: a href="/posts/"= zh_lorem_sentence
+            p.post_description= zh_lorem_paragraph
+            ul.post_meta
+              li: span.post_date= lorem_date("%Y/%m/%d")
+              li: a.post_author href="/authors/"= zh_lorem_name
+              li
+                - (rand(4)+1).times do|i|
+                  a.post_tag href=""= zh_lorem_words(2)
 
-.block
-  h2 fb 留言區塊
+.block.block-fb_comments
+  h2.block_title 評論
+  .block_content
+    .fb-comments data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="1"
 
-/ .block
 = render "/partials/job_feed_block"

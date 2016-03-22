@@ -56,7 +56,10 @@
   +at-breakpoint($pad)
     +pie-clearfix
     margin: 48px 0
-    padding: 36px 12px
+    padding: 36px 2px
+
+    .subscribe_block_title
+      +adjust-font-size-to(24px, 1.25)
 
     .subscribe_block_description
       +trailer(1)
@@ -69,13 +72,7 @@
       float: left
 
   +at-breakpoint($desktop)
-    padding: 48px 12px
-
-    .subscribe_block_title
-      +adjust-font-size-to(24px, 1.25)
-
-    .subscribe_block_description
-      +adjust-font-size-to(16px, 1)
+    padding: 48px 2px
 
     .subscribe_block_email
       input

@@ -1,2 +1,33 @@
 .block
-  @extend %block_holder
+  margin: 48px auto
+
+  .block_title
+    +adjust-font-size-to(21px, 1)
+    color: black
+    +trailer(1)
+
+  &.block-relative-articles
+    .post_list
+      margin-top: -24px
+
+  &.block-fb_comments
+    .block_content
+      max-width: 640px
+      margin: 0 -8px
+
+  +at-breakpoint($pad)
+    .block_title
+      +adjust-font-size-to(24px, 1.25)
+
+    &.block-relative-articles
+      .post_list
+        margin-top: 0
+      .post_list_item:nth-child(3)
+        display: none
+
+  +at-breakpoint($desktop)
+    &.block-relative-articles
+      .post_list
+        margin-top: 0
+      .post_list_item:nth-child(3)
+        display: block

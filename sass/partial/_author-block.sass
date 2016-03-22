@@ -18,7 +18,9 @@
   .author_title
     margin: -24px 0 24px 0
     text-align: center
-    font-weight: bold
+    +adjust-font-size-to(21px, 1)
+    color: black
+    +trailer(0.5)
 
   .author_description
     margin-bottom: 12px
@@ -47,17 +49,14 @@
     cursor: pointer
     color: $color-gray
 
-  +at-breakpoint($pad)
-    margin: 48px auto
-    padding: 48px
 
-  +at-breakpoint($desktop)
-    padding: 48px 96px 48px 84px
+  +at-breakpoint($pad)
+    padding: 48px
 
     .author_avatar
       float: left
       height: 100%
-      margin-right: 36px
+      margin-right: 48px
 
       img
         width: 100px
@@ -71,5 +70,9 @@
       text-align: left
 
     .author_description
-      max-width: 540px
+      max-width: 670px
       text-align: left
+
+    .author_more_article
+      float: left
+      margin-left: 12px
