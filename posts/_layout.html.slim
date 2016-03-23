@@ -10,7 +10,9 @@ html lang="zh-TW"
 
     .page.off_canvas.js-off_canvas class="#{@pageNameClass}"
       = render "/partials/header"
-      = yield
+      .content
+        .container
+          = yield
       = render "/partials/footer"
       .off_canvas_mask.js-off_canvas_mask
     = render "/layout_foot"
