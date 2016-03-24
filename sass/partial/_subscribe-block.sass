@@ -28,7 +28,10 @@
       opacity: 0.75
 
   .subscribe_block_email
+    +pie-clearfix
     input
+      float: left
+      display: block
       padding: 3px 12px
       +border-radius(2px)
       width: 170px
@@ -36,22 +39,26 @@
       +adjust-font-size-to(13px)
       background-color: transparent
       +transition(border-color 0.25s)
+      -webkit-appearance: none
       &:hover
         border: 1px solid rgba(black, 0.75)
       &:focus
         outline: none
 
     button
+      float: left
+      display: block
       padding: 4px 24px
       border: none
       margin-left: -2px
-      +border-radius (2px)
+      +border-radius (0 2px 2px 0)
       +adjust-font-size-to(13px)
       vertical-align: middle
       font-weight: bold
       background-color: $color-black
       color: white
       outline: none
+      -webkit-appearance: none
 
   +at-breakpoint($pad)
     +pie-clearfix
