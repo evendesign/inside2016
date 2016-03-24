@@ -1,4 +1,5 @@
 .job_feed_block
+  margin: 48px auto
 
   .job_feed_block_title
     +adjust-font-size-to(16px, 1)
@@ -46,6 +47,9 @@
     margin-bottom: 0px
     +adjust-font-size-to(13px, 3/4)
     color: $text-gray
+
+  +at-breakpoint($pad)
+    margin: 48px auto 72px
 
   +at-breakpoint($desktop)
     .job_feed
