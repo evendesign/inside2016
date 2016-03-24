@@ -7,9 +7,9 @@
         span.menu_btn_icon.icon-hanburger.js-menu_icon
           span.icon-hanburger_line
       .menu.off_canvas_menu
-        .search
-          input.search_submit.icon-search type="submit"
-          input.search_input type="text" placeholder="搜尋"
+        form.search_form
+          input.js-search_submit.search_submit.icon-search type="submit"
+          input.js-search_input.search_input#search type="text" placeholder="搜尋"
         ul.primary_nav
           li.primary_nav_item: a href="/categories/" 新創
           li.primary_nav_item: a href="/categories/" 趨勢

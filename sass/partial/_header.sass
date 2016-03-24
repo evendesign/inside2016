@@ -1,7 +1,7 @@
 .header
-  margin: 0 -24px 24px
 
   .header_inner
+    margin: 0 -24px 24px
     background-color: #f6f6f6
     +pie-clearfix
 
@@ -39,7 +39,7 @@
     float: right
     background-color: $color-gray-white
 
-  .search
+  .search_form
     position: relative
     border-bottom: 1px solid $color-gray-white
 
@@ -119,36 +119,35 @@
     width: 32px
     height: 32px
     &.social_btn_icon-twitter
-      background-image: image-url('icon/border-twitter')
+      background-image: image-url('icon/border-twitter.svg')
     &.social_btn_icon-facebook
-      background-image: image-url('icon/border-facebook')
+      background-image: image-url('icon/border-facebook.svg')
     &.social_btn_icon-line
       width: 55px
-      background-image: image-url('icon/border-line')
+      background-image: image-url('icon/border-line.svg')
 
   +at-breakpoint($pad)
-    margin: 0 -48px 48px
+    .header_inner
+      margin: 0 -48px 48px
 
   +at-breakpoint($desktop)
-    margin: 0 auto 48px
+    .header_inner
+      margin: 0 auto 48px
 
     .menu_btn
       display: none
 
-    .search
+    .search_form
       float: right
       border-bottom: none
       background-color: $color-gray-white
       text-align: center
-      &:hover
-        .search_input
-          width: 240px
-          visibility: visible
-          opacity: 1
-          +transition(width 0.25s, opacity 0.25s)
-
+      &:hover .search_input
+        width: 240px
+        opacity: 1
 
     .search_submit
+      display: block
       float: none
       width: 48px
       position: relative
@@ -160,20 +159,17 @@
     .search_input
       position: absolute
       top: 0
-      right: 100%
+      right: 0
       z-index: 90
       width: 0px
       padding: 12px
-      border-right: 2px solid #f6f6f6
       background-color: $color-gray-white
+      +box-sizing(border-box)
       opacity: 0
-      visibility: hidden
-      +transition(width 0.25s, opacity 0.25s, visibility 0s 0.25s)
+      +transition(width 0.25s, opacity 0.25s)
       &:focus
         width: 240px
-        visibility: visible
         opacity: 1
-        +transition(width 0.25s, opacity 0.25s)
 
     .primary_nav
       float: left
@@ -218,10 +214,10 @@
       height: 24px
       &.social_btn_icon-twitter
         width: image-width("icon/twitter.png")
-        background-image: image-url('icon/twitter')
+        background-image: image-url('icon/twitter.svg')
       &.social_btn_icon-facebook
         width: image-width("icon/facebook.png")
-        background-image: image-url('icon/facebook')
+        background-image: image-url('icon/facebook.svg')
       &.social_btn_icon-line
         width: image-width("icon/line.png")
-        background-image: image-url('icon/line')
+        background-image: image-url('icon/line.svg')
