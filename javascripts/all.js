@@ -17,3 +17,4 @@ function require(src) {
 require('_search')
 require('_sticky')
 require('_menu')
+require('_hero')
