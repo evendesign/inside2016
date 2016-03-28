@@ -7,7 +7,7 @@
       li: a.post_author href="/authors/"= zh_lorem_name
       li
         - (rand(4)+1).times do|i|
-          a.post_tag href=""= zh_lorem_words(2)
+          a.post_tag href="/tags/"= zh_lorem_words(2)
     .post_toolbox.js-post_toolbox
       p.post_toolbox_title 分享
       a.post_toolbox_item
@@ -85,7 +85,7 @@
               li: a.post_author href="/authors/"= zh_lorem_name
               li
                 - (rand(4)+1).times do|i|
-                  a.post_tag href=""= zh_lorem_words(2)
+                  a.post_tag href="/tags/"= zh_lorem_words(2)
 
 .block.block-fb_comments
   h2.block_title 評論
@@ -93,3 +93,5 @@
     .fb-comments data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="1"
 
 = render "/partials/job_feed_block"
+
+= render "/posts/fb_setting"
