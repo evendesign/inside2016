@@ -1,7 +1,8 @@
 .header
+  margin-bottom: 24px
 
   .header_inner
-    margin: 0 -24px 24px
+    margin: 0 -24px
     background-color: #f6f6f6
     +pie-clearfix
 
@@ -54,6 +55,7 @@
     padding: 0
     background-color: transparent
     opacity: 0.3
+    +background-size(18px 18px)
 
   .search_input
     +box-sizing(border-box)
@@ -61,32 +63,40 @@
     outline: none
     margin: 0
     border: none
-    padding: 12px 24px 12px 60px
+    padding: 12px 24px 12px 54px
     width: 100%
     background-color: transparent
     +adjust-font-size-to(15px, 1)
 
   .primary_nav
     +reset-list-style
+    border-bottom: 1px solid $color-gray-white
+    padding: 18px 0
 
   .primary_nav_item
-    border-bottom: 1px solid $color-gray-white
     a
       display: block
-      padding: 12px 24px
+      padding: 6px 24px
       color: black
-      +transition(color 0.25s)
+      +transition(background-color 0.25s)
+      +adjust-font-size-to(15px, 1)
+      .en
+        display: inline-block
+        color: $text-gray
+        margin-left: 3px
 
       &:hover
-        color: darken($color-primary, 5%)
+        background-color: $color-gray-white
         text-decoration: none
 
   .header_subscribe_block
-    padding: 24px
+    padding: 24px 24px
+    border-bottom: 1px solid $color-gray-white
 
   .header_subscribe_block_title
+    color: black
     +trailer(0.5)
-    +adjust-font-size-to(16px, 1)
+    +adjust-font-size-to(15px, 1)
 
   .header_subscribe_block_description
     +trailer(0.75)
@@ -126,13 +136,30 @@
       width: 55px
       background-image: image-url('icon/border-line.svg')
 
+  .secondary_nav
+    +reset-list-style
+    padding: 18px 0
+    border-bottom: 1px solid $color-gray-white
+
+  .secondary_nav_item
+    a
+      display: block
+      padding: 6px 24px
+      color: $text-gray
+      +transition(color 0.25s)
+      +adjust-font-size-to(15px, 1)
+      &:hover
+        color: darken($color-primary, 5%)
+        text-decoration: none
+
   +at-breakpoint($pad)
+    margin-bottom: 48px
     .header_inner
-      margin: 0 -48px 48px
+      margin: 0 -48px
 
   +at-breakpoint($desktop)
     .header_inner
-      margin: 0 auto 48px
+      margin: 0 auto
 
     .menu_btn
       display: none
@@ -154,7 +181,6 @@
       z-index: 100
       top: auto
       left: auto
-      @include background-size(20px 20px)
 
     .search_input
       position: absolute
@@ -162,7 +188,7 @@
       right: 0
       z-index: 90
       width: 0px
-      padding: 12px
+      padding: 12px 48px 12px 18px
       background-color: $color-gray-white
       +box-sizing(border-box)
       opacity: 0
@@ -173,23 +199,31 @@
 
     .primary_nav
       float: left
+      border-bottom: none
+      padding: 0
 
     .primary_nav_item
       float: left
       border-bottom: none
       a
-        padding: 12px 18px
+        padding: 12px
+        .en
+          display: none
+
+    .secondary_block
+      float: right
 
     .header_subscribe_block
       float: right
       padding: 0
+      border-bottom: none
 
     .header_subscribe_block_title
       float: left
       +trailer(0)
       padding: 12px 0
       +adjust-font-size-to(15px, 1)
-      color: $text-black
+      color: $text-gray
       &:after
         content: '：'
         display: inline
@@ -199,7 +233,7 @@
 
     .social_btns
       float: left
-      padding: 12px 8px 12px 4px
+      padding: 12px 8px 12px 0px
       li
         margin-right: 0
         border-bottom: none
@@ -208,6 +242,7 @@
     .social_btn
       display: block
       padding: 0 8px
+      opacity: 0.3
 
     .social_btn_icon
       margin-right: auto
@@ -221,3 +256,14 @@
       &.social_btn_icon-line
         width: image-width("icon/line.png")
         background-image: image-url('icon/line.svg')
+
+    .secondary_nav
+      float: left
+      padding: 0 12px
+      border-bottom: none
+
+    .secondary_nav_item
+      a
+        +adjust-font-size-to(15px, 1)
+        padding: 12px 6px
+        color: $text-gray
