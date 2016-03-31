@@ -2,27 +2,26 @@
   position: relative
   +pie-clearfix
   background: $color-white-dark
-  margin: 24px auto
+  margin: 0 auto 24px
   padding: 36px 24px
   +border-radius(2px)
 
   .author_avatar
-    text-align: center
-
-    img
-      width: 80px
-      height: 80px
-      +border-radius (100%)
-      border: 3px solid #C13B3B
+    display: block
+    margin: 0 auto 6px
+    width: 96px
+    height: 96px
+    +border-radius (100%)
+    border: 3px solid #C13B3B
 
   .author_title
-    margin: -24px 0 24px 0
+    margin:  0 24px 24px
     text-align: center
     +adjust-font-size-to(21px, 1)
     color: black
-    +trailer(0.5)
 
   .author_description
+    +adjust-font-size-to(15px, 1)
     margin-bottom: 12px
 
   .author_social_tool
@@ -62,11 +61,11 @@
         width: 100px
         height: 100px
 
-    .author-warp
+    .author_content
       overflow: hidden
 
     .author_title
-      margin-top: 0px
+      margin: 0 auto 12px
       text-align: left
 
     .author_description
@@ -76,3 +75,7 @@
     .author_more_article
       float: left
       margin-left: 12px
+
+  +at-breakpoint($desktop)
+    .author_description
+      +adjust-font-size-to(16px, 1)
