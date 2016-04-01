@@ -1,2 +1,44 @@
-.hero
-  h2.hero-title Hero 區塊
+/ fake data
+- hero_posts = (1..5).map {|i| \
+  { \
+    :title => zh_lorem_sentence, \
+    :cover => "https://placeimg.com/640/480/#{rand(10)}", \
+    :date => lorem_date("%Y/%m/%d"), \
+    :tags => (rand(4)+1).times.map {|t| zh_lorem_words(2)}, \
+    :author => { \
+      :url => '/authors/', \
+      :name => zh_lorem_name \
+    }, \
+    :category => { \
+      :id => i, \
+      :text => zh_lorem_words(2) \
+    } \
+  } \
+}
+
+.hero.js-hero
+  .hero_menu_wrapper
+    h2.hero_menu_title 熱門文章
+    ul.hero_menu
+      - hero_posts.reverse.each do |post|
+        li.hero_menu_item.js-hero_menu_item class="is-color#{post[:category][:id]}"
+          a.hero_menu_link href='#'= post[:title]
+  .hero_slides_wrapper
+    ul.hero_slides
+      - hero_posts.each do |post|
+        li.hero_slide.js-hero_slide style="background-image: url(#{post[:cover]})"
+          .hero_slide_info
+            a.badge class="badge-color#{post[:category][:id]}" href="#{post[:category][:url]}"= post[:category][:text]
+            .hero_slide_title= post[:title]
+            ul.hero_slide_meta
+              li.hero_slide_meta_item
+                span.hero_slide_date= post[:date]
+              li.hero_slide_meta_item
+                a.hero_slide_author href="#{post[:author][:url]}"= post[:author][:name]
+              li.hero_slide_meta_item
+                - post[:tags].each do |tag|
+                  a.hero_slide_tag href=''= tag
+  .hero_pagination_wrapper
+    .hero_pagination
+      - hero_posts.each do |post|
+        .hero_pagination_item.js-hero_pagination_item

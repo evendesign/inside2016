@@ -1,2 +1,219 @@
+$xx: rgba(red, .3)
+
+=desktop
+  +at-breakpoint($desktop)
+    @content
+
+=pad
+  +at-breakpoint($pad)
+    @content
+
+// wrapper
+// =========================================================================
+
 .hero
-  @extend %block_holder
+  position: relative
+  overflow: hidden
+  padding: 12px 0
+  margin: 0 -24px
+  +desktop
+    margin: 0 -12px 36px
+  a
+    color: inherit
+
+.hero_slides_wrapper
+  margin: 0 12px
+  &:after
+    content: ''
+    display: block
+    right: 0
+    top: 0
+    width: 20px
+    height: 100%
+    background: #fff
+    position: absolute
+  +desktop
+    margin-left: 12px
+    width: calc(100% * 2 / 3 - 24px)
+
+.hero_slides, .hero_pagination, .hero_menu
+  list-style: none
+  margin: 0
+  padding: 0
+
+.hero_menu_wrapper
+  position: absolute
+  right: 12px
+  top: 0
+  bottom: 0
+  width: calc(100% / 3 - 13px)
+  z-index: 1
+  background: #fff
+  display: none
+  border: 1px solid rgba(#000, .1)
+  border-radius: 0 4px 4px 0
+  &:before, &:after
+    content: ''
+    display: block
+    position: absolute
+  // &:before
+
+  // &:after
+  //   right: -13px
+  //   top: 0
+  //   bottom: 0
+  //   width: 12px
+  //   background: #fff
+
+  +desktop
+    display: block
+
+// menu
+// =========================================================================
+
+.hero_menu
+  height: calc(100% - 50px)
+
+.hero_menu_title
+  color: $color-primary
+  padding: 0 12px
+  line-height: 50px
+  height: 50px
+  margin-bottom: 0
+  font-size: 18px
+  font-weight: bold
+
+.hero_menu_item
+  height: 20%
+  &:before
+    content: ''
+    position: absolute
+    width: 100%
+    height: 1px
+    background: #f3f3f3
+  &:last-child
+    border-radius: 0 0 4px 4px
+  &.is-active
+    background: #fafafa
+    box-shadow: inset 2px 1px 2px rgba(#000, .2)
+    position: relative
+    &:before
+      position: absolute
+      left: -1px
+      height: 100%
+      width: 5px
+    @for $i from 1 through length($color-list)
+      &.is-color#{$i}:before
+        background-color: nth($color-list, $i)
+
+.hero_menu_link
+  box-sizing: border-box
+  display: block
+  height: 100%
+  padding: 18px
+  line-height: 21px
+  &:hover
+    text-decoration: none
+
+// slides
+// =========================================================================
+
+.hero_slides, .hero_slide
+  padding-bottom: 100%
+  +at-breakpoint(480px)
+    padding-bottom: 60%
+
+.hero_slides
+  position: relative
+
+.hero_slide
+  left: 0
+  width: 100%
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  position: absolute
+  color: white
+  transition: left .5s
+  will-change: left
+  border-radius: 4px
+  overflow: hidden
+  &:before
+    position: absolute
+    display: block
+    width: 100%
+    height: 100%
+    content: ''
+    border-radius: 4px
+    +background-image(linear-gradient(15deg, rgba(#000, .5), rgba(#000, 0)))
+  &:first-child, &.is-active, &.is-active + &
+    box-shadow: -2px 2px 5px rgba(#000, .15), -2px 2px 2px rgba(#000, .25)
+  &.is-panning
+    transition: none
+  &.is-active ~ &
+    left: -100%
+    +desktop
+      left: 100%
+
+.hero_slide_info
+  position: absolute
+  left: 15px
+  bottom: 15px
+  right: 15px
+
+.hero_slide_title
+  font-weight: bold
+  font-size: 26px
+  line-height: 1.3
+  margin: 10px 0
+  margin-right: 40px
+
+.hero_slide_meta
+  display: none
+  padding: 0
+  +pad
+    display: block
+
+.hero_slide_meta_item
+  display: inline-block
+  &:not(:last-child):after
+    content: ''
+    display: inline-block
+    width: 4px
+    height: 4px
+    margin: 5px 6px 2px 4px
+    background-color: rgba(#000, 0.15)
+
+// pagination
+// =========================================================================
+
+.hero_pagination_wrapper
+  text-align: center
+  line-height: 0
+  margin: 25px auto
+  +desktop
+    display: none
+
+.hero_pagination
+  display: inline-block
+
+.hero_pagination_item
+  position: relative
+  float: right
+  width: 20px
+  height: 20px
+  cursor: pointer
+  &:after
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-top: -5px
+    margin-left: -5px
+    width: 10px
+    height: 10px
+    border-radius: 50%
+    border: 1px solid rgba(#000, .2)
+  &.is-active:after
+    border-color: $color-primary
+    background: $color-primary
