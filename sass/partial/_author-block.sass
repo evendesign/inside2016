@@ -32,6 +32,8 @@
     float: left
     display: block
     opacity: 0.3
+    +transition(opacity 0.25s)
+
     &:hover
       opacity: 0.5
     .icon
@@ -45,7 +47,6 @@
     float: right
     +adjust-font-size-to(13px)
     text-decoration: underline
-    cursor: pointer
     color: $color-gray
 
 
