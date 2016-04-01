@@ -45,20 +45,17 @@
       &:focus
         outline: none
 
-    button
+    .btn
       float: left
       display: block
-      padding: 4px 24px
-      border: none
       margin-left: -2px
+      border: none
+      padding: 4px 24px
       +border-radius (0 2px 2px 0)
       +adjust-font-size-to(13px)
-      vertical-align: middle
-      font-weight: bold
-      background-color: $color-black
+      background: $color-black
       color: white
       outline: none
-      -webkit-appearance: none
 
   +at-breakpoint($pad)
     +pie-clearfix
