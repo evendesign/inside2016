@@ -46,19 +46,42 @@ class Hero
   constructor: ->
     @window = $(window)
     @root = $root
+    @wrapper = @root.find('.js-hero_slides_wrapper')
     @children = @root.find('.js-hero_slide')
-    @max = @children.length - 1
+    @length = @children.length
+    @max = @length - 1
     @currentIndex = @max
 
     @slides = []
     @pagedots = []
     @menuItems = []
 
+    @_load()
+
+  _load: ->
+    loadedImageLength = 0
     @children.each (index, el) =>
       @slides.push new Slide($(el), index, @)
       @pagedots.push new Pagedot(index, @)
       @menuItems.push new MenuItem(index, @)
 
+      url = el.style.backgroundImage.match(/\(["']?(.*)["']?\)/)[1]
+
+      $('<img>')
+        .on 'load', =>
+          loadedImageLength++
+          @_loaded() if loadedImageLength == @length
+        .attr('src', url)
+
+  _loaded: ->
+    @wrapper.toggleClass('is-loading is-entering')
+    @_init()
+
+    setTimeout =>
+      @wrapper.removeClass('is-entering')
+    , 2250
+
+  _init: ->
     @_bindEventHandler()
     @_updateDimension()
     @_updateClass()

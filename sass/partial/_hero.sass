@@ -23,18 +23,18 @@ $xx: rgba(red, .3)
 
 .hero_slides_wrapper
   margin: 0 12px
-  &:after
-    content: ''
-    display: block
-    right: 0
-    top: 0
-    width: 20px
-    height: 100%
-    background: #fff
-    position: absolute
   +desktop
     margin-left: 12px
     width: calc(100% * 2 / 3 - 24px)
+    &:after
+      position: absolute
+      right: 0
+      top: 0
+      display: block
+      width: 20px
+      height: 100%
+      background: #fff
+      content: ''
 
 .hero_slides, .hero_pagination, .hero_menu
   list-style: none
@@ -52,18 +52,6 @@ $xx: rgba(red, .3)
   display: none
   border: 1px solid rgba(#000, .1)
   border-radius: 0 4px 4px 0
-  &:before, &:after
-    content: ''
-    display: block
-    position: absolute
-  // &:before
-
-  // &:after
-  //   right: -13px
-  //   top: 0
-  //   bottom: 0
-  //   width: 12px
-  //   background: #fff
 
   +desktop
     display: block
@@ -134,10 +122,19 @@ $xx: rgba(red, .3)
   background-size: cover
   position: absolute
   color: white
-  transition: left .5s
-  will-change: left
   border-radius: 4px
   overflow: hidden
+  will-change: left
+  transition: left .5s
+
+  .is-loading &
+    left: -110%
+    +desktop
+      left: 110%
+  .is-entering &
+    @for $i from 1 through 5
+      &:nth-child(#{$i})
+        transition: left 1.5s #{.15 * $i}s
   &:before
     position: absolute
     display: block
