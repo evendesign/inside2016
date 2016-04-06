@@ -46,7 +46,6 @@ class Hero
   constructor: ->
     @window = $(window)
     @root = $root
-    @wrapper = @root.find('.js-hero_slides_wrapper')
     @children = @root.find('.js-hero_slide')
     @length = @children.length
     @max = @length - 1
@@ -65,7 +64,7 @@ class Hero
       @pagedots.push new Pagedot(index, @)
       @menuItems.push new MenuItem(index, @)
 
-      url = el.style.backgroundImage.match(/\(["']?(.*)["']?\)/)[1]
+      url = el.style.backgroundImage.replace(/["']/g, '').match(/\((.*)\)/)[1]
 
       $('<img>')
         .on 'load', =>
@@ -74,11 +73,11 @@ class Hero
         .attr('src', url)
 
   _loaded: ->
-    @wrapper.toggleClass('is-loading is-entering')
+    @root.toggleClass('is-loading is-entering')
     @_init()
 
     setTimeout =>
-      @wrapper.removeClass('is-entering')
+      @root.removeClass('is-entering')
     , 2250
 
   _init: ->

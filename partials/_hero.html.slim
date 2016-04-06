@@ -16,14 +16,15 @@
   } \
 }
 
-.hero.js-hero
+.hero.js-hero.is-loading
+  .hero_loading_indicator
   .hero_menu_wrapper
     h2.hero_menu_title 熱門文章
     ul.hero_menu
       - hero_posts.reverse.each do |post|
         li.hero_menu_item.js-hero_menu_item class="is-color#{post[:category][:id]}"
           a.hero_menu_link href='#'= post[:title]
-  .hero_slides_wrapper.is-loading.js-hero_slides_wrapper
+  .hero_slides_wrapper
     ul.hero_slides
       - hero_posts.each do |post|
         li.hero_slide.js-hero_slide style="background-image: url(#{post[:cover]})"
