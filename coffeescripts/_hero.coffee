@@ -10,6 +10,9 @@ translateX = (el, x) ->
   el.style.transform = value
   el.style.msTransform = value
 
+isTouchDevice = ->
+  `'ontouchstart' in window` || navigator.maxTouchPoints
+
 class Page
   _isCurrent: ->
     @index == @parent.currentIndex
@@ -101,11 +104,11 @@ class Hero
 
   _bindEventHandler: ->
     @window.on 'resize', @_updateDimension
-    @mc = new Hammer(@root[0], { prevent_mouseevents: true })
+    return unless isTouchDevice()
 
+    @mc = new Hammer(@root[0])
     @mc.on 'panleft panright', @_pan
     @mc.on 'panend', @_panend
-    # TODO: prevent window scroll
 
   _getPanningSlide: ->
     if @delta * @dir > 0
