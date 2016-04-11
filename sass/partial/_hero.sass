@@ -1,27 +1,3 @@
-$xx: rgba(red, .3)
-
-=desktop
-  +at-breakpoint($desktop)
-    @content
-
-=pad
-  +at-breakpoint($pad)
-    @content
-
-=keyframe($animation_name)
-  @-webkit-keyframes #{$animation_name}
-    @content
-  @keyframes #{$animation_name}
-    @content
-
-=animation($delay, $duration, $animation, $iteration-count)
-  @each $prefix in (-webkit-, '')
-    #{$prefix}animation-delay: $delay
-    #{$prefix}animation-duration: $duration
-    #{$prefix}animation-name: $animation
-    #{$prefix}animation-fill-mode: forwards
-    #{$prefix}animation-iteration-count: $iteration-count
-
 %fade-in
   opacity: 1
   +transition(opacity .3s)
@@ -40,7 +16,6 @@ $xx: rgba(red, .3)
 .hero
   position: relative
   overflow: hidden
-  padding: 12px 0
   margin: 0 -24px
 
   +pad
@@ -48,6 +23,7 @@ $xx: rgba(red, .3)
 
   +desktop
     margin: 0 -12px 36px
+    padding: 12px 0
     border: 1px solid rgba(#fff, 0)
     border-radius: 2px
     +transition(border .3s)
@@ -81,11 +57,6 @@ $xx: rgba(red, .3)
       background: #fff
       content: ''
 
-.hero_slides, .hero_pagination, .hero_menu
-  list-style: none
-  margin: 0
-  padding: 0
-
 .hero_menu_wrapper
   position: absolute
   right: 12px
@@ -114,11 +85,17 @@ $xx: rgba(red, .3)
 .hero_pagination_wrapper
   text-align: center
   line-height: 0
-  margin: 25px auto
+  margin: 24px auto 0
   @extend %fade-in
+
+  +pad
+    margin-bottom: 10px
 
   +desktop
     display: none
+
+.hero_slides, .hero_pagination, .hero_menu
+  +reset-list-style
 
 // loading indicator
 // =========================================================================
@@ -145,6 +122,7 @@ $xx: rgba(red, .3)
     background: $color-primary
     content: ''
     +animation(0, 1.5s, loading, infinite)
+
   .is-loading &
     opacity: 1
 
@@ -155,18 +133,19 @@ $xx: rgba(red, .3)
   height: calc(100% - 50px)
 
 .hero_menu_title
-  color: $color-primary
+  margin-bottom: 0
   padding: 0 12px
+  padding-left: 16px
   line-height: 50px
   height: 50px
-  margin-bottom: 0
   font-size: 1.3em
   font-weight: bold
+  color: $color-primary
 
 .hero_menu_item
   height: 20%
-  border-top: 1px solid #eee
   box-sizing: border-box
+  border-top: 1px solid #ddd
 
   &:last-child
     border-radius: 0 0 2px 2px
@@ -176,22 +155,38 @@ $xx: rgba(red, .3)
     box-shadow: inset 2px 1px 2px rgba(#000, .2)
     position: relative
     border-top-color: transparent
-    &:before
-      position: absolute
-      left: -1px
-      width: 5px
-      height: 100%
-      content: ''
+
     @for $i from 1 through length($color-list)
-      &.is-color#{$i}:before
+      &.is-color#{$i} .hero_menu_link:before
         background-color: nth($color-list, $i)
 
 .hero_menu_link
-  box-sizing: border-box
   display: block
   height: 100%
-  padding: .8em
-  line-height: 21px
+
+  &:before, span
+    display: inline-block
+    vertical-align: middle
+
+  span
+    box-sizing: border-box
+    width: calc(100% - 5px)
+    padding: 0 15px
+    line-height: 21px
+    font-size: 13px
+    +transition(font-size .3s)
+    +at-breakpoint(1024px)
+      font-size: 14px
+    +at-breakpoint(1280px)
+      font-size: 15px
+
+  &:before
+    position: relative
+    margin-left: -1px
+    width: 5px
+    height: 100%
+    content: ''
+
   &:hover
     text-decoration: none
 
@@ -223,10 +218,12 @@ $xx: rgba(red, .3)
     +transform(translateX(-110%))
     +desktop
       +transform(translateX(160%))
+
   .is-entering &
     @for $i from 1 through 5
       &:nth-child(#{$i})
         +transition(transform 1.5s #{.15 * $i}s)
+
   &:before
     position: absolute
     display: block
@@ -235,12 +232,15 @@ $xx: rgba(red, .3)
     content: ''
     border-radius: 2px
     +background-image(linear-gradient(15deg, rgba(#000, .5), rgba(#000, 0)))
+
   &:first-child, &:last-child
     box-shadow: 2px 2px 5px rgba(#000, .15), 2px 2px 2px rgba(#000, .25)
     +desktop
       box-shadow: -2px 2px 5px rgba(#000, .15), -2px 2px 2px rgba(#000, .25)
+
   &.is-panning
     +transition(none)
+
   &.is-active ~ &
     +transform(translateX(-100%))
     +desktop
@@ -254,13 +254,14 @@ $xx: rgba(red, .3)
 
 .hero_slide_title
   font-weight: bold
-  font-size: 26px
   line-height: 1.3
   margin: 10px 0
-  margin-right: 40px
   display: block
   &:hover
     text-decoration: none
+  +pad
+    font-size: 26px
+    margin-right: 40px
 
 .hero_slide_meta
   display: none
@@ -270,6 +271,7 @@ $xx: rgba(red, .3)
 
 .hero_slide_meta_item
   display: inline-block
+
   &:not(:last-child):after
     content: ''
     display: inline-block
@@ -291,6 +293,7 @@ $xx: rgba(red, .3)
   width: 20px
   height: 20px
   cursor: pointer
+
   &:after
     content: ''
     position: absolute
@@ -302,6 +305,7 @@ $xx: rgba(red, .3)
     height: 10px
     border-radius: 50%
     border: 1px solid rgba(#000, .2)
+
   &.is-active:after
     border-color: $color-primary
     background: $color-primary

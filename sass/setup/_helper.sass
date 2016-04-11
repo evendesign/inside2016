@@ -61,3 +61,29 @@
 =reset-list-style
   @include reset-box-model
   list-style: none
+
+
+// rwd alias
+=desktop
+  +at-breakpoint($desktop)
+    @content
+
+=pad
+  +at-breakpoint($pad)
+    @content
+
+
+// animation
+=keyframe($animation_name)
+  @-webkit-keyframes #{$animation_name}
+    @content
+  @keyframes #{$animation_name}
+    @content
+
+=animation($delay, $duration, $animation, $iteration-count)
+  @each $prefix in (-webkit-, '')
+    #{$prefix}animation-delay: $delay
+    #{$prefix}animation-duration: $duration
+    #{$prefix}animation-name: $animation
+    #{$prefix}animation-fill-mode: forwards
+    #{$prefix}animation-iteration-count: $iteration-count
