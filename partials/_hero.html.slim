@@ -2,9 +2,11 @@
 - hero_posts = (1..5).map {|i| \
   { \
     :title => zh_lorem_sentence, \
+    :url => 'posts/', \
     :cover => "https://placeimg.com/640/480/#{rand(10)}", \
+    # :cover => "https://placehold.it/640x480?text=cover", \
     :date => lorem_date("%Y/%m/%d"), \
-    :tags => (rand(4)+1).times.map {|t| zh_lorem_words(2)}, \
+    :tags => (rand(4)+1).times.map { |t| {:text => zh_lorem_words(2), :url => '#'} }, \
     :author => { \
       :url => '/authors/', \
       :name => zh_lorem_name \
@@ -17,7 +19,7 @@
 }
 
 .hero.js-hero.is-loading
-  .hero_loading_indicator
+  .hero_loading_indicator.js_loading_indicator
   .hero_menu_wrapper
     h2.hero_menu_title 熱門文章
     ul.hero_menu
@@ -30,15 +32,16 @@
         li.hero_slide.js-hero_slide style="background-image: url(#{post[:cover]})"
           .hero_slide_info
             a.badge class="badge-color#{post[:category][:id]}" href="#{post[:category][:url]}"= post[:category][:text]
-            .hero_slide_title= post[:title]
+            .hero_slide_title
+              a href="#{post[:url]}"= post[:title]
             ul.hero_slide_meta
               li.hero_slide_meta_item
                 span.hero_slide_date= post[:date]
               li.hero_slide_meta_item
                 a.hero_slide_author href="#{post[:author][:url]}"= post[:author][:name]
               li.hero_slide_meta_item
-                - post[:tags].each do |tag|
-                  a.hero_slide_tag href=''= tag
+                = post[:tags].map{ |tag| link_to(tag[:text], tag[:url], {:class => 'hero_slide_tag'})}.join(', ')
+
   .hero_pagination_wrapper
     .hero_pagination
       - hero_posts.each do |post|

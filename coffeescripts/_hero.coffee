@@ -5,6 +5,11 @@ PANNING_CLASS = 'is-panning'
 ACTIVE_CLASS = 'is-active'
 THRESHOLD = .3
 
+translateX = (el, x) ->
+  value = if x? then "translateX(#{x}px)" else ''
+  el.style.transform = value
+  el.style.msTransform = value
+
 class Page
   _isCurrent: ->
     @index == @parent.currentIndex
@@ -18,16 +23,19 @@ class Slide extends Page
       @root.addClass('is-panning')
       @isPanning = true
     if @_isCurrent()
-      edgeK = 1
       if @index == 0 || (@index == @parent.max && delta * @parent.dir < 0)
-        edgeK = 0
-      @root.css('left', delta * edgeK)
+        moveX = 0
+      else
+        moveX = delta
     else
-      @root.css('left', (@parent.width + delta * @parent.dir) * @parent.dir)
+      moveX = (@parent.width + delta * @parent.dir) * @parent.dir
+
+    translateX(@root[0], moveX)
+
   _panend: ->
     @isPanning = false
     @root.removeClass('is-panning')
-    @root[0].style.left = ''
+    translateX(@root[0])
 
 class Pagedot extends Page
   constructor: (@index, @parent) ->
@@ -47,6 +55,7 @@ class Hero
     @window = $(window)
     @root = $root
     @children = @root.find('.js-hero_slide')
+    @loadingIndicator = @root.find('.js_loading_indicator')
     @length = @children.length
     @max = @length - 1
     @currentIndex = @max
@@ -78,6 +87,7 @@ class Hero
 
     setTimeout =>
       @root.removeClass('is-entering')
+      @loadingIndicator.remove()
     , 2250
 
   _init: ->
