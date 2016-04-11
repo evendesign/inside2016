@@ -1,2 +1,311 @@
+%fade-in
+  opacity: 1
+  +transition(opacity .3s)
+  .is-loading &
+    opacity: 0
+
++keyframe(loading)
+  10%, 90%
+    +transform(translateX(0))
+  40%, 60%
+    +transform(translateX(30px))
+
+// wrapper
+// =========================================================================
+
 .hero
-  @extend %block_holder
+  position: relative
+  overflow: hidden
+  margin: 0 -24px
+
+  +pad
+    margin: 0 -48px
+
+  +desktop
+    margin: 0 -12px 36px
+    padding: 12px 0
+    border: 1px solid rgba(#fff, 0)
+    border-radius: 2px
+    +transition(border .3s)
+
+    &.is-loading
+      border: 1px solid #e5e5e5
+
+  a
+    color: inherit
+
+.hero_slides_wrapper
+  margin: 0 24px
+  visibility: visible
+
+  .is-loading &
+    visibility: hidden
+
+  +pad
+    margin: 0 48px
+
+  +desktop
+    margin-left: 12px
+    width: calc(100% * 2 / 3 - 24px)
+    &:after
+      position: absolute
+      right: 0
+      top: 0
+      display: block
+      width: 20px
+      height: 100%
+      background: #fff
+      content: ''
+
+.hero_menu_wrapper
+  position: absolute
+  right: 12px
+  top: 0
+  bottom: 0
+  width: calc(100% / 3 - 13px)
+  z-index: 1
+  background: #fff
+  display: none
+  border: 1px solid rgba(#000, .1)
+  border-radius: 0 2px 2px 0
+  @extend %fade-in
+
+  &:before
+    content: ''
+    position: absolute
+    display: block
+    left: -10px
+    width: 10px
+    height: 100%
+    background: image-url('shadow-front.png') right center no-repeat
+
+  +desktop
+    display: block
+
+.hero_pagination_wrapper
+  text-align: center
+  line-height: 0
+  margin: 24px auto 0
+  @extend %fade-in
+
+  +pad
+    margin-bottom: 10px
+
+  +desktop
+    display: none
+
+.hero_slides, .hero_pagination, .hero_menu
+  +reset-list-style
+
+// loading indicator
+// =========================================================================
+
+.hero_loading_indicator
+  position: absolute
+  width: 50px
+  height: 20px
+  left: 50%
+  top: 50%
+  margin-top: -10px
+  margin-left: -25px
+  border-radius: 2px
+  background: #f6f6f6
+  opacity: 0
+  +transition(opacity .5s)
+
+  &:before
+    position: absolute
+    display: block
+    width: 20px
+    height: 20px
+    border-radius: 2px
+    background: $color-primary
+    content: ''
+    +animation(0, 1.5s, loading, infinite)
+
+  .is-loading &
+    opacity: 1
+
+// menu
+// =========================================================================
+
+.hero_menu
+  height: calc(100% - 50px)
+
+.hero_menu_title
+  margin-bottom: 0
+  padding: 0 12px
+  padding-left: 16px
+  line-height: 50px
+  height: 50px
+  font-size: 1.3em
+  font-weight: bold
+  color: $color-primary
+
+.hero_menu_item
+  height: 20%
+  box-sizing: border-box
+  border-top: 1px solid #ddd
+
+  &:last-child
+    border-radius: 0 0 2px 2px
+
+  &.is-active
+    background: #fafafa
+    box-shadow: inset 2px 1px 2px rgba(#000, .2)
+    position: relative
+    border-top-color: transparent
+
+    @for $i from 1 through length($color-list)
+      &.is-color#{$i} .hero_menu_link:before
+        background-color: nth($color-list, $i)
+
+.hero_menu_link
+  display: block
+  height: 100%
+
+  &:before, span
+    display: inline-block
+    vertical-align: middle
+
+  span
+    box-sizing: border-box
+    width: calc(100% - 5px)
+    padding: 0 15px
+    line-height: 21px
+    font-size: 13px
+    +transition(font-size .3s)
+    +at-breakpoint(1024px)
+      font-size: 14px
+    +at-breakpoint(1280px)
+      font-size: 15px
+
+  &:before
+    position: relative
+    margin-left: -1px
+    width: 5px
+    height: 100%
+    content: ''
+
+  &:hover
+    text-decoration: none
+
+// slides
+// =========================================================================
+
+.hero_slides, .hero_slide
+  padding-bottom: 100%
+  +at-breakpoint(480px)
+    padding-bottom: 60%
+
+.hero_slides
+  position: relative
+
+.hero_slide
+  left: 0
+  width: 100%
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  position: absolute
+  color: white
+  border-radius: 2px
+  overflow: hidden
+  +transition(transform .5s)
+  +transform(translateX(0))
+
+  .is-loading &
+    +transform(translateX(-110%))
+    +desktop
+      +transform(translateX(160%))
+
+  .is-entering &
+    @for $i from 1 through 5
+      &:nth-child(#{$i})
+        +transition(transform 1.5s #{.15 * $i}s)
+
+  &:before
+    position: absolute
+    display: block
+    width: 100%
+    height: 100%
+    content: ''
+    border-radius: 2px
+    +background-image(linear-gradient(15deg, rgba(#000, .5), rgba(#000, 0)))
+
+  &:first-child, &:last-child
+    box-shadow: 2px 2px 5px rgba(#000, .15), 2px 2px 2px rgba(#000, .25)
+    +desktop
+      box-shadow: -2px 2px 5px rgba(#000, .15), -2px 2px 2px rgba(#000, .25)
+
+  &.is-panning
+    +transition(none)
+
+  &.is-active ~ &
+    +transform(translateX(-100%))
+    +desktop
+      +transform(translateX(calc(100% - 1px)))
+
+.hero_slide_info
+  position: absolute
+  left: 15px
+  bottom: 15px
+  right: 15px
+
+.hero_slide_title
+  font-weight: bold
+  line-height: 1.3
+  margin: 10px 0
+  display: block
+  &:hover
+    text-decoration: none
+  +pad
+    font-size: 26px
+    margin-right: 40px
+
+.hero_slide_meta
+  display: none
+  padding: 0
+  +pad
+    display: block
+
+.hero_slide_meta_item
+  display: inline-block
+
+  &:not(:last-child):after
+    content: ''
+    display: inline-block
+    width: 4px
+    height: 4px
+    margin: -2px 5px 0
+    vertical-align: middle
+    background-color: rgba(#fff, 0.4)
+
+// pagination
+// =========================================================================
+
+.hero_pagination
+  display: inline-block
+
+.hero_pagination_item
+  position: relative
+  float: right
+  width: 20px
+  height: 20px
+  cursor: pointer
+
+  &:after
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-top: -5px
+    margin-left: -5px
+    width: 10px
+    height: 10px
+    border-radius: 50%
+    border: 1px solid rgba(#000, .2)
+
+  &.is-active:after
+    border-color: $color-primary
+    background: $color-primary
