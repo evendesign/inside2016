@@ -32,8 +32,7 @@
         li.hero_slide.js-hero_slide style="background-image: url(#{post[:cover]})"
           .hero_slide_info
             a.badge class="badge-color#{post[:category][:id]}" href="#{post[:category][:url]}"= post[:category][:text]
-            .hero_slide_title
-              a href="#{post[:url]}"= post[:title]
+            a.hero_slide_title href="#{post[:url]}"= post[:title]
             ul.hero_slide_meta
               li.hero_slide_meta_item
                 span.hero_slide_date= post[:date]
