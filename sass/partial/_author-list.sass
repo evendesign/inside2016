@@ -1,0 +1,75 @@
+.author_list
+
+  .author_list_item
+    +pie-clearfix
+    margin: 24px auto
+    padding-bottom: 24px
+    border-bottom: 1px solid $color-gray-white
+    &:last-child
+      padding-bottom: 0px
+      border-bottom: none
+
+  .author_avatar
+    display: block
+    +box-sizing(border-box)
+    margin: 0 12px 0 0
+    width: 48px
+    height: 48px
+    +border-radius (100%)
+    border: 2px solid $color-primary
+    float: left
+    background-color: $color-gray-white
+    +background-size(cover)
+    background-position: center center
+    background-repeat: no-repeat
+
+  .author_list_item_content
+    overflow: hidden
+
+  .author_title
+    display: inline-block
+    +adjust-font-size-to(16px, 1)
+    color: black
+    margin-bottom: 3px
+    &:hover
+      color: $color-primary
+      text-decoration: none
+
+  .author_description
+    +adjust-font-size-to(15px, 1)
+    color: $text-gray
+    margin-bottom: 6px
+
+  .author_contact_links
+
+  .author_contact_link
+    float: left
+    display: block
+    opacity: 0.3
+    +transition(opacity 0.25s)
+    &:hover
+      opacity: 0.5
+    .icon
+      display: block
+      height: 24px
+      margin-right: 12px
+
+  +at-breakpoint($pad)
+
+    .author_list_item
+      margin: 48px auto
+      padding-bottom: 48px
+
+    .author_avatar
+      width: 120px
+      height: 120px
+      margin-right: 36px
+
+    .author_title
+      +adjust-font-size-to(18px, 1)
+      margin-bottom: 12px
+
+    .author_description
+      +adjust-font-size-to(16px, 1)
+      margin-bottom: 12px
+

@@ -1,7 +1,6 @@
 // input variable
 $form-height: 36px
 $form-border-width: 1px
-$form-border-color: #dddddd
 $form-padding: 5px 12px
 $form-radius-width: $global-radius-width
 $form-bg-color: white
@@ -50,7 +49,7 @@ $form-tip-color: #999999
   input[type="url"],
   input[type="week"]
     +box-sizing(border-box)
-    border: $form-border-width solid $form-border-color
+    border: $form-border-width solid $color-gray
     padding: $form-padding
     min-height: $form-height
     +border-radius($form-radius-width)
@@ -58,12 +57,15 @@ $form-tip-color: #999999
     +adjust-font-size-to($form-font-size)
     background-color: $form-bg-color
     +input-placeholder-color($form-placeholder-color)
+    +transition(border-color 0.25s)
     +box-shadow(none)
     outline: none
     max-width: 100%
     // Responsiveness: Sets a maximum width relative to the parent to scale on narrower viewports
     &.full-width
       width: 100%
+    &:hover, &:focus
+      border-color: $color-black
   input[type="file"], select
     cursor: pointer
     outline: none
