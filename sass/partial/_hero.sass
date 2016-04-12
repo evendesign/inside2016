@@ -31,12 +31,12 @@
     &.is-loading
       border: 1px solid #e5e5e5
 
-  a
-    color: inherit
-
 .hero_slides_wrapper
   margin: 0 24px
   visibility: visible
+
+  a
+    color: inherit
 
   .is-loading &
     visibility: hidden
@@ -163,6 +163,9 @@
 .hero_menu_link
   display: block
   height: 100%
+  color: #000
+  &:hover
+    color: #000
 
   &:before, span
     display: inline-block
@@ -241,6 +244,9 @@
   &.is-panning
     +transition(none)
 
+  &.is-active:last-child
+    box-shadow: none
+
   &.is-active ~ &
     +transform(translateX(-100%))
     +desktop
@@ -260,7 +266,7 @@
   &:hover
     text-decoration: none
   +pad
-    font-size: 26px
+    font-size: 28px
     margin-right: 40px
 
 .hero_slide_meta
