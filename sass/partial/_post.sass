@@ -13,44 +13,11 @@
   .post_meta
     margin-bottom: 16px
 
-  .post_toolbox
-    +pie-clearfix
-    margin-bottom: 24px
-
-  .post_toolbox_title
-    display: none
-
-  .post_toolbox_item
-    +box-sizing(border-box)
-    float: left
-    display: block
-    margin-right: 2px
-    padding: 3px 12px
-    cursor: pointer
-    +border-radius (2px)
-    background-color: $color-white-dark
-    text-align: center
-    min-width: 60px
-    +transition(background-color 0.25s)
-    &:hover
-      text-decoration: none
-      background-color: $color-gray-white
-    .icon
-      vertical-align: middle
-      display: inline-block
-      height: 24px
-      opacity: 0.3
-    .text
-      margin-left: 6px
-      +adjust-font-size-to(13px, 1)
-      color: $text-gray
+  .post_content_wrapper
+    position: relative
 
   .post_content
     margin-bottom: 48px
-
-  .post_footer
-    .post_toolbox
-      margin-bottom: 48px
 
   +at-breakpoint($pad)
     margin: 0 auto 48px
@@ -60,47 +27,6 @@
     .post_header
       border-bottom: 2px solid #C03A3A
       margin-bottom: 24px
-
-    .post_toolbox
-      position: absolute
-      margin: 0px auto 0 -72px
-      width: 48px
-
-      &.is-sticky
-        position: fixed
-        top: 48px
-
-      &.is-bottom
-        bottom: 0
-
-    .post_toolbox_title
-      display: block
-      text-align: center
-      margin: 0px
-      // padding: 3px 0px
-      background-color: $color-gray-white
-      +adjust-font-size-to(13px)
-      +border-radius (2px 2px 0px 0px)
-
-    .post_toolbox_item
-      // float: none
-      margin: 2px 0 0 0
-      padding: 12px 0
-      min-width: 0px
-      width: 100%
-      +border-radius (0)
-      &:last-child
-        +border-radius (0 0 2px 2px)
-      .icon
-        display: block
-        margin: 0 auto
-        height: 24px
-      .text
-        display: block
-        margin: -2px 0 0 0
-        +adjust-font-size-to(13, 3/4)
-      &.post_toolbox_item-comment
-        padding: 6px 0
 
     .post_header_title
       +adjust-font-size-to(28px, 1.5)
