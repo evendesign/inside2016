@@ -42,13 +42,10 @@
           .hero_slide_info
             a.badge class="badge-color#{post[:category][:id]}" href="#{post[:category][:url]}"= post[:category][:text]
             a.hero_slide_title href="#{post[:url]}"= post[:title]
-            ul.hero_slide_meta
-              li.hero_slide_meta_item
-                span.hero_slide_date= post[:date]
-              li.hero_slide_meta_item
-                a.hero_slide_author href="#{post[:author][:url]}"= post[:author][:name]
-              li.hero_slide_meta_item
-                = post[:tags].map{ |tag| link_to(tag[:text], tag[:url], {:class => 'hero_slide_tag'})}.join(', ')
+            ul.post_meta.hero_slide_meta
+              li: span.post_date= post[:date]
+              li: a.post_author href="#{post[:author][:url]}"= post[:author][:name]
+              li= post[:tags].map{ |tag| link_to(tag[:text], tag[:url], {:class => 'hero_slide_tag'})}.join(', ')
   .hero_pagination_wrapper
     .hero_pagination
       - hero_posts.each do |post|
