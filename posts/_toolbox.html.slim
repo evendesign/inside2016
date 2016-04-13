@@ -1,0 +1,13 @@
+- modifier_class_name = locals[:modifier].nil? ? "" : "post_toolbox-#{locals[:modifier]}"
+
+.post_toolbox class="#{modifier_class_name}"
+  p.post_toolbox_title 分享
+  a.post_toolbox_item
+    span.icon.icon-twitter href="#" twitter
+  a.post_toolbox_item
+    span.icon.icon-facebook href="#" facebook
+  a.post_toolbox_item
+    span.icon.icon-line href="#" LINE
+  a.post_toolbox_item.post_toolbox_item-comment
+    span.icon.icon-comment href="#"
+    span.text 評論
