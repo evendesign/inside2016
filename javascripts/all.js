@@ -22,3 +22,12 @@ require('_search')
 require('_sticky')
 require('_off-canvas')
 require('_hero')
+
+$('.dropdown_trigger').on('click', function(e){
+  $('.dropdown').toggleClass('is-active');
+  e.stopPropagation();
+})
+
+$(document).on("click", function(){
+  $('.dropdown').removeClass('is-active');
+});
