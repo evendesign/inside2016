@@ -48,6 +48,7 @@ ruby:
     ul.hero_slides
       - hero_posts.each do |post|
         li.hero_slide.js-hero_slide style="background-image: url(#{post.cover})"
+          a.hero_slide_link href="#{post.url}"
           .hero_slide_info
             a.badge class="badge-color#{post.category.color_id}" href="#{post.category.url}"= post.category.text
             a.hero_slide_title href="#{post.url}"= post.title

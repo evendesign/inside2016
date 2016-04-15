@@ -232,10 +232,14 @@
     position: absolute
     display: block
     width: 100%
-    height: 100%
+    top: 0
+    bottom: -150px
     content: ''
-    border-radius: 2px
-    +background-image(linear-gradient(15deg, rgba(#000, .5), rgba(#000, 0)))
+    +transition(bottom .3s)
+    +background-image(linear-gradient(15deg, rgba(#000, .7), rgba(#000, 0)))
+
+  &:hover:before
+    bottom: 0
 
   &.is-panning
     +transition(none)
@@ -247,6 +251,14 @@
     +transform(translateX(-100%))
     +desktop
       +transform(translateX(calc(100% - 1px)))
+
+.hero_slide_link
+  display: block
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
 
 .hero_slide_info
   position: absolute
