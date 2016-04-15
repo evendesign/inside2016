@@ -1,4 +1,4 @@
-return if `'ontouchstart' in window`
+return if isTouchDevice()
 
 $postShareToolbox = $('.post_toolbox-sticky')
 return unless $postShareToolbox.length

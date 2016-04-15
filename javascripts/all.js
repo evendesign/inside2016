@@ -8,6 +8,10 @@ function xx(a) {
   console.log(a);
 }
 
+function isTouchDevice() {
+  return 'ontouchstart' in window;
+}
+
 function require(src) {
   var tag = document.createElement('script');
   tag.setAttribute('src', '/javascripts/' + src + '.js');
@@ -16,5 +20,5 @@ function require(src) {
 
 require('_search')
 require('_sticky')
-require('_menu')
+require('_off-canvas')
 require('_hero')

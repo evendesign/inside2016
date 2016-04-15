@@ -1,4 +1,5 @@
 stylesheets
+.coffeescript-cache
 _hero.js
 _sticky.js
-.coffeescript-cache
+_off-canvas.js
