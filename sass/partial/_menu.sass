@@ -34,28 +34,68 @@
 
   .primary_nav
     +reset-list-style
-    border-bottom: 1px solid $color-gray-white
-    padding: 18px 0
 
   .primary_nav_item
-    a
-      display: block
-      padding: 6px 24px
-      color: black
-      +transition(background-color 0.25s)
-      +adjust-font-size-to(15px, 1)
-      .en
-        display: inline-block
-        color: $text-gray
-        margin-left: 3px
+    border-bottom: 1px solid $color-gray-white
 
-      &:hover
-        background-color: $color-gray-white
-        text-decoration: none
+  .primary_nav_item-dropdown
+    &.is-active
+      .primary_nav_item_title:after
+        border-width: 0 4px 8px 4px
+        border-color: transparent transparent $color-gray transparent
+
+    .primary_nav_item_title:after
+      content: ''
+      position: relative
+      top: 8px
+      float: right
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 8px 4px 0 4px
+      border-color: $color-gray transparent transparent transparent
+
+  .primary_nav_item_title
+    display: block
+    padding: 12px 24px
+    color: black
+    +transition(background-color 0.25s)
+    +adjust-font-size-to(15px, 1)
+
+    .en
+      display: inline-block
+      color: $text-gray
+      margin-left: 3px
+
+    &:hover
+      background-color: $color-gray-white
+      text-decoration: none
+
+
+  .primary_nav_item_content
+    +reset-list-style
+    padding: 18px 24px 6px
+    background-color: $color-gray-white
+
+  .primary_nav_child_item
+    display: block
+    margin-bottom: 12px
+    text-indent: 2em
+    color: $text-black
+    +transition(background-color 0.25s)
+    +adjust-font-size-to(15px, 1)
+    .en
+      display: inline-block
+      color: $text-gray
+      margin-left: 3px
+
+    &:hover
+      text-decoration: none
+      color: $color-primary
 
   .secondary_nav
     +reset-list-style
-    padding: 18px 0
+    padding: 6px 0
     border-bottom: 1px solid $color-gray-white
 
   .secondary_nav_item
@@ -157,10 +197,35 @@
     .primary_nav_item
       float: left
       border-bottom: none
-      a
-        padding: 12px
-        .en
-          display: none
+
+
+    .primary_nav_item-dropdown
+      position: relative
+
+      .primary_nav_item_title:after
+        display: inline-block
+        top: -1px
+        float: none
+        margin-left: 6px
+
+      &.is-active
+        .primary_nav_item_title
+          background-color: $color-gray-white
+
+    .primary_nav_item_title
+      padding: 12px
+      .en
+        display: none
+
+    .primary_nav_item_content
+      position: absolute
+      top: 100%
+      z-index: 1000
+      background-color: $color-gray-white
+
+    .primary_nav_child_item
+      +nowrap
+      text-indent: 0
 
     .secondary_block
       float: right
