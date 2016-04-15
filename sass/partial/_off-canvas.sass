@@ -1,37 +1,40 @@
+$menu-width: 260px
+
 .off_canvas
   +transition(transform 0.5s)
 
-  .off_canvas_menu
-    position: fixed
-    background-color: #f6f6f6
-    width: 260px
-    top: 0
-    bottom: 0
-    left: 100%
-
-  .off_canvas_mask
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    cursor: pointer
-
   &.is-menu_open
-    +translate(-260px, 0, 0)
+    height: 100%
+    background-color: #f6f6f6
+    +translate(-$menu-width, 0, 0)
+
+    .page, .off_canvas_mask
+      position: fixed
+
+    .page
+      width: 100%
+      overflow: hidden
+      background-color: #fff
 
     .off_canvas_mask
       bottom: 0
 
-  +at-breakpoint($desktop)
-    .off_canvas_menu
-      position: static
-      width: auto
-      top: auto
-      bottom: auto
-      left: auto
+.off_canvas_menu_container
+  position: fixed
+  width: $menu-width
+  top: 0
+  bottom: 0
+  left: 100%
+  overflow: auto
 
-    &.is-menu_open
-      +transform(none)
+  .menu
+    padding-bottom: 100px
+    display: block
 
-      .off_canvas_mask
-        bottom: auto
+.off_canvas_mask
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  cursor: pointer
+  z-index: 1

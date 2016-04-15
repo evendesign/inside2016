@@ -1,0 +1,221 @@
+.menu
+  display: none
+
+  +desktop
+    display: block
+
+  .search_form
+    position: relative
+    border-bottom: 1px solid $color-gray-white
+
+  .search_submit
+    position: absolute
+    left: 24px
+    top: 0px
+    height: 48px
+    outline: none
+    margin: 0
+    border: none
+    padding: 0
+    background-color: transparent
+    opacity: 0.3
+    +background-size(18px 18px)
+
+  .search_input
+    +box-sizing(border-box)
+    display: block
+    outline: none
+    margin: 0
+    border: none
+    padding: 12px 24px 12px 54px
+    width: 100%
+    background-color: transparent
+    +adjust-font-size-to(15px, 1)
+
+  .primary_nav
+    +reset-list-style
+    border-bottom: 1px solid $color-gray-white
+    padding: 18px 0
+
+  .primary_nav_item
+    a
+      display: block
+      padding: 6px 24px
+      color: black
+      +transition(background-color 0.25s)
+      +adjust-font-size-to(15px, 1)
+      .en
+        display: inline-block
+        color: $text-gray
+        margin-left: 3px
+
+      &:hover
+        background-color: $color-gray-white
+        text-decoration: none
+
+  .secondary_nav
+    +reset-list-style
+    padding: 18px 0
+    border-bottom: 1px solid $color-gray-white
+
+  .secondary_nav_item
+    a
+      display: block
+      padding: 6px 24px
+      color: $text-gray
+      +transition(color 0.25s)
+      +adjust-font-size-to(15px, 1)
+      &:hover
+        color: darken($color-primary, 5%)
+        text-decoration: none
+
+  .header_subscribe_block
+    padding: 24px 24px
+
+  .header_subscribe_block_title
+    color: black
+    +trailer(0.5)
+    +adjust-font-size-to(15px, 1)
+
+  .header_subscribe_block_description
+    +trailer(0.75)
+    +adjust-font-size-to(13px, 3/4)
+
+  .social_btns
+    +reset-list-style
+    +pie-clearfix
+    li
+      float: left
+      margin-right: 16px
+
+  .social_btn
+    display: block
+    color: $text-gray
+    opacity: 0.5
+    +transition(opacity 0.25s)
+
+    &:hover
+      opacity: 0.75
+
+  .social_btn_icon
+    display: block
+    text-indent: 110%
+    white-space: nowrap
+    overflow: hidden
+    background-position: center center
+    @include background-size(contain)
+    background-repeat: no-repeat
+    width: 32px
+    height: 32px
+    &.social_btn_icon-twitter
+      background-image: image-url('icon/border-twitter.svg')
+    &.social_btn_icon-facebook
+      background-image: image-url('icon/border-facebook.svg')
+    &.social_btn_icon-line
+      width: 55px
+      background-image: image-url('icon/border-line.svg')
+
+  +desktop
+    .search_form
+      float: right
+      border-bottom: none
+      background-color: $color-gray-white
+      text-align: center
+      &:hover .search_input
+        width: 240px
+        opacity: 1
+
+    .search_submit
+      display: block
+      float: none
+      width: 48px
+      position: relative
+      z-index: 100
+      top: auto
+      left: auto
+
+    .search_input
+      position: absolute
+      top: 0
+      right: 0
+      z-index: 90
+      width: 0px
+      padding: 12px 48px 12px 18px
+      background-color: $color-gray-white
+      +box-sizing(border-box)
+      opacity: 0
+      +transition(width 0.25s, opacity 0.25s)
+      &:focus
+        width: 240px
+        opacity: 1
+
+    .primary_nav
+      float: left
+      border-bottom: none
+      padding: 0
+
+    .primary_nav_item
+      float: left
+      border-bottom: none
+      a
+        padding: 12px
+        .en
+          display: none
+
+    .secondary_block
+      float: right
+
+    .secondary_nav
+      float: left
+      padding: 0 12px
+      border-bottom: none
+
+    .secondary_nav_item
+      a
+        +adjust-font-size-to(15px, 1)
+        padding: 12px 6px
+        color: $text-gray
+
+    .header_subscribe_block
+      float: right
+      padding: 0
+      border-bottom: none
+
+    .header_subscribe_block_title
+      float: left
+      +trailer(0)
+      padding: 12px 0
+      +adjust-font-size-to(15px, 1)
+      color: $text-gray
+      &:after
+        content: '：'
+        display: inline
+
+    .header_subscribe_block_description
+      display: none
+
+    .social_btns
+      float: left
+      padding: 12px 8px 12px 0px
+      li
+        margin-right: 0
+        border-bottom: none
+        float: left
+
+    .social_btn
+      display: block
+      padding: 0 8px
+      opacity: 0.3
+
+    .social_btn_icon
+      margin-right: auto
+      height: 24px
+      &.social_btn_icon-twitter
+        width: image-width("icon/twitter.png")
+        background-image: image-url('icon/twitter.svg')
+      &.social_btn_icon-facebook
+        width: image-width("icon/facebook.png")
+        background-image: image-url('icon/facebook.svg')
+      &.social_btn_icon-line
+        width: image-width("icon/line.png")
+        background-image: image-url('icon/line.svg')

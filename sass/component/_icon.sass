@@ -40,12 +40,6 @@
   display: inline-block
   position: relative
 
-  &.is-active .icon-hanburger_line
-    &:before
-      transform: translate3d($hamburger-layer-width * -0.2, 1px, 0) rotate(-45deg) scale(0.8, 1)
-    &:after
-      transform: translate3d($hamburger-layer-width * -0.2, -1px, 0) rotate(45deg) scale(0.8, 1)
-
   .icon-hanburger_line
     display: block
     top: 50%
@@ -58,9 +52,7 @@
       background-color: $hamburger-layer-color
       border-radius: $hamburger-layer-border-radius
       position: absolute
-      transition-property: transform
-      transition-duration: 0.15s
-      transition-timing-function: ease
+      +transition(transform .15s ease)
     &:before,
     &:after
       content: ""
@@ -70,4 +62,9 @@
     &:after
       bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1
 
+    .is-menu_open &
+      &:before
+        transform: translate3d($hamburger-layer-width * -0.2, 1px, 0) rotate(-45deg) scale(0.8, 1)
+      &:after
+        transform: translate3d($hamburger-layer-width * -0.2, -1px, 0) rotate(45deg) scale(0.8, 1)
 

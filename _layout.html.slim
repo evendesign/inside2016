@@ -1,5 +1,5 @@
 doctype 5
-html lang="zh-TW"
+html.off_canvas.js-off_canvas lang="zh-TW"
   head
     = render "/layout_head"
     = render "/layout_siteinfo"
@@ -8,13 +8,14 @@ html lang="zh-TW"
   <!--[if lte IE 9 ]> <body class="lte-ie9"> <![endif]-->
   <!--[if (gt IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><body><!--<![endif]-->
 
-    .page.off_canvas.js-off_canvas class="#{@pageNameClass}"
+    .off_canvas_mask.js-menu_switch.js-off_canvas_mask
+    .off_canvas_menu_container.js-off_canvas_menu_container
+    .page class="#{@pageNameClass}"
       = render "/partials/header"
       .content
         .container
           = yield
       = render "/partials/footer"
-      .off_canvas_mask.js-off_canvas_mask
     = render "/layout_foot"
     = render "/layout_livereload"
 
