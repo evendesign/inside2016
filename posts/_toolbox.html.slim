@@ -1,13 +1,16 @@
 - modifier_class_name = locals[:modifier].nil? ? "" : "post_toolbox-#{locals[:modifier]}"
 
 .post_toolbox class="#{modifier_class_name}"
+  - if locals[:modifier] == "footer"
+    p.post_toolbox-footer_title 分享文章或觀看評論
   p.post_toolbox_title 分享
-  a.post_toolbox_item
-    span.icon.icon-twitter href="#" twitter
-  a.post_toolbox_item
-    span.icon.icon-facebook href="#" facebook
-  a.post_toolbox_item
-    span.icon.icon-line href="#" LINE
-  a.post_toolbox_item.post_toolbox_item-comment
-    span.icon.icon-comment href="#"
-    span.text 評論
+  .post_toolbox_action
+    a.post_toolbox_item href="#"
+      span.icon.icon-facebook  facebook
+    a.post_toolbox_item href="#"
+      span.icon.icon-twitter  twitter
+    a.post_toolbox_item href="#"
+      span.icon.icon-line  LINE
+    a.post_toolbox_item.post_toolbox_item-comment href="#block-fb_comments"
+      span.icon.icon-comment
+      span.text 評論
