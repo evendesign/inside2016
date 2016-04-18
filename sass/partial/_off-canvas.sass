@@ -1,12 +1,16 @@
 $menu-width: 260px
 
+.page
+  position: relative
+  z-index: 1
+  background-color: #fff
+  +transition(transform .6s)
+
 .off_canvas
-  +transition(transform 0.5s)
+  background-color: #f6f6f6
 
   &.is-menu_open
     height: 100%
-    background-color: #f6f6f6
-    +translate(-$menu-width, 0, 0)
 
     .page, .off_canvas_mask
       position: fixed
@@ -14,18 +18,24 @@ $menu-width: 260px
     .page
       width: 100%
       overflow: hidden
-      background-color: #fff
+      +transform(translateX(-$menu-width))
 
     .off_canvas_mask
       bottom: 0
+
+    .off_canvas_menu_container
+      visibility: visible
+      +transition(none)
 
 .off_canvas_menu_container
   position: fixed
   width: $menu-width
   top: 0
   bottom: 0
-  left: 100%
+  right: 0
   overflow: auto
+  visibility: hidden
+  +transition(visibility 0 .6s)
 
   .menu
     padding-bottom: 100px
