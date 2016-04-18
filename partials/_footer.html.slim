@@ -4,121 +4,38 @@
       .footer_post_list_group
         .footer_post_list
           .footer_post_list_title 新創
-          .footer_post_list_item
-            h4.post_title: a href=""= zh_lorem_sentence
-            ul.post_meta
-              li: span.post_date= lorem_date("%Y/%m/%d")
-              li: a.post_author href="/authors/"= zh_lorem_name
-              li
-                - (rand(4)+1).times do|i|
-                  a.post_tag href="/tags/"= zh_lorem_words(2)
-          .footer_post_list_item
-            h4.post_title: a href=""= zh_lorem_sentence
-            ul.post_meta
-              li: span.post_date= lorem_date("%Y/%m/%d")
-              li: a.post_author href="/authors/"= zh_lorem_name
-              li
-                - (rand(4)+1).times do|i|
-                  a.post_tag href="/tags/"= zh_lorem_words(2)
-          .footer_post_list_item
-            h4.post_title: a href=""= zh_lorem_sentence
-            ul.post_meta
-              li: span.post_date= lorem_date("%Y/%m/%d")
-              li: a.post_author href="/authors/"= zh_lorem_name
-              li
-                - (rand(4)+1).times do|i|
-                  a.post_tag href="/tags/"= zh_lorem_words(2)
+          - 5.times do |i|
+            .footer_post_list_item
+              h5.post_title: a href="" = zh_lorem_sentence
         .footer_post_list
           .footer_post_list_title 趨勢
-          .footer_post_list_item
-            h4.post_title: a href=""= zh_lorem_sentence
-            ul.post_meta
-              li: span.post_date= lorem_date("%Y/%m/%d")
-              li: a.post_author href="/authors/"= zh_lorem_name
-              li
-                - (rand(4)+1).times do|i|
-                  a.post_tag href="/tags/"= zh_lorem_words(2)
-          .footer_post_list_item
-            h4.post_title: a href=""= zh_lorem_sentence
-            ul.post_meta
-              li: span.post_date= lorem_date("%Y/%m/%d")
-              li: a.post_author href="/authors/"= zh_lorem_name
-              li
-                - (rand(4)+1).times do|i|
-                  a.post_tag href="/tags/"= zh_lorem_words(2)
-          .footer_post_list_item
-            h4.post_title: a href=""= zh_lorem_sentence
-            ul.post_meta
-              li: span.post_date= lorem_date("%Y/%m/%d")
-              li: a.post_author href="/authors/"= zh_lorem_name
-              li
-                - (rand(4)+1).times do|i|
-                  a.post_tag href="/tags/"= zh_lorem_words(2)
+          - 5.times do |i|
+            .footer_post_list_item
+              h5.post_title: a href="" = zh_lorem_sentence
         .footer_post_list
           .footer_post_list_title 娛樂
-          .footer_post_list_item
-            h4.post_title: a href=""= zh_lorem_sentence
-            ul.post_meta
-              li: span.post_date= lorem_date("%Y/%m/%d")
-              li: a.post_author href="/authors/"= zh_lorem_name
-              li
-                - (rand(4)+1).times do|i|
-                  a.post_tag href="/tags/"= zh_lorem_words(2)
-          .footer_post_list_item
-            h4.post_title: a href=""= zh_lorem_sentence
-            ul.post_meta
-              li: span.post_date= lorem_date("%Y/%m/%d")
-              li: a.post_author href="/authors/"= zh_lorem_name
-              li
-                - (rand(4)+1).times do|i|
-                  a.post_tag href="/tags/"= zh_lorem_words(2)
-          .footer_post_list_item
-            h4.post_title: a href=""= zh_lorem_sentence
-            ul.post_meta
-              li: span.post_date= lorem_date("%Y/%m/%d")
-              li: a.post_author href="/authors/"= zh_lorem_name
-              li
-                - (rand(4)+1).times do|i|
-                  a.post_tag href="/tags/"= zh_lorem_words(2)
+          - 5.times do |i|
+            .footer_post_list_item
+              h5.post_title: a href="" = zh_lorem_sentence
         .footer_post_list
           .footer_post_list_title 評論
-          .footer_post_list_item
-            h4.post_title: a href=""= zh_lorem_sentence
-            ul.post_meta
-              li: span.post_date= lorem_date("%Y/%m/%d")
-              li: a.post_author href="/authors/"= zh_lorem_name
-              li
-                - (rand(4)+1).times do|i|
-                  a.post_tag href="/tags/"= zh_lorem_words(2)
-          .footer_post_list_item
-            h4.post_title: a href=""= zh_lorem_sentence
-            ul.post_meta
-              li: span.post_date= lorem_date("%Y/%m/%d")
-              li: a.post_author href="/authors/"= zh_lorem_name
-              li
-                - (rand(4)+1).times do|i|
-                  a.post_tag href="/tags/"= zh_lorem_words(2)
-          .footer_post_list_item
-            h4.post_title: a href=""= zh_lorem_sentence
-            ul.post_meta
-              li: span.post_date= lorem_date("%Y/%m/%d")
-              li: a.post_author href="/authors/"= zh_lorem_name
-              li
-                - (rand(4)+1).times do|i|
-                  a.post_tag href="/tags/"= zh_lorem_words(2)
+          - 5.times do |i|
+            .footer_post_list_item
+              h5.post_title: a href=""= zh_lorem_sentence
 
   .footer_bottom
     .container
       .subscribe_block.footer_subscribe_block
         .subscribe_block_title 訂閱 INSIDE
         .subscribe_block_description 隨時關注最新創業、科技、網路、工作訊息。
-        .subscribe_block_social_list
-          a.subscribe_block_social_item.icon-border-twitter href="" 追蹤 Twitter
-          a.subscribe_block_social_item.icon-border-facebook href="" 追蹤 FB 粉絲團
-          a.subscribe_block_social_item.icon-border-line href="" 加 Line 好友
-        label.subscribe_block_email
-          input placeholder='Email 訂閱'
-          button.btn type='button' 送出
+        .subscribe_block_action
+          .subscribe_block_social_list
+            a.subscribe_block_social_item.icon-border-twitter href="" 追蹤 Twitter
+            a.subscribe_block_social_item.icon-border-facebook href="" 追蹤 FB 粉絲團
+            a.subscribe_block_social_item.icon-border-line href="" 加 Line 好友
+          form.subscribe_block_email
+            input placeholder='Email 訂閱'
+            button.btn type='button' 送出
       ul.footer_links
         li: a href="/about" 關於 INSIDE
         li: a href="" 聯絡我們
