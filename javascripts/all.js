@@ -23,7 +23,7 @@ require('_sticky')
 require('_off-canvas')
 require('_hero')
 
-$('.dropdown_trigger').on('click', function(e){
+$('html').on('click', '.dropdown_trigger', function(e){
   $('.dropdown').toggleClass('is-active');
   e.stopPropagation();
 })
