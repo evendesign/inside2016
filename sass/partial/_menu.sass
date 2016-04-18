@@ -40,9 +40,9 @@
 
   .primary_nav_item-dropdown
     &.is-active
+      background: $color-gray-white
       .primary_nav_item_title:after
-        border-width: 0 4px 8px 4px
-        border-color: transparent transparent $color-gray transparent
+        +transform(rotateX(180deg))
 
     .primary_nav_item_title:after
       content: ''
@@ -52,8 +52,9 @@
       width: 0
       height: 0
       border-style: solid
-      border-width: 8px 4px 0 4px
+      border-width: 7px 4px 0 4px
       border-color: $color-gray transparent transparent transparent
+      +transition(transform .3s)
 
   .primary_nav_item_title
     display: block
@@ -74,16 +75,17 @@
 
   .primary_nav_item_content
     +reset-list-style
-    padding: 18px 24px 6px
+    padding: 0 24px 12px
     background-color: $color-gray-white
 
   .primary_nav_child_item
     display: block
-    margin-bottom: 12px
     text-indent: 2em
     color: $text-black
     +transition(background-color 0.25s)
     +adjust-font-size-to(15px, 1)
+    & + .primary_nav_child_item
+      margin-top: 12px
     .en
       display: inline-block
       color: $text-gray
@@ -221,6 +223,7 @@
       position: absolute
       top: 100%
       z-index: 1000
+      padding: 18px 24px
       background-color: $color-gray-white
 
     .primary_nav_child_item
