@@ -8,59 +8,66 @@
 
   .author_avatar
     display: block
-    margin: 0 auto 6px
+    +box-sizing(border-box)
+    margin: 0 auto 9px
+    border: 2px solid $color-primary
     width: 96px
     height: 96px
     +border-radius (100%)
-    border: 3px solid #C13B3B
+    background-color: $color-gray-white
+    +background-size(cover)
+    background-position: center center
+    background-repeat: no-repeat
+    +transition(opacity 0.25s)
+    &:hover
+      opacity: 0.75
 
   .author_title
-    margin:  0 24px 24px
+    margin:  0 24px 18px
     text-align: center
     +adjust-font-size-to(21px, 1)
     color: $color-black-dark
+    display: block
+    +transition(color 0.25s)
+    &:hover
+      color: $color-primary
+      text-decoration: none
 
   .author_description
     +adjust-font-size-to(15px, 1)
     margin-bottom: 12px
 
-  .author_social_tool
-    width: auto
-    float: left
+  .author_block_action
+    +adjust-font-size-to(13px, 3/4)
 
-  .author_social_tool_item
-    float: left
-    display: block
-    opacity: 0.3
-    +transition(opacity 0.25s)
+  .author_social_links
+    +reset-list-style
+    margin-bottom: 6px
+    li
+      display: inline-block
+      &:after
+        content: ''
+        display: inline-block
+        width: 4px
+        height: 4px
+        margin: 2px 5px
+        background-color: $color-gray-light
+      &:last-child:after
+        display: none
 
-    &:hover
-      opacity: 0.5
-    .icon
-      display: block
-      height: 24px
-      margin-right: 12px
-
+  .author_social_link
+    color: $text-gray
 
   .author_more_article
     display: inline-block
-    float: right
-    +adjust-font-size-to(13px)
-    text-decoration: underline
-    color: $color-gray
-
+    color: $text-gray
 
   +at-breakpoint($pad)
     padding: 48px
 
     .author_avatar
       float: left
-      height: 100%
       margin-right: 48px
-
-      img
-        width: 100px
-        height: 100px
 
     .author_content
       overflow: hidden
@@ -73,10 +80,12 @@
       max-width: 670px
       text-align: left
 
-    .author_more_article
-      float: left
-      margin-left: 12px
-
   +at-breakpoint($desktop)
     .author_description
       +adjust-font-size-to(16px, 1)
+
+    .author_social_links
+      float: left
+
+    .author_more_article
+      float: right
