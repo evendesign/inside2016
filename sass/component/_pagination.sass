@@ -11,20 +11,20 @@
     padding: 6px 16px
     margin: 0 1px
     color: $color-black-dark
-    background-color: $color-gray-white
+    background-color: $btn-bg-color
     +border-radius(2px)
     text-align: center
     +adjust-font-size-to(15px)
     +transition(color 0.25s, background-color 0.25s)
     &:hover
       text-decoration: none
-      background-color: $color-gray
+      background-color: $btn-hover-bg-color
     &.is-current
-      background-color: $color-gray
+      background-color: $btn-active-bg-color
     &.is-disable
       cursor: not-allowed
       color: $color-gray
-      background-color: $color-gray-white
+      background-color: $btn-bg-color
     &.is-current,
     &.pagination_item-prev,
     &.pagination_item-next
