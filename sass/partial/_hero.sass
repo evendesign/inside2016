@@ -57,7 +57,7 @@
       display: block
       width: 20px
       height: 100%
-      background: #fff
+      background: white
       content: ''
 
 .hero_menu_wrapper
@@ -67,9 +67,9 @@
   bottom: 0
   width: calc(100% / 3 - 13px)
   z-index: 1
-  background: #fff
+  background: white
   display: none
-  border: 1px solid rgba(#000, .1)
+  border: 1px solid rgba(black, .1)
   border-radius: 0 2px 2px 0
   @extend %fade-in
 
@@ -103,7 +103,7 @@
   margin-top: -10px
   margin-left: -25px
   border-radius: 2px
-  background: #f6f6f6
+  background: $color-white-dark
   opacity: 0
   +transition(opacity .5s)
 
@@ -146,7 +146,7 @@
 
   &.is-active
     background: #fafafa
-    box-shadow: inset 2px 1px 2px rgba(#000, .2)
+    box-shadow: inset 2px 1px 2px rgba(black, .2)
     position: relative
     border-top-color: transparent
 
@@ -157,9 +157,9 @@
 .hero_menu_link
   display: block
   height: 100%
-  color: #000
+  color: black
   &:hover
-    color: #000
+    color: black
 
   &:before, span
     display: inline-block
@@ -236,7 +236,7 @@
     bottom: -150px
     content: ''
     +transition(bottom .3s)
-    +background-image(linear-gradient(15deg, rgba(#000, .7), rgba(#000, 0)))
+    +background-image(linear-gradient(15deg, rgba(black, .7), rgba(black, 0)))
 
   &:hover:before
     bottom: 0
@@ -309,7 +309,7 @@
     width: 10px
     height: 10px
     border-radius: 50%
-    border: 1px solid rgba(#000, .2)
+    border: 1px solid rgba(black, .2)
 
   &.is-active:after
     border-color: $color-primary
