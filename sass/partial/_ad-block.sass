@@ -6,23 +6,9 @@
 
   &.ad_block-top
     display: none
-    position: relative
     background-color: $color-gray-lll
+    +background-image(linear-gradient(to bottom, rgba(#999, 0) 75%, rgba(#999, 0.125)))
     padding: 0px
-
-    .ad_block_content
-      position: relative
-
-    &:before
-      content: ''
-      display: block
-      position: absolute
-      left: 0
-      right: 0
-      bottom: 0
-      height: 24px
-      +background-image(linear-gradient(to bottom, rgba(#999, 0), rgba(#999, 0.1)))
-
 
   +at-breakpoint($desktop)
 
