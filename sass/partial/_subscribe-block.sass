@@ -1,12 +1,13 @@
 .subscribe_block
-  margin: 24px 0
-  padding: 36px 0
-  border-width: 1px 0px
-  border-style: solid
-  border-color: lighten(#000, 50%)
+  margin: 24px -24px
+  padding: 36px 24px
+  background-color: $color-white-dark
+  // border-width: 1px 0px
+  // border-style: solid
+  // border-color: lighten(#000, 50%)
 
   .subscribe_block_title
-    color: black
+    color: $color-black-dark
     +adjust-font-size-to(21px, 1)
     +trailer(0.5)
 
@@ -25,7 +26,7 @@
     opacity: 0.4
     +transition(opacity 0.25s)
     &:hover
-      opacity: 0.75
+      opacity: 0.6
 
   .subscribe_block_email
     +pie-clearfix
@@ -41,7 +42,7 @@
       +transition(border-color 0.25s)
       -webkit-appearance: none
       &:hover
-        border: 1px solid rgba(black, 0.75)
+        border: 1px solid rgba(black, 0.6)
       &:focus
         outline: none
 
@@ -50,23 +51,23 @@
       display: block
       margin-left: -2px
       border: none
-      padding: 4px 24px
       +border-radius (0 2px 2px 0)
-      +adjust-font-size-to(13px)
-      background: $color-black
-      color: white
       outline: none
 
   +at-breakpoint($pad)
-    +pie-clearfix
     margin: 48px 0
-    padding: 36px 2px
+    padding: 48px
+    text-align: center
 
     .subscribe_block_title
       +adjust-font-size-to(24px, 1.25)
 
     .subscribe_block_description
       +trailer(1)
+
+    .subscribe_block_action
+      display: inline-block
+      +pie-clearfix
 
     .subscribe_block_social_list
       +trailer(0)
@@ -76,7 +77,7 @@
       float: left
 
   +at-breakpoint($desktop)
-    padding: 48px 2px
+    padding: 48px
 
     .subscribe_block_email
       input

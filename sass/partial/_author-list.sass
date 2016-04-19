@@ -3,11 +3,6 @@
   .author_list_item
     +pie-clearfix
     margin: 24px auto
-    // padding-bottom: 24px
-    // border-bottom: 1px solid $color-gray-white
-    // &:last-child
-    //   padding-bottom: 0px
-    //   border-bottom: none
 
   .author_avatar
     display: block
@@ -22,38 +17,49 @@
     +background-size(cover)
     background-position: center center
     background-repeat: no-repeat
+    +transition(opacity 0.25s)
+    &:hover
+      opacity: 0.75
 
   .author_list_item_content
     overflow: hidden
 
   .author_title
     display: inline-block
-    +adjust-font-size-to(16px, 1)
-    color: black
-    margin-bottom: 3px
+    +adjust-font-size-to(18px, 1)
+    color: $color-black-dark
+    margin-bottom: 6px
+    +transition(color 0.25s)
+
     &:hover
       color: $color-primary
       text-decoration: none
 
   .author_description
     +adjust-font-size-to(15px, 1)
-    color: $text-gray
+    color: $text-black-light
     margin-bottom: 6px
 
-  .author_contact_links
+  .author_block_action
+    +adjust-font-size-to(13px, 3/4)
 
-  .author_contact_link
-    float: left
-    display: block
-    opacity: 0.3
-    +transition(opacity 0.25s)
-    &:hover
-      opacity: 0.5
-    .icon
-      display: block
-      height: 24px
-      margin-right: 12px
+  .author_social_links
+    +reset-list-style
+    margin-bottom: 6px
+    li
+      display: inline-block
+      &:after
+        content: ''
+        display: inline-block
+        width: 4px
+        height: 4px
+        margin: 2px 5px
+        background-color: $color-gray-light
+      &:last-child:after
+        display: none
 
+  .author_social_link
+    color: $text-gray
   +at-breakpoint($pad)
 
     .author_list_item
@@ -61,15 +67,6 @@
       // padding-bottom: 48px
 
     .author_avatar
-      width: 120px
-      height: 120px
+      width: 96px
+      height: 96px
       margin-right: 36px
-
-    .author_title
-      +adjust-font-size-to(18px, 1)
-      margin-bottom: 12px
-
-    .author_description
-      +adjust-font-size-to(16px, 1)
-      margin-bottom: 12px
-

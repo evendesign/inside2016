@@ -115,7 +115,7 @@
     padding: 24px 24px
 
   .header_subscribe_block_title
-    color: black
+    color: $color-black-dark
     +trailer(0.5)
     +adjust-font-size-to(15px, 1)
 
@@ -133,11 +133,11 @@
   .social_btn
     display: block
     color: $text-gray
-    opacity: 0.5
+    opacity: 0.3
     +transition(opacity 0.25s)
 
     &:hover
-      opacity: 0.75
+      opacity: 0.6
 
   .social_btn_icon
     display: block
@@ -161,7 +161,8 @@
     .search_form
       float: right
       border-bottom: none
-      background-color: $color-gray-white
+      +border-radius(0 2px 2px 0)
+      background-color: $btn-bg-color
       text-align: center
       &:hover .search_input
         width: 240px
@@ -183,7 +184,7 @@
       z-index: 90
       width: 0px
       padding: 12px 48px 12px 18px
-      background-color: $color-gray-white
+      background-color: $btn-bg-color
       +box-sizing(border-box)
       opacity: 0
       +transition(width 0.25s, opacity 0.25s)

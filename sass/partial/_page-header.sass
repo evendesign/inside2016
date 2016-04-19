@@ -1,16 +1,24 @@
 .page_header
 
   .page_header_title
-    +adjust-font-size-to(21px, 1)
+    +adjust-font-size-to(24px, 1.25)
     +trailer(0)
-    color: black
+    color: $color-black-dark
+    display: inline-block
+    margin-right: 6px
 
-  @for $i from 1 through length($color-list)
-    .page_header_title-color#{$i}
-      color: nth($color-list, $i)
+  .page_header_subtitle
+    display: inline-block
+    +adjust-font-size-to(15px, 1)
+    color: $text-gray
+
 
   +at-breakpoint($pad)
     margin: 0 auto 12px
 
     .page_header_title
       +adjust-font-size-to(28px, 1.5)
+      margin-right: 12px
+
+    .page_header_subtitle
+      +adjust-font-size-to(18px, 1)

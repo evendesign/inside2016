@@ -31,7 +31,7 @@
     +adjust-font-size-to(18px, 1)
     margin-bottom: 6px
     a
-      color: black
+      color: $color-black-dark
       +transition(color .25s)
 
       &:hover
@@ -136,6 +136,9 @@
       margin: -12px auto 0
       width: 100%
 
+    .post_title
+      +adjust-font-size-to(21px, 1.2)
+
     // == 文章列表項目的頭條樣式
     .post_list_item-hero_style
       position: relative
@@ -225,7 +228,7 @@
       .post_title
         font-weight: normal
         a
-          color: black
+          color: $color-black-dark
 
       .post_description
         display: block

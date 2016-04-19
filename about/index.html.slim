@@ -22,20 +22,18 @@
           .form-content
             textarea.full-width rows="4"
         .form-action
-          button.btn.btn_primary 送出
+          button.btn.btn-primary 送出
 
   h2.static_content_subtitle 編輯群
   .author_list
     - 6.times do |i|
       .author_list_item
-        a.author_avatar href="/authors/" style="background-image: url('https://placeimg.com/200/200/#{rand(10)}');"
+        a.author_avatar href="/authors/" style="background-image: url('https://placeimg.com/120/120/#{rand(10)}');"
         .author_list_item_content
           a.author_title href="/authors/"= zh_lorem_name
           p.author_description= zh_lorem_paragraph
-          .author_contact_links
-            a.author_contact_link href="#"
-              span.icon.icon-twitter Twitter
-            a.author_contact_link href="#"
-              span.icon.icon-facebook Facebook
-            a.author_contact_link href="#"
-              span.icon.icon-mail Mail
+          .author_block_action
+            ul.author_social_links
+              li: a.author_social_link href="#" Facebook
+              li: a.author_social_link href="#" Twitter
+              li: a.author_social_link href="#" Mail

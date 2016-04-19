@@ -4,6 +4,9 @@
 
   &.post_toolbox-footer
     margin-bottom: 48px
+    text-align: center
+    .post_toolbox-footer_title
+      display: block
 
   &.post_toolbox-sticky
     display: none
@@ -11,7 +14,15 @@
 .post_toolbox_title
   display: none
 
+.post_toolbox-footer_title
+  display: none
+  +adjust-font-size-to(13px, 1)
+  margin-bottom: 6px
+  color: $text-gray
+
+
 .post_toolbox_item
+  +pie-clearfix
   box-sizing: border-box
   display: block
   min-width: 60px
@@ -19,22 +30,29 @@
   margin-right: 2px
   padding: 3px 12px
   text-align: center
-  border-radius: 2px
-  background-color: $color-white-dark
+  background-color: $btn-bg-color
   cursor: pointer
   +transition(background-color 0.25s)
+  &:first-child
+    +border-radius(2px 0 0 2px)
+  &:last-child
+    margin-right: 0
+    +border-radius(0 2px 2px 0)
   &:hover
     text-decoration: none
-    background-color: $color-gray-white
+    background-color: $btn-hover-bg-color
   .icon
-    display: inline-block
+    display: block
     height: 24px
-    vertical-align: middle
-    opacity: 0.3
+    margin: 0 auto
+    opacity: 0.4
   .text
     margin-left: 6px
     color: $text-gray
     +adjust-font-size-to(13px, 1)
+  &.post_toolbox_item-comment
+    .icon, .text
+      float: left
 
 +pad
   .post_toolbox
@@ -62,7 +80,7 @@
       display: block
       margin: 0px
       text-align: center
-      background-color: $color-gray-white
+      background-color: $btn-bg-color
       border-radius: 2px 2px 0px 0px
       +adjust-font-size-to(13px)
 
@@ -72,6 +90,8 @@
       width: 100%
       min-width: 0
       border-radius: 0
+      &:first-child
+        +border-radius(0)
       &:last-child
         border-radius: 0 0 2px 2px
       .icon
@@ -84,3 +104,5 @@
         +adjust-font-size-to(13, 3/4)
       &.post_toolbox_item-comment
         padding: 6px 0
+        .icon, .text
+          float: none

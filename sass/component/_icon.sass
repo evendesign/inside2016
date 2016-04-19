@@ -1,70 +1,43 @@
+=set-icon-image($image-name)
+  width: image-width("#{$image-name}.png")
+  height: image-height("#{$image-name}.png")
+  background-image: image-url("#{$image-name}.png")
+  background-image: none, image-url("#{$image-name}.svg")
+
+[class^="icon-"], [class*=" icon-"]
+  display: inline-block
+  text-indent: 110%
+  overflow: hidden
+  text-align: left
+  background-repeat: no-repeat
+  background-position: 50% 50%
+  background-position: center center
+  white-space: nowrap
+  +background-size(contain)
+
 .icon-search
-  display: inline-block
-  +replace-text-with-svg("icon/search")
+  +set-icon-image("icon/search")
+
 .icon-facebook
-  display: inline-block
-  +replace-text-with-svg("icon/facebook")
+  +set-icon-image("icon/facebook")
+
 .icon-twitter
-  display: inline-block
-  +replace-text-with-svg("icon/twitter")
+  +set-icon-image("icon/twitter")
+
 .icon-line
-  display: inline-block
-  +replace-text-with-svg("icon/line")
+  +set-icon-image("icon/line")
+
 .icon-mail
-  display: inline-block
-  +replace-text-with-svg("icon/mail")
+  +set-icon-image("icon/mail")
+
 .icon-comment
-  display: inline-block
-  +replace-text-with-svg("icon/comment")
+  +set-icon-image("icon/comment")
+
 .icon-border-facebook
-  display: inline-block
-  +replace-text-with-svg("icon/border-facebook")
+  +set-icon-image("icon/border-facebook")
+
 .icon-border-twitter
-  display: inline-block
-  +replace-text-with-svg("icon/border-twitter")
+  +set-icon-image("icon/border-twitter")
+
 .icon-border-line
-  display: inline-block
-  +replace-text-with-svg("icon/border-line")
-
-
-.icon-hanburger
-  $hamburger-layer-width                     : 24px !default
-  $hamburger-layer-height                    : 2px !default
-  $hamburger-layer-spacing                   : 6px !default
-  $hamburger-layer-color                     : $color-gray-dark !default
-  $hamburger-layer-border-radius             : 2px !default
-
-  padding: 15px 12px
-  width: $hamburger-layer-width
-  height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2
-  display: inline-block
-  position: relative
-
-  .icon-hanburger_line
-    display: block
-    top: 50%
-    margin-top: $hamburger-layer-height / -2
-    &,
-    &:before,
-    &:after
-      width: $hamburger-layer-width
-      height: $hamburger-layer-height
-      background-color: $hamburger-layer-color
-      border-radius: $hamburger-layer-border-radius
-      position: absolute
-      +transition(transform .5s ease)
-    &:before,
-    &:after
-      content: ""
-      display: block
-    &:before
-      top: ($hamburger-layer-spacing + $hamburger-layer-height) * -1
-    &:after
-      bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1
-
-    .is-menu_open &
-      &:before
-        transform: translate3d($hamburger-layer-width * -0.2, 1px, 0) rotate(-45deg) scale(0.8, 1)
-      &:after
-        transform: translate3d($hamburger-layer-width * -0.2, -1px, 0) rotate(45deg) scale(0.8, 1)
-
+  +set-icon-image("icon/border-line")

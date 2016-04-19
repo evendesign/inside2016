@@ -9,7 +9,7 @@ $form-placeholder-color: #999999
 $form-font-size: 15px
 
 $form-label-font-size: $form-font-size
-$form-label-color: black
+$form-label-color: $color-black-dark
 
 $form-content-font-size: $form-font-size
 $form-content-color: $form-color
@@ -89,7 +89,7 @@ $form-tip-color: #999999
   display: block
   +adjust-font-size-to($form-label-font-size)
   +trailer(0.125)
-  color: black
+  color: $color-black-dark
   @extend %subpixel
   .is_required &:after
     content: '*'
