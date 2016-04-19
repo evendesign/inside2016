@@ -1,42 +1,45 @@
 // ---- Base Color ----
 // gray
-$color-black-dark: #222
+$color-black-d: #222
 $color-black: #444
-$color-black-light: #666
-$color-gray-dark: #999
+$color-black-l: #666
+
+$color-gray-d: #999
 $color-gray: #aaa
-$color-gray-light: #ddd
-$color-gray-white: #eaeaea
-$color-white-dark: #f6f6f6
+$color-gray-l: #ddd
+$color-gray-ll: #eaeaea
+$color-gray-lll: #f6f6f6
 
 // blue
-$color-blue-light: #dee9ef
+$color-blue-l: #dee9ef
 $color-blue: #53caf5
-$color-blue-dark: darken($color-blue, 10%)
+$color-blue-d: darken($color-blue, 10%)
 
 // red
 $color-red: #df3f3f
-$color-red-dark: darken($color-red, 10%)
-$color-red-light: lighten($color-red, 10%)
+$color-red-d: darken($color-red, 10%)
+$color-red-l: lighten($color-red, 10%)
 
 // text-color
 $text-black: #444
-$text-black-light: #666
+$text-black-l: #666
 $text-gray: #999
-$text-gray-light: lighten($text-gray, 15%)
-
-// ---- box model
-$global-radius-width: 2px
+$text-gray-l: lighten($text-gray, 15%)
 
 // 網站主色調
 $color-primary: #C13B3B
 
-// btn-color
-$btn-bg-color: $color-gray-white
-$btn-hover-bg-color: darken($color-gray-light, 10%)
+
+// ---- 網站應用 ----
+// 全站圓角參數設定
+$global-radius-width: 2px
+
+// 按鈕設定
+$btn-bg-color: $color-gray-lll
+$btn-hover-bg-color: $color-gray-ll
 $btn-active-bg-color: $btn-hover-bg-color
 
-// 網站標籤顏色定義
+// 網站標籤顏色設定
 $color-1: #1CAFD7
 $color-2: #EA5496
 $color-3: #34ACAC
@@ -47,5 +50,4 @@ $color-7: #C66495
 $color-8: #7EB326
 $color-9: #EC6B56
 $color-10: #28475E
-
 $color-list: ($color-1,$color-2,$color-3,$color-4,$color-5,$color-6,$color-7,$color-8,$color-9,$color-10)
