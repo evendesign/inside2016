@@ -78,3 +78,6 @@
 
 / fb comment setting
 = render "/posts/fb_setting"
+
+= content_for :script do
+  = javascript_include_tag 'post-sticky'

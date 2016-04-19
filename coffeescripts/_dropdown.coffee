@@ -34,6 +34,5 @@ closeAllDropdown = (e) ->
   return if $(e.target).closest('.dropdown.is-active').length
   $('.dropdown.is-active').each (i, el) -> $(el).data('dropdown').close()
 
-$document = $(document)
 $document.on 'click', '.dropdown_trigger', lazyCreateDropdown
 $document.on 'click', closeAllDropdown

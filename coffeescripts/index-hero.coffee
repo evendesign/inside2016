@@ -10,9 +10,6 @@ translateX = (el, x) ->
   el.style.transform = value
   el.style.msTransform = value
 
-isTouchDevice = ->
-  `'ontouchstart' in window` || navigator.maxTouchPoints
-
 class Page
   _isCurrent: ->
     @index == @parent.currentIndex

@@ -60,3 +60,6 @@ ruby:
     .hero_pagination
       - hero_posts.each do |post|
         .hero_pagination_item.js-hero_pagination_item
+
+= content_for :script do
+  = javascript_include_tag 'index-hero'
