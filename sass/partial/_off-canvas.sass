@@ -20,31 +20,28 @@ $menu-width: 260px
       overflow: hidden
       +transform(translateX(-$menu-width))
 
-    .off_canvas_mask
-      bottom: 0
-
-    .off_canvas_menu_container
+    .off_canvas_mask, .off_canvas_menu_container
       visibility: visible
       +transition(none)
+
+
+.off_canvas_menu_container, .off_canvas_mask
+  top: 0
+  bottom: 0
+  right: 0
+  visibility: hidden
+  +transition(visibility 0 .6s)
 
 .off_canvas_menu_container
   position: fixed
   width: $menu-width
-  top: 0
-  bottom: 0
-  right: 0
   overflow: auto
-  visibility: hidden
-  +transition(visibility 0 .6s)
-
   .menu
     padding-bottom: 100px
     display: block
 
 .off_canvas_mask
   position: absolute
-  top: 0
   left: 0
-  right: 0
   cursor: pointer
   z-index: 1

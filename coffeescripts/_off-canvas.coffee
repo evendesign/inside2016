@@ -17,6 +17,7 @@ class Menu
       @mask.on('touchstart', @close)
     else
       $window.on('resize', @close)
+      @mask.on('click', @close)
 
   _toggleClass: ->
     @offCanvas.toggleClass('is-menu_open', @isMenuOpen)
