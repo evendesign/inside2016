@@ -24,9 +24,20 @@
     display: block
     margin-right: 12px
     opacity: 0.4
+    width: 32px
+    +border-radius(2px)
+    border: 1px solid black
+    padding: 3px 0
     +transition(opacity 0.25s)
+    cursor: pointer
+    &.subscribe_block_social_item-line
+      width: 52px
     &:hover
       opacity: 0.6
+    [class^="icon-"]
+      display: block
+      height: 24px
+      margin: 0 auto
 
   .subscribe_block_email
     +pie-clearfix

@@ -133,11 +133,31 @@
   .social_btn
     display: block
     color: $text-gray
-    opacity: 0.3
+    opacity: 0.25
     +transition(opacity 0.25s)
-
+    +border-radius(2px)
+    border: 1px solid black
+    padding: 3px 0
+    width: 32px
+    cursor: pointer
     &:hover
       opacity: 0.6
+
+  .social_btn-twitter
+    .social_btn_icon
+      background-image: image-url('icon/twitter.svg')
+      width: image-width("icon/twitter.png")
+
+  .social_btn-facebook
+    .social_btn_icon
+      background-image: image-url('icon/facebook1.svg')
+      width: image-width("icon/facebook1.png")
+
+  .social_btn-line
+    width: 52px
+    .social_btn_icon
+      background-image: image-url('icon/line.svg')
+      width: image-width("icon/line.png")
 
   .social_btn_icon
     display: block
@@ -147,15 +167,9 @@
     background-position: center center
     @include background-size(contain)
     background-repeat: no-repeat
-    width: 32px
-    height: 32px
-    &.social_btn_icon-twitter
-      background-image: image-url('icon/border-twitter.svg')
-    &.social_btn_icon-facebook
-      background-image: image-url('icon/border-facebook.svg')
-    &.social_btn_icon-line
-      width: 55px
-      background-image: image-url('icon/border-line.svg')
+    height: 24px
+    margin: 0 auto
+
 
   +desktop
     .search_form
@@ -273,17 +287,19 @@
     .social_btn
       display: block
       padding: 0 8px
-      opacity: 0.3
+      border: none
+      width: auto
 
-    .social_btn_icon
-      margin-right: auto
-      height: 24px
-      &.social_btn_icon-twitter
-        width: image-width("icon/twitter.png")
-        background-image: image-url('icon/twitter.svg')
-      &.social_btn_icon-facebook
-        width: image-width("icon/facebook.png")
-        background-image: image-url('icon/facebook.svg')
-      &.social_btn_icon-line
-        width: image-width("icon/line.png")
-        background-image: image-url('icon/line.svg')
+    .social_btn-twitter .social_btn_icon
+      width: image-width("icon/twitter.png")
+      background-image: image-url('icon/twitter.svg')
+
+    .social_btn-facebook .social_btn_icon
+      width: image-width("icon/facebook.png")
+      background-image: image-url('icon/facebook.svg')
+
+    .social_btn-line .social_btn_icon
+      width: image-width("icon/line.png")
+      background-image: image-url('icon/line.svg')
+
+
