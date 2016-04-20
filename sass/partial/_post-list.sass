@@ -17,6 +17,9 @@
     background-repeat: no-repeat
     background-position: center center
     +border-radius(2px)
+    +transition(opacity 0.25s)
+    &:hover
+      opacity: 0.8
 
   .post_list_item_content
     +leader(-0.5)
@@ -25,6 +28,7 @@
     float: left
     display: block
     margin-bottom: 12px
+    position: relative
 
   .post_title
     clear: both
