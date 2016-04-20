@@ -72,12 +72,9 @@
 .block.block-fb_comments#block-fb_comments
   h2.block_title 評論
   .block_content
-    .fb-comments data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="1"
+    = render "/posts/fb_comment"
 
 = render "/partials/job_feed_block"
-
-/ fb comment setting
-= render "/posts/fb_setting"
 
 = content_for :script do
   = javascript_include_tag 'post-sticky'
