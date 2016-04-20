@@ -6,24 +6,30 @@
   text-align: center
   li
     display: inline-block
+    &:first-child .pagination_item
+      +border-radius(2px 0 0 2px)
+    &:last-child .pagination_item
+      +border-radius(0 2px 2px 0)
+
   .pagination_item
     display: none
     padding: 6px 16px
     margin: 0 1px
-    color: $color-black-d
+    color: $text-black-l
     background-color: $btn-bg-color
-    +border-radius(2px)
     text-align: center
     +adjust-font-size-to(15px)
     +transition(color 0.25s, background-color 0.25s)
     &:hover
+      color: $color-black-d
       text-decoration: none
       background-color: $btn-hover-bg-color
     &.is-current
+      color: $color-black-d
       background-color: $btn-active-bg-color
     &.is-disable
       cursor: not-allowed
-      color: $color-gray
+      color: $color-gray-l
       background-color: $btn-bg-color
     &.is-current,
     &.pagination_item-prev,
