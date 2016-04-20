@@ -11,9 +11,6 @@
   &.post_toolbox-sticky
     display: none
 
-.post_toolbox_title
-  display: none
-
 .post_toolbox-footer_title
   display: none
   +adjust-font-size-to(13px, 1)
@@ -64,7 +61,7 @@
     position: -webkit-sticky
     top: 48px
     float: left
-    margin: -24px auto 0 -72px
+    margin: 0px auto 0 -72px
     width: 48px
 
     &.is-sticky
@@ -76,16 +73,8 @@
       top: auto
       bottom: 0
 
-    .post_toolbox_title
-      display: block
-      margin: 0px
-      text-align: center
-      background-color: $btn-bg-color
-      border-radius: 2px 2px 0px 0px
-      +adjust-font-size-to(13px)
-
     .post_toolbox_item
-      margin: 2px 0 0 0
+      margin: 0 0 2px 0
       padding: 12px 0
       width: 100%
       min-width: 0
