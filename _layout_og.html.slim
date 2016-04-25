@@ -1,10 +1,36 @@
-meta content= data["site-title"] property="og:title"
-meta content= data["site-name"] property="og:site_name"
-meta content= data["site-url"] property="og:url"
+/ og 共同 layout
 
-meta content= data["og-image"] property="og:image"
-meta content= data["site-description"] property="og:description"
+- if @og_title
+  meta content="#{@og_title}" property="og:title"
+- else
+  meta content="#{data['site-title']}" property="og:title"
 
-meta content= data["og-type"] property="og:type"
-meta content= data["fb-admins"] property="fb:admins"
+- if @og_site_name
+  meta content="#{@og_site_name}" property="og:site_name"
+- else
+  meta content="#{data['site-name']}" property="og:site_name"
 
+- if @og_url
+  meta content="#{@og_url}" property="og:url"
+- else
+  meta content="#{data['site-url']}" property="og:url"
+
+- if @og_image
+  meta content="#{@og_image}" property="og:image"
+- else
+  meta content="#{data['og-image']}" property="og:image"
+
+- if @og_description
+  meta content="#{@og_description}" property="og:description"
+- else
+  meta content="#{data['site-description']}" property="og:description"
+
+- if @og_type
+  meta content="#{@og_type}" property="og:type"
+- else
+  meta content="#{data['og-type']}" property="og:type"
+
+- if @og_admins
+  meta content="#{@og_admins}" property="fb:admins"
+- else
+  meta content="#{data['fb-admins']}" property="fb:admins"
