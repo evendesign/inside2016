@@ -13,6 +13,6 @@ require = (src) ->
   tag.setAttribute('src', "/javascripts/#{src}.js")
   document.body.appendChild(tag)
 
-require('_search')
-require('_off-canvas')
-require('_dropdown')
+require('search')
+require('off-canvas')
+require('dropdown')
