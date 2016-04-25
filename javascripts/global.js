@@ -26,10 +26,10 @@
     return document.body.appendChild(tag);
   };
 
-  require('_search');
+  require('search');
 
-  require('_off-canvas');
+  require('off-canvas');
 
-  require('_dropdown');
+  require('dropdown');
 
 }).call(this);
