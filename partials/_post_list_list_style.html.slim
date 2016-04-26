@@ -15,8 +15,8 @@
         .post_cover_inner style="background-image: url(https://placeimg.com/640/480/#{rand(10)});"
       .post_list_item_content
         a.post_category.badge class="badge-color#{i+1}" href="/categories/"= zh_lorem_words(2)
-        h3.post_title: a href="/posts/"= zh_lorem_sentence
-        p.post_description= zh_lorem_paragraph
+        h3.post_title: a.js-auto_break_title href="/posts/"= zh_lorem_sentence
+        p.post_description.js-auto_break_text= zh_lorem_paragraph
         ul.post_meta
           li: span.post_date= lorem_date("%Y/%m/%d")
           li: a.post_author href="/authors/"= zh_lorem_name

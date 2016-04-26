@@ -51,7 +51,7 @@ ruby:
           a.hero_slide_link href="#{post.url}"
           .hero_slide_info
             a.badge class="badge-color#{post.category.color_id}" href="#{post.category.url}"= post.category.text
-            a.hero_slide_title href="#{post.url}"= post.title
+            a.hero_slide_title.js-auto_break_title href="#{post.url}"= post.title
             ul.post_meta.hero_slide_meta
               li: span.post_date= post.date
               li: a.post_author href="#{post.author.url}"= post.author.name
