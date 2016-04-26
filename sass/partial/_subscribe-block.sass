@@ -2,9 +2,6 @@
   margin: 24px -24px
   padding: 36px 24px
   background-color: $color-gray-lll
-  // border-width: 1px 0px
-  // border-style: solid
-  // border-color: lighten(#000, 50%)
 
   .subscribe_block_title
     color: $color-black-d
@@ -42,11 +39,13 @@
   .subscribe_block_email
     +pie-clearfix
     input
+      +box-sizing(border-box)
       float: left
       display: block
       padding: 3px 12px
-      +border-radius(2px)
-      width: 170px
+      +border-radius(2px 0 0 2px)
+      width: 192px
+      height: 32px
       border: 1px solid rgba(black, 0.4)
       +adjust-font-size-to(13px)
       background-color: transparent
@@ -62,6 +61,7 @@
       display: block
       margin-left: -2px
       border: none
+      padding: 4px 18px
       +border-radius (0 2px 2px 0)
       outline: none
 
