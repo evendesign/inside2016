@@ -24,6 +24,9 @@ $menu-width: 260px
       visibility: visible
       +transition(none)
 
+    .lte-ie9 .off_canvas_mask
+      right: $menu-width
+
 
 .off_canvas_menu_container, .off_canvas_mask
   top: 0
@@ -36,12 +39,10 @@ $menu-width: 260px
   position: fixed
   width: $menu-width
   overflow: auto
-  z-index: 1000
 
   .menu
     padding-bottom: 100px
     display: block
-
 
 .off_canvas_mask
   position: absolute

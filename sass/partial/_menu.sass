@@ -119,6 +119,9 @@
     color: $color-black-d
     +trailer(0.5)
     +adjust-font-size-to(15px, 1)
+    &:after
+      content: '：'
+      display: none
 
   .header_subscribe_block_description
     +trailer(0.75)
@@ -254,6 +257,7 @@
       border-bottom: none
 
     .secondary_nav_item
+      float: left
       a
         +adjust-font-size-to(15px, 1)
         padding: 12px 6px
@@ -271,7 +275,6 @@
       +adjust-font-size-to(15px, 1)
       color: $text-gray
       &:after
-        content: '：'
         display: inline
 
     .header_subscribe_block_description

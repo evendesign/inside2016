@@ -8,7 +8,6 @@ html.off_canvas.js-off_canvas lang="zh-TW"
   <!--[if lte IE 9 ]> <body class="lte-ie9"> <![endif]-->
   <!--[if (gt IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><body><!--<![endif]-->
 
-    .off_canvas_menu_container.js-off_canvas_menu_container
     .page class="#{@pageNameClass}"
       .off_canvas_mask.js-off_canvas_mask
       = render "/partials/top_ad_block"
@@ -17,6 +16,7 @@ html.off_canvas.js-off_canvas lang="zh-TW"
         .container
           = yield
       = render "/partials/footer"
+    .off_canvas_menu_container.js-off_canvas_menu_container
     = render "/layout_foot"
     = render "/layout_livereload"
 
