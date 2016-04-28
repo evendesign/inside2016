@@ -1,15 +1,18 @@
 .article
-  +adjust-font-size-to(15px, 1)
+  font-size: 16px
+  line-height: 1.5
 
   #{headings()}
     color: $color-black-d
     margin-bottom: 24px
 
   h1
-    +adjust-font-size-to(24px, 1.25)
+    font-size: 150%
+    line-height: 1.5
 
   h2
-    +adjust-font-size-to(24px, 1.25)
+    font-size: 150%
+    line-height: 1.5
     border-bottom: 2px solid $color-primary
     padding-bottom: 12px
     margin-top: 48px
@@ -17,21 +20,26 @@
       margin-top: 0
 
   h3
-    +adjust-font-size-to(21px, 1)
+    font-size: 135%
+    line-height: 1.5
 
   h4
-    +adjust-font-size-to(18px, 1)
+    font-size: 115%
+    line-height: 1.5
 
   h5
-    +adjust-font-size-to(15px, 3/4)
+    font-size: 100%
+    line-height: 1.5
     color: $text-gray
 
   h6
-    +adjust-font-size-to(11px, 3/4)
+    font-size: 75%
+    line-height: 1.2
 
   p
     margin: 0 auto 24px
-    +adjust-font-size-to(15px, 1)
+    font-size: 100%
+    line-height: 1.5
 
   ul, ol
     li
@@ -49,7 +57,8 @@
 
   figcaption
     text-align: center
-    +adjust-font-size-to(13px, 3/4)
+    font-size: 81.25%
+    line-height: 1.5
     color: $text-gray
 
   blockquote
@@ -60,30 +69,46 @@
       display: block
 
   +at-breakpoint($pad)
-    +adjust-font-size-to(16px, 1)
+    font-size: 18px
+    line-height: 1.65
+
     #{headings()}
       color: $color-black-d
       margin-bottom: 30px
     h1
-      +adjust-font-size-to(36px, 2)
+      // +adjust-font-size-to(36px, 2)
+      font-size: 200%
+      line-height: 1.25
 
     h2
-      +adjust-font-size-to(30px, 1.5)
+      // +adjust-font-size-to(30px, 1.5)
+      font-size: 187.5%
+      line-height: 1.25
 
     h3
-      +adjust-font-size-to(24px, 1.25)
+      // +adjust-font-size-to(24px, 1.25)
+      font-size: 150%
+      line-height: 1.5
 
     h4
-      +adjust-font-size-to(21px, 1)
+      // +adjust-font-size-to(21px, 1)
+      font-size: 120%
+      line-height: 1.5
 
     h5
-      +adjust-font-size-to(16px, 1)
+      // +adjust-font-size-to(16px, 1)
+      font-size: 100%
+      line-height: 1.5
 
     h6
-      +adjust-font-size-to(13px, 3/4)
+      // +adjust-font-size-to(13px, 3/4)
+      font-size: 75%
+      line-height: 1.2
 
     p
-      +adjust-font-size-to(16px, 1.15)
+      // +adjust-font-size-to(16px, 1.15)
+      font-size: 100%
+      line-height: 1.65
       margin: 0 auto 30px
 
     img
@@ -93,3 +118,6 @@
 
     figure
       margin-bottom: 30px
+    blockquote
+      margin: 30px auto
+      padding: 30px 30px 30px 27px
