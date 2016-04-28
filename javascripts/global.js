@@ -18,6 +18,15 @@
     return 'ontouchstart' in window || navigator.maxTouchPoints;
   };
 
+  if ($('.js-auto_break_text, .js-auto_break_title').length) {
+    $('.js-auto_break_text').macho({
+      'length': 5
+    });
+    $('.js-auto_break_title').macho({
+      'length': 3
+    });
+  }
+
   require = function(src) {
     var tag;
 
