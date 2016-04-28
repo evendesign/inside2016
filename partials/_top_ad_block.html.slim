@@ -1,4 +1,15 @@
-.ad_block.ad_block-top
-  .ad_block_content
-    / 廣告內容，暫時以圖片取代
-    img src="/images/ad-banner.jpg"
+/ 置頂廣告區塊，內容可以是一般廣告或是放置廠商贊助 LOGO 或是廠商贊助廣告
+
+- if @top_ad_block == "sponsor"
+  / 贊助商 LOGO 或贊助商廣告
+  .ad_block.ad_block-top.ad_block-top-sponsor
+    .ad_block_content
+      / 廣告內容，暫時以圖片取代
+      img src="/images/sponsor-banner.png"
+
+- else
+  / 一般置頂廣告
+  .ad_block.ad_block-top
+    .ad_block_content
+      / 廣告內容，暫時以圖片取代
+      img src="/images/ad-banner.jpg"

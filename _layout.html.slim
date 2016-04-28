@@ -12,7 +12,8 @@ html.off_canvas.js-off_canvas lang="zh-Hant-TW"
 
     .page class="#{@pageNameClass}"
       / 置頂廣告區塊
-      = render "/partials/top_ad_block"
+      - if @top_ad_block
+        = render "/partials/top_ad_block"
       / header 區塊
       = render "/partials/header"
       / 頁面主要內容
