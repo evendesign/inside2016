@@ -253,7 +253,7 @@
     box-shadow: none
 
   &.is-active ~ &
-    +transform(translateX(-100%))
+    +transform(translateX(calc(-100% + 2px)))
     +desktop
       +transform(translateX(100%))
 

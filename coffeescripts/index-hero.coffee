@@ -24,7 +24,7 @@ class Slide extends Page
       @isPanning = true
     if @_isCurrent()
       if @index == 0 || (@index == @parent.max && delta * @parent.dir < 0)
-        moveX = 0
+        moveX = delta * 0.5
       else
         moveX = delta
     else
