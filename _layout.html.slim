@@ -1,23 +1,36 @@
 doctype 5
-html.off_canvas.js-off_canvas lang="zh-TW"
+html.off_canvas.js-off_canvas lang="zh-Hant-TW"
   head
     = render "/layout_head"
+    / 網站共同資訊設定
     = render "/layout_siteinfo"
+    / og 資訊設定
     = render "/layout_og"
 
   <!--[if lte IE 9 ]> <body class="lte-ie9"> <![endif]-->
   <!--[if (gt IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><body><!--<![endif]-->
 
     .page class="#{@pageNameClass}"
-      .off_canvas_mask.js-off_canvas_mask
+      / 置頂廣告區塊
       = render "/partials/top_ad_block"
+      / header 區塊
       = render "/partials/header"
+      / 頁面主要內容
       .content
         .container
           = yield
+      / footer 區塊
       = render "/partials/footer"
+      / 手機版打開 menu 後，避免使用者誤觸碰內容的 mask
+      .off_canvas_mask.js-off_canvas_mask
+
+    / 手機版的 menu 內容
     .off_canvas_menu_container.js-off_canvas_menu_container
+
+    / 頁面共用的 javacsript
     = render "/layout_foot"
+
+    / livereload 方便開發的工具
     = render "/layout_livereload"
 
   </body>

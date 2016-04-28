@@ -1,18 +1,18 @@
 / 頁面共同資訊
 
-/ page title
+/ 頁面標題
 - if @site_title
   title #{@site_title}
 - else
   title #{data["site-title"]}
 
-/ page keywords
+/ 頁面關鍵字設定
 - if @site_keywords
   meta name="keywords" content="#{@site_keywords}"
 - else
   meta name="keywords" content="#{data['site-keywords']}"
 
-/ page description
+/ 頁面敘述
 - if @site_description
   meta name="description" content="#{@site_description}"
 - else

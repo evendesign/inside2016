@@ -1,16 +1,15 @@
-/ import js
-
+/ 連結頁面共用使用的 js 檔案
 = javascript_include_tag \
   "/vendor/jquery-1.12.0.min.js", \
   "/vendor/hammer.js", \
   "/vendor/macho.js", \
   "global"
 
-/ 某些頁面專屬 js
+/ 連結某些頁面專屬 js 檔案
 - if (yield :script)
   = yield :script
 
-/ ga 設定
+/ 設定 ga
 javascript:
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
