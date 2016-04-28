@@ -1,7 +1,7 @@
 (function() {
   var $postShareToolbox, authorBlock, checkShareToolBoxPosition, currentStatus, getStatus, postHeader, postShareToolboxHeight, postShareToolboxOffsetTop;
 
-  if (isTouchDevice()) {
+  if (isTouchDevice() || CSS.supports('(position: -webkit-sticky)')) {
     return;
   }
 
