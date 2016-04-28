@@ -1,4 +1,4 @@
-return if isTouchDevice()
+return if isTouchDevice() || CSS.supports('(position: -webkit-sticky)')
 
 $postShareToolbox = $('.post_toolbox-sticky')
 return unless $postShareToolbox.length
