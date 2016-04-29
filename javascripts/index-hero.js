@@ -57,7 +57,7 @@
       }
       if (this._isCurrent()) {
         if (this.index === 0 || (this.index === this.parent.max && delta * this.parent.dir < 0)) {
-          moveX = 0;
+          moveX = delta * 0.5;
         } else {
           moveX = delta;
         }
