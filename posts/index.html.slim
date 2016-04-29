@@ -8,8 +8,11 @@
       li
         - (rand(4)+1).times do|i|
           a.post_tag href="/tags/"= zh_lorem_words(2)
+    / 手機上專用的分享 toolbox
     = render "/posts/toolbox"
+
   .post_content_wrapper
+    / 在平板以上才會出現的固定式 toolbox
     = render "/posts/toolbox", :locals => {:modifier => 'sticky'}
     .post_content.article
       / 文章內容
@@ -41,14 +44,18 @@
       / 文章內容 end
 
   .post_footer.js-post_footer
+    / 手機上專用的分享 toolbox
     = render "/posts/toolbox", :locals => {:modifier => "footer"}
     .poster_footer_author
       = render "/partials/author_block"
 
+/ 橫幅廣告區塊
 = render "/partials/ad_block"
 
+/ 訂閱區塊
 = render "/partials/subscribe_block"
 
+/ 相關文章區塊
 .block.block-relative-articles
   h2.block_title 相關文章
   .block_content
@@ -70,11 +77,13 @@
                 - (rand(4)+1).times do|i|
                   a.post_tag href="/tags/"= zh_lorem_words(2)
 
+/ fb 留言區塊
 .block.block-fb_comments#block-fb_comments
   h2.block_title 評論
   .block_content
     = render "/posts/fb_comment"
 
+/ 求職廣告區塊
 = render "/partials/job_feed_block"
 
 = content_for :script do
