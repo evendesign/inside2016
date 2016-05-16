@@ -44,6 +44,13 @@ body
   text-rendering: optimizeLegibility
   color: $text-color
 
+::selection
+  background: $color-primary
+  color: white
+::-moz-selection
+  background: $color-primary
+  color: white
+
 // heading
 #{headings()}
   +reset-box-model
@@ -150,3 +157,7 @@ hr, .divider
 img
   max-width: 100%
   +trailer(1)
+  &::selection
+    background: white
+  &::-moz-selection
+    background: white
