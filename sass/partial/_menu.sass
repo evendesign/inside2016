@@ -7,6 +7,12 @@
   .search_form
     position: relative
     border-bottom: 1px solid $color-gray-ll
+    +transition(background-color 0.25s)
+    &:hover
+      .search_input
+        color: rgba(white, 0.85)
+        background-color: $color-primary
+        +input-placeholder-color(rgba(white, 0.85))
 
   .search_submit
     position: absolute
@@ -31,7 +37,12 @@
     height: 48px
     width: 100%
     background-color: transparent
+    +transition(background-color 0.25s, color 0.25s)
     +adjust-font-size-to(15px, 1)
+    &:hover, &:focus
+      color: rgba(white, 0.85)
+      background-color: $color-primary
+      +input-placeholder-color(rgba(white, 0.85))
 
   .primary_nav
     +reset-list-style
@@ -41,60 +52,68 @@
 
   .primary_nav_item-dropdown
     &.is-active
-      background: $color-gray-ll
-      .primary_nav_item_title:after
-        +transform(rotateX(180deg))
+      .primary_nav_item_title
+        background-color: $color-primary
+        color: white
+        text-decoration: none
+        .en
+          color: rgba(white, 0.5)
+        &:after
+          border-color: rgba(white, 0.8) transparent transparent transparent
 
-    .primary_nav_item_title:after
-      content: ''
-      position: relative
-      top: 8px
-      float: right
-      width: 0
-      height: 0
-      border-style: solid
-      border-width: 7px 4px 0 4px
-      border-color: $color-gray transparent transparent transparent
-      +transition(transform .3s)
+    .primary_nav_item_title
+      &:after
+        content: ''
+        position: relative
+        top: 8px
+        float: right
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 7px 4px 0 4px
+        border-color: $color-gray transparent transparent transparent
+        +transition(border-color 0.25s)
+      &:hover:after
+        border-color: rgba(white, 0.8) transparent transparent transparent
 
   .primary_nav_item_title
     display: block
     padding: 12px 24px
     color: $color-black-d
-    +transition(background-color 0.25s)
+    +transition(background-color 0.25s, color 0.25s)
     +adjust-font-size-to(15px, 1)
 
     .en
       display: inline-block
       color: $text-gray
       margin-left: 3px
+      +transition(color 0.25s)
+
 
     &:hover
-      background-color: $color-gray-ll
+      background-color: $color-primary
+      color: white
       text-decoration: none
+      .en
+        color: rgba(white, 0.5)
 
 
   .primary_nav_item_content
     +reset-list-style
     padding: 9px 0
-    background-color: $color-gray-ll
-    border-top: 1px solid $color-gray-l
+    background-color: darken($color-primary, 5%)
 
   .primary_nav_child_item
     display: block
-    color: $text-black-l
+    color: white
     +transition(background-color 0.25s)
     +adjust-font-size-to(15px, 1)
     padding: 6px 24px
-    .en
-      display: inline-block
-      color: $text-gray
-      margin-left: 3px
-
     &:hover
       text-decoration: none
-      color: $text-black
-      background-color: $color-gray-l
+      background-color: darken($color-primary, 10%)
+      // color: $text-black
+      // background-color: $color-gray-l
 
   .secondary_nav
     +reset-list-style
@@ -184,6 +203,7 @@
       text-align: center
       &:hover .search_input
         width: 240px
+        padding: 12px 48px 12px 18px
         opacity: 1
 
     .search_submit
@@ -201,13 +221,12 @@
       right: 0
       z-index: 90
       width: 0px
-      padding: 12px 48px 12px 18px
-      background-color: $color-gray-ll
+      padding: 0px
       +box-sizing(border-box)
       opacity: 0
-      +transition(width 0.25s, opacity 0.25s)
-      &:focus
+      &:hover, &:focus
         width: 240px
+        padding: 12px 48px 12px 18px
         opacity: 1
 
     .primary_nav
@@ -229,9 +248,6 @@
         float: none
         margin-left: 6px
 
-      &.is-active
-        .primary_nav_item_title
-          background-color: $color-gray-ll
 
     .primary_nav_item_title
       padding: 12px
@@ -239,14 +255,16 @@
         display: none
 
     .primary_nav_item_content
+      padding: 0
       position: absolute
       top: 100%
       z-index: 1000
       border-top: none
-      background-color: $color-gray-ll
+      background-color: $color-primary
 
     .primary_nav_child_item
       +nowrap
+      padding: 12px
 
     .secondary_block
       float: right

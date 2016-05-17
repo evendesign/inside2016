@@ -28,6 +28,17 @@
     background-color: transparent
     overflow: visible
     -webkit-tap-highlight-color: transparent
+    &:hover
+      .menu_btn_icon
+        background-color: $color-primary
+        span, span:before, span:after
+          background-color: white
+    .is-menu_open &
+      .menu_btn_icon
+        background-color: $color-primary
+        span, span:before, span:after
+          background-color: white
+
 
   .menu_btn_title
     display: block
@@ -49,6 +60,8 @@
     display: block
     float: right
     background-color: $color-gray-ll
+    +transition(background-color 0.25s)
+
     span
       display: block
       top: 50%
@@ -61,7 +74,7 @@
         background-color: $hamburger-layer-color
         border-radius: $hamburger-layer-border-radius
         position: absolute
-        +transition(transform .15s ease)
+        +transition(transform .15s ease, background-color 0.25s)
       &:before,
       &:after
         content: ""
