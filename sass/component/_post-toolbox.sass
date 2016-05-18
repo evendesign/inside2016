@@ -27,32 +27,29 @@
   margin-right: 2px
   padding: 3px 12px
   text-align: center
+  color: $color-gray
   background-color: $btn-bg-color
   cursor: pointer
   +transition(background-color 0.25s)
+  line-height: 24px
+  &.icon-line
+    font-size: 14px
+  &.icon-comment
+    font-size: 13px
+    &:before
+      font-size: 14px
+      margin-right: 3px
+      vertical-align: middle
   &:first-child
     +border-radius(2px 0 0 2px)
   &:last-child
     margin-right: 0
     +border-radius(0 2px 2px 0)
+
   &:hover
     text-decoration: none
-    background-color: $btn-hover-bg-color
-  .icon
-    display: block
-    height: 24px
-    margin: 0 auto
-    opacity: 0.4
-  .text
-    margin-left: 6px
-    color: $text-gray
-    +adjust-font-size-to(13px, 1)
-  &.post_toolbox_item-comment
-    .icon, .text
-      float: left
-    .text
-      position: relative
-      top: 1px
+    color: white
+    background-color: $color-primary
 
 +pad
   .post_toolbox
@@ -82,19 +79,12 @@
       width: 100%
       min-width: 0
       border-radius: 0
+      &.icon-comment
+        padding: 9px
+        &:before
+          display: block
+          margin-bottom: -6px
       &:first-child
-        +border-radius(0)
+        +border-radius(2px 2px 0 0)
       &:last-child
-        border-radius: 0 0 2px 2px
-      .icon
-        display: block
-        margin: 0 auto
-        height: 24px
-      .text
-        display: block
-        margin: -2px 0 0 0
-        +adjust-font-size-to(13, 3/4)
-      &.post_toolbox_item-comment
-        padding: 9px 0
-        .icon, .text
-          float: none
+        +border-radius(0 0 2px 2px)
