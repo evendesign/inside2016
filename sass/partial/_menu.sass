@@ -7,12 +7,18 @@
   .search_form
     position: relative
     border-bottom: 1px solid $color-gray-ll
-    +transition(background-color 0.25s)
-    &:hover
-      .search_input
-        color: rgba(white, 0.85)
-        background-color: $color-primary
-        +input-placeholder-color(rgba(white, 0.85))
+
+  .search_input
+    +box-sizing(border-box)
+    display: block
+    outline: none
+    margin: 0
+    border: none
+    padding: 12px 24px 12px 48px
+    height: 48px
+    width: 100%
+    +adjust-font-size-to(15px, 1)
+    background-color: transparent
 
   .search_submit
     position: absolute
@@ -24,25 +30,8 @@
     border: none
     padding: 0
     background-color: transparent
-    opacity: 0.3
-    +background-size(18px 18px)
-
-  .search_input
-    +box-sizing(border-box)
-    display: block
-    outline: none
-    margin: 0
-    border: none
-    padding: 12px 24px 12px 54px
-    height: 48px
-    width: 100%
-    background-color: transparent
-    +transition(background-color 0.25s, color 0.25s)
-    +adjust-font-size-to(15px, 1)
-    &:hover, &:focus
-      color: rgba(white, 0.85)
-      background-color: $color-primary
-      +input-placeholder-color(rgba(white, 0.85))
+    color: $color-gray
+    +transition(color 0.25s)
 
   .primary_nav
     +reset-list-style
@@ -155,44 +144,45 @@
 
   .social_btn
     display: block
-    color: $text-gray
-    opacity: 0.25
-    +transition(opacity 0.25s)
-    +border-radius(2px)
-    border: 1px solid black
+    font-family: 'icomoon' !important
+    speak: none
+    font-style: normal
+    font-weight: normal
+    font-variant: normal
+    text-transform: none
+    line-height: 24px
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    border: 1px solid $color-gray
+    color: $color-gray
     padding: 3px 0
     width: 32px
-    cursor: pointer
+    +border-radius(2px)
+    text-align: center
+    +transition(background-color 0.25s, color 0.25s, border-color 0.25s)
+
     &:hover
-      opacity: 0.6
+      text-decoration: none
+      background-color: $color-primary
+      color: white
+      border-color: $color-primary
+
+    &:before
+      display: block
 
   .social_btn-twitter
-    .social_btn_icon
-      background-image: image-url('icon/twitter.svg')
-      width: image-width("icon/twitter.png")
+    &:before
+      content: "\e903"
 
   .social_btn-facebook
-    .social_btn_icon
-      background-image: image-url('icon/facebook1.svg')
-      width: image-width("icon/facebook1.png")
+    &:before
+      content: "\e902"
+      font-size: 18px
 
   .social_btn-line
-    width: 52px
-    .social_btn_icon
-      background-image: image-url('icon/line.svg')
-      width: image-width("icon/line.png")
-
-  .social_btn_icon
-    display: block
-    text-indent: 110%
-    white-space: nowrap
-    overflow: hidden
-    background-position: center center
-    @include background-size(contain)
-    background-repeat: no-repeat
-    height: 24px
-    margin: 0 auto
-
+    width: 54px
+    &:before
+      content: "\e603"
 
   +desktop
     .search_form
@@ -201,10 +191,39 @@
       +border-radius(0 2px 2px 0)
       background-color: $color-gray-ll
       text-align: center
-      &:hover .search_input
-        width: 240px
-        padding: 12px 48px 12px 18px
+      &:hover
+        .search_input
+          visibility: visible
+          background-color: $color-primary
+          opacity: 1
+          color: white
+          +transition(opacity 0.25s)
+        .search_submit
+          color: white
+
+    .search_input
+      +box-sizing(border-box)
+      position: absolute
+      top: 0
+      right: 0
+      z-index: 90
+      width: 240px
+      padding: 12px 48px 12px 18px
+      +border-radius(0 2px 2px 0)
+      background-color: $color-primary
+      color: white
+      +input-placeholder-color(white)
+      opacity: 0
+      visibility: hidden
+      +transition(opacity 0.25s, visibility 0s 0.25s)
+      &:hover, &:focus
+        visibility: visible
         opacity: 1
+        color: white
+        +transition(opacity 0.25s)
+
+    .search_input:focus + .search_submit
+      color: white
 
     .search_submit
       display: block
@@ -214,20 +233,8 @@
       z-index: 100
       top: auto
       left: auto
+      +transition(color 0.25s)
 
-    .search_input
-      position: absolute
-      top: 0
-      right: 0
-      z-index: 90
-      width: 0px
-      padding: 0px
-      +box-sizing(border-box)
-      opacity: 0
-      &:hover, &:focus
-        width: 240px
-        padding: 12px 48px 12px 18px
-        opacity: 1
 
     .primary_nav
       float: left
@@ -308,20 +315,16 @@
 
     .social_btn
       display: block
-      padding: 0 8px
+      padding: 0 6px
       border: none
       width: auto
+      &:hover
+        background-color: transparent
+        color: $color-primary
 
-    .social_btn-twitter .social_btn_icon
-      width: image-width("icon/twitter.png")
-      background-image: image-url('icon/twitter.svg')
+    .social_btn-facebook:before
+      content: "\e601"
+      font-size: 15px
 
-    .social_btn-facebook .social_btn_icon
-      width: image-width("icon/facebook.png")
-      background-image: image-url('icon/facebook.svg')
-
-    .social_btn-line .social_btn_icon
-      width: image-width("icon/line.png")
-      background-image: image-url('icon/line.svg')
-
-
+    .social_btn-line:before
+      font-size: 15px
