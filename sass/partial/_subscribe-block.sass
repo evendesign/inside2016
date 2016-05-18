@@ -20,21 +20,25 @@
     float: left
     display: block
     margin-right: 12px
-    opacity: 0.4
     width: 32px
-    +border-radius(2px)
-    border: 1px solid black
+    border: 1px solid $color-gray
+    color: $color-gray
     padding: 3px 0
-    +transition(opacity 0.25s)
-    cursor: pointer
-    &.subscribe_block_social_item-line
-      width: 52px
+    width: 32px
+    line-height: 24px
+    +border-radius(2px)
+    text-align: center
+    +transition(background-color 0.25s, color 0.25s, border-color 0.25s)
+    &.icon-facebook2
+      font-size: 18px
+    &.icon-line
+      width: 54px
     &:hover
-      opacity: 0.6
-    [class^="icon-"]
-      display: block
-      height: 24px
-      margin: 0 auto
+      text-decoration: none
+      background-color: $color-primary
+      color: white
+      border-color: $color-primary
+
 
   .subscribe_block_email
     +pie-clearfix
@@ -43,18 +47,17 @@
       float: left
       display: block
       padding: 3px 12px
+      outline: none
       +border-radius(2px 0 0 2px)
       width: 192px
       height: 32px
-      border: 1px solid rgba(black, 0.4)
+      border: 1px solid $color-gray
       +adjust-font-size-to(13px)
       background-color: transparent
       +transition(border-color 0.25s)
       -webkit-appearance: none
-      &:hover
-        border: 1px solid rgba(black, 0.6)
-      &:focus
-        outline: none
+      &:hover, &:focus
+        border: 1px solid $color-black
 
     .btn
       float: left
