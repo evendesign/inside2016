@@ -17,18 +17,12 @@
     background-repeat: no-repeat
     background-position: center center
     +border-radius(2px)
-    +transition(opacity 0.25s)
-    &:hover
-      opacity: 0.8
-
-  .post_list_item_content
-    +leader(-0.5)
 
   .post_category
+    position: relative
     float: left
     display: block
-    margin-bottom: 12px
-    position: relative
+    margin: -12px auto 12px
 
   .post_title
     clear: both
@@ -83,8 +77,10 @@
 
     .post_list_item_content
       width: 66.6667%
-      margin-top: 0
       padding-left: 12px
+
+    .post_category
+      margin-top: 0
 
 
   +at-breakpoint($pad)
@@ -93,14 +89,11 @@
     .post_list_item-sponsor, .post_list_item-ad
       +border-radius(2px)
 
-    .post_list_item-ad
-      .ad
-        max-width: none
-
     .post_list_item_content
       padding-left: 0px
 
     .post_title
+      +adjust-font-size-to(21px, 1.25)
       margin-bottom: 12px
 
     .post_description
@@ -129,8 +122,10 @@
       width: 100%
 
     .post_list_item_content
-      margin: -12px auto 0
       width: 100%
+
+    .post_category
+      margin-top: -12px
 
     .post_title
       +adjust-font-size-to(21px, 1.2)
@@ -153,30 +148,32 @@
           left: 0
           right: 0
           z-index: 40
-          background: rgba(black, 0.25)
-          +background( linear-gradient(top, rgba(black, 0) 50%, rgba(black, 0.3)) )
+          +background-image(linear-gradient(15deg, rgba(black, .7), rgba(black, 0)))
 
       .post_list_item_content
         position: absolute
+        left: 0
         bottom: 0
         z-index: 50
+        width: auto
         padding: 36px
+
+      .post_category
+        padding: 3px 12px
+        font-size: 16px
+        margin-top: 0px
 
       .post_title
         +adjust-font-size-to(28px, 1.5)
         font-weight: bold
         a
           color: white
-          &:hover
-            color: $color-primary
 
       .post_description
         display: none
 
       .post_meta
-        li
-          color: $color-gray-ll
-        .post_author, .post_tag
+        .post_date, .post_author, .post_tag
           color: $color-gray-ll
 
       &.post_list_item-sponsor
@@ -217,7 +214,6 @@
 
       .post_cover_inner
         &:after
-          content: ''
           display: none
 
       .post_list_item_content
@@ -225,22 +221,21 @@
         position: static
         vertical-align: top
         width: 33.3333%
-        margin-top: 0
         padding: 12px
 
       .post_title
         font-weight: normal
         a
           color: $color-black-d
+          &:hover
+            color: $color-primary
 
       .post_description
         display: block
         +adjust-font-size-to(16px, 1)
 
       .post_meta
-        li
-          color: #aaa
-        .post_author, .post_tag
+        .post_date, .post_author, .post_tag
           color: #aaa
 
 
@@ -282,14 +277,6 @@
     .post_list_item_content
       padding-left: 36px
 
-    .post_title
-      +adjust-font-size-to(21px, 1)
-      +trailer(0.75)
-
-    .post_description
-      +adjust-font-size-to(16px, 1)
-      +trailer(0.75)
-
   +at-breakpoint($desktop)
     .post_list_item_content
       padding-left: 48px
@@ -297,3 +284,6 @@
     .post_title
       margin-top: -2px
       +adjust-font-size-to(24px, 1.25)
+
+    .post_description
+      +adjust-font-size-to(16px, 1)
