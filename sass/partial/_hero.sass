@@ -158,8 +158,10 @@
   display: block
   height: 100%
   color: black
+  +transition(color 0.25s)
+
   &:hover
-    color: black
+    color: darken($color-primary, 5%)
 
   &:before, span
     display: inline-block

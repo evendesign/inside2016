@@ -21,8 +21,11 @@
       margin-bottom: 18px
       a
         color: $text-black-l
-        &:hover .macho
-          text-decoration: underline
+        +transition(color 0.25s)
+
+        &:hover
+          color: darken($color-primary, 5%)
+          text-decoration: none
 
   .footer_subscribe_block
     margin: 0 -24px 24px
