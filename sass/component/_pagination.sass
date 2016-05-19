@@ -16,17 +16,17 @@
     display: none
     padding: 6px 16px
     margin: 0 1px
-    color: $text-black-l
+    color: $btn-color
     background-color: $btn-bg-color
     text-align: center
     +adjust-font-size-to(15px)
     +transition(color 0.25s, background-color 0.25s)
     &:hover
-      color: $color-black-d
+      color: $btn-hover-color
       text-decoration: none
       background-color: $btn-hover-bg-color
     &.is-current
-      color: $color-black-d
+      color: $btn-active-color
       background-color: $btn-active-bg-color
     &.is-disable
       cursor: not-allowed

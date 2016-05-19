@@ -24,13 +24,13 @@
   outline: none
   +nowrap
   +user-select(none)
-  color: $text-black
+  color: $btn-color
   background-color: $btn-bg-color
   +transition(background-color 0.25s)
 
   &:hover
     text-decoration: none
-    color: $color-black-l
+    color: $btn-hover-color
     background-color: $btn-hover-bg-color
   &:disabled, &.is-disabled
     cursor: default
@@ -43,8 +43,8 @@
   border-color: $color-black-l
   background-color: $color-black-l
   &:hover
-    color: white
-    background-color: $color-primary
+    color: $btn-hover-color
+    background-color: $btn-hover-bg-color
   &:disabled, &.is-disabled
     cursor: default
     color: $color-gray-d
@@ -65,11 +65,12 @@
     background-color: $color-gray-ll
 
 .btn-outline
-  border: 1px solid $color-black-l
+  border: 1px solid $btn-color
   background-color: transparent
   &:hover
-    border: 1px solid $color-black-l
-    background-color: transparent
+    color: $btn-hover-color
+    border: 1px solid $btn-hover-bg-color
+    background-color: $btn-hover-bg-color
   &:disabled, &.is-disabled
     color: $color-gray-d
     border: 1px solid $color-gray-l
