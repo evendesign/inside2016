@@ -63,10 +63,40 @@
 
   blockquote
     +pie-clearfix
+    background-color: transparent
+    position: relative
+    border-left: 0
+    font-size: 120%
+    line-height: 1.5
+    margin: 36px auto
+    padding: 36px
+    color: $text-black
+    &:before, &:after
+      content: ''
+      position: absolute
+      width: 32px
+      height: 32px
+      background-repeat: no-repeat
+      +background-size(contain)
+      background-position: center
+
+    &:before
+      top: 0
+      left: 3px
+      background-image: image-url("quote.svg")
+
+
+    &:after
+      right: 6px
+      bottom: 0
+      background-image: image-url("quote1.svg")
+
     p
       margin: 0 auto 12px
     cite
+      text-align: right
       display: block
+      font-style: normal
 
   +at-breakpoint($pad)
     font-size: 18px
@@ -119,5 +149,13 @@
     figure
       margin-bottom: 30px
     blockquote
-      margin: 30px auto
-      padding: 30px 30px 30px 27px
+      margin: 72px auto
+      font-size: 130%
+      line-height: 1.5
+      padding: 48px
+      &:before, &:after
+        content: ''
+        position: absolute
+        width: 42px
+        height: 42px
+
