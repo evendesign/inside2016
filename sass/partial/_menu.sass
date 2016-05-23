@@ -89,20 +89,18 @@
 
   .primary_nav_item_content
     +reset-list-style
-    padding: 9px 0
-    background-color: darken($color-primary, 5%)
+    background-color: $color-primary
 
   .primary_nav_child_item
     display: block
     color: white
     +transition(background-color 0.25s)
     +adjust-font-size-to(15px, 1)
-    padding: 6px 24px
+    border-top: 1px solid rgba(white, 0.15)
+    padding: 12px 24px
     &:hover
       text-decoration: none
-      background-color: darken($color-primary, 10%)
-      // color: $text-black
-      // background-color: $color-gray-l
+      background-color: darken($color-primary, 5%)
 
   .secondary_nav
     +reset-list-style
@@ -245,7 +243,6 @@
       float: left
       border-bottom: none
 
-
     .primary_nav_item-dropdown
       position: relative
 
@@ -255,6 +252,11 @@
         float: none
         margin-left: 6px
 
+      &.is-active
+        .primary_nav_item_content
+          opacity: 1
+          visibility: visible
+          +transition(opacity 0.25s)
 
     .primary_nav_item_title
       padding: 12px
@@ -262,16 +264,23 @@
         display: none
 
     .primary_nav_item_content
+      display: block
       padding: 0
       position: absolute
       top: 100%
       z-index: 1000
       border-top: none
       background-color: $color-primary
+      min-width: 140px
+      opacity: 0
+      visibility: hidden
+      +transition(opacity 0.25s, visibility 0s 0.25s)
 
     .primary_nav_child_item
       +nowrap
       padding: 12px
+      &:first-child
+        border-top: 0
 
     .secondary_block
       float: right
