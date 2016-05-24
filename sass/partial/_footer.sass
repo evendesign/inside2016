@@ -25,23 +25,27 @@
           color: darken($color-primary, 5%)
           text-decoration: none
 
-  .footer_bottom
-    padding: 0 0 18px
-
   .footer_subscribe_block
-    margin: 0 -24px 24px
+    margin: 0 -24px
     border: none
-    border-bottom: 1px solid $color-gray-l
-    padding: 30px 24px
+    padding: 48px 24px 48px
     background-color: transparent
     text-align: left
 
+    .subscribe_block_title
+      margin-bottom: 16px
+
+    .subscribe_block_description
+      margin-bottom: 16px
+      padding-top: 0
+      border-top: 0
+
+
   .footer_links
     +reset-list-style
-    margin-bottom: 18px
     +adjust-font-size-to(15px, 1)
     li
-      margin-bottom: 9px
+      margin-bottom: 6px
     a
       color: $text-black
       &:hover
@@ -49,10 +53,29 @@
         color: $color-primary
 
   .copyright
-    margin-bottom: 0
-    +adjust-font-size-to(13px, 1)
+    margin-bottom: 48px
+    +adjust-font-size-to(15px, 1)
     color: $text-gray-l
+    +nowrap
 
+  +at-breakpoint(480px)
+
+    .footer_subscribe_block
+      text-align: center
+      .subscribe_block_title
+        margin: 0 auto 16px
+      .subscribe_block_description
+        margin: 0 auto 16px
+
+    .footer_links
+      margin-bottom: 0px
+      text-align: center
+      li
+        display: inline-block
+        margin: 0 9px 6px
+
+    .copyright
+      text-align: center
 
   +at-breakpoint($pad)
 
@@ -63,23 +86,14 @@
       +box-sizing(border-box)
       display: inline-block
       vertical-align: top
+      margin-bottom: 30px
       padding: 0 24px
       width: 50%
 
     .footer_subscribe_block
-      margin: 0 -48px 24px
+      margin: 0 -48px -6px
       padding: 48px
-      text-align: center
 
-    .footer_links
-      margin-bottom: 0px
-      text-align: center
-      li
-        display: inline-block
-        margin: 0 12px 12px
-
-    .copyright
-      text-align: center
 
 
   +at-breakpoint($desktop)
@@ -88,28 +102,29 @@
       width: 25%
 
     .footer_bottom
-      padding-top: 48px
+      padding: 48px 0
 
     .footer_subscribe_block
       +box-sizing(border-box)
-      border-bottom: none
-      float: right
-      width: 75%
-      margin-bottom: 0
-      padding: 0 12px
+      float: left
+      margin: 0
+      padding: 0
       text-align: left
+      .subscribe_block_title,
+      .subscribe_block_description
+        margin-left: 0
 
     .footer_links
-      float: left
-      width: 25%
+      float: right
       margin-bottom: 0
-      text-align: left
+      text-align: right
       li
         display: block
-        margin: 0 0 9px
+        margin: 0 0 6px
 
     .copyright
       margin: 0 auto
-      clear: both
-      text-align: left
+      text-align: right
+      float: right
+      clear: right
 
