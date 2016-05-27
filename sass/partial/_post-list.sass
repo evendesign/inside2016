@@ -28,7 +28,7 @@
   .post_title
     clear: both
     +adjust-font-size-to(18px, 1)
-    margin-bottom: 6px
+    margin-bottom: 0px
     a
       color: $color-black
       +transition(color .25s)
@@ -44,6 +44,9 @@
     +adjust-font-size-to(15px)
     margin-bottom: 12px
     color: $text-gray-d
+
+  .post_meta
+    display: none
 
   // 文章列表項目的贊助商樣式
   .post_list_item-sponsor
@@ -86,6 +89,11 @@
     .post_category
       margin-top: 0
 
+    .post_title
+      margin-bottom: 6px
+
+    .post_meta
+      display: block
 
   +at-breakpoint($pad)
     margin: 0 -12px

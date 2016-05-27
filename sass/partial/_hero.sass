@@ -272,22 +272,24 @@
   left: 15px
   bottom: 15px
   right: 15px
-  .badge
-    padding: 3px 12px
-    font-size: 16px
+  +pad
+    .badge
+      padding: 3px 12px
+      font-size: 16px
 
 .hero_slide_title
   font-weight: bold
   +adjust-font-size-to(18px, 1)
-  margin: 10px 0
+  margin: 10px 0 0
   display: block
   &:hover
     text-decoration: none
   +pad
     +adjust-font-size-to(28px, 1.5)
-    margin-right: 40px
+    margin: 10px 40px 10px 0
 
 .hero_slide_meta.post_meta
+  display: none
   li
     color: white
     &:after
@@ -295,6 +297,9 @@
 
   .post_author, .post_tag
     color: white
+
+  +pad
+    display: block
 
 // pagination
 // =========================================================================
