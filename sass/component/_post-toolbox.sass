@@ -36,10 +36,13 @@
     font-size: 14px
   &.icon-comment
     font-size: 13px
+    .post_toolbox_item_tip
+      float: left
+      line-height: 22px
     &:before
+      float: left
       font-size: 14px
-      margin-right: 3px
-      vertical-align: middle
+      margin-right: 4px
   &:first-child
     +border-radius(2px 0 0 2px)
   &:last-child
@@ -83,6 +86,7 @@
         padding: 9px
         &:before
           display: block
+          float: none
           margin-bottom: -6px
       &:first-child
         +border-radius(2px 2px 0 0)
