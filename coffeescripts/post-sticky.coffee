@@ -7,13 +7,13 @@ postHeader = document.querySelectorAll('.js-post_header')[0]
 authorBlock = document.querySelectorAll('.js-post_footer')[0]
 
 postShareToolboxHeight = $postShareToolbox.height()
-postShareToolboxOffsetTop = 48
+postShareToolboxOffsetTop = 36
 
 currentStatus = ''
 
 getStatus = ->
   if postHeader.getBoundingClientRect().bottom - postShareToolboxOffsetTop < 0
-    if authorBlock.getBoundingClientRect().top < postShareToolboxHeight + postShareToolboxOffsetTop + 48
+    if authorBlock.getBoundingClientRect().top < postShareToolboxHeight + postShareToolboxOffsetTop + 36
       return 'bottom'
     return 'sticky'
   return 'top'
