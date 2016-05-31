@@ -17,6 +17,8 @@
   margin-bottom: 6px
   color: $text-gray
 
+.post_toolbox_logo
+  display: none
 
 .post_toolbox_item
   +pie-clearfix
@@ -54,11 +56,16 @@
     color: white
     background-color: $color-primary
 
+  &.post_toolbox_item-logo
+    display: none
+
+
 +pad
   .post_toolbox
     display: none
     &.post_toolbox-sticky
       display: block
+      overflow: hidden
 
   .post_toolbox-sticky
     position: -webkit-sticky
@@ -69,12 +76,36 @@
 
     &.is-sticky
       position: fixed
-      top: 72px
+      top: 36px
+
+      .post_toolbox_logo
+        opacity: 1
+        +transition(margin-bottom 0.25s, opacity 0s)
+
+      .post_toolbox_action
+        +translateY(0)
+
+      .post_toolbox_item:first-child
+        +border-radius(0px)
 
     &.is-bottom
       position: absolute
       top: auto
       bottom: 0
+
+      .post_toolbox_logo
+        opacity: 1
+        +transition(margin-bottom 0.25s, opacity 0s)
+
+      .post_toolbox_action
+        +translateY(0)
+
+      .post_toolbox_item:first-child
+        +border-radius(0px)
+
+    .post_toolbox_action
+      +translateY(-50px)
+      +transition(transform 0.25s)
 
     .post_toolbox_item
       margin: 0 0 2px 0
@@ -92,3 +123,16 @@
         +border-radius(2px 2px 0 0)
       &:last-child
         +border-radius(0 0 2px 2px)
+
+  .post_toolbox_logo
+    display: block
+    margin-bottom: 2px
+    padding: 0
+    width: 48px
+    height: 48px
+    opacity: 0
+    +border-radius(2px 2px 0 0)
+    background-image: image-url("logo-small.svg")
+    +transition(margin-bottom 0.25s, opacity 0s 0.25s)
+
+

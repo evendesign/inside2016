@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.2 (29753) - http://www.bohemiancoding.com/sketch -->
+    <title>144</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="favicon" transform="translate(-239.000000, -76.000000)">
+            <g id="144" transform="translate(239.000000, 76.000000)">
+                <rect id="Rectangle-1" fill="#C13B3B" x="0" y="0" width="48" height="48" rx="1.33333333"></rect>
+                <g id="Group" transform="translate(10.333333, 13.666667)" fill="#FEFEFE">
+                    <polygon id="Fill-10" points="0 21.4674783 4.719 21.4674783 4.719 0 0 0"></polygon>
+                    <polygon id="Fill-11" points="13.68875 0 22.6458793 14.402087 22.7063793 14.402087 22.7063793 0 27.1239224 0 27.1239224 21.4674783 22.4049224 21.4674783 13.4790862 7.09565217 13.4185862 7.09565217 13.4185862 21.4674783 9 21.4674783 9 0"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

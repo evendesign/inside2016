@@ -3,6 +3,8 @@
 .post_toolbox class="#{modifier_class_name}"
   - if locals[:modifier] == "footer"
     p.post_toolbox-footer_title 分享文章或觀看評論
+  - if locals[:modifier] == "sticky"
+    a.post_toolbox_logo href="/"
   .post_toolbox_action
     a.post_toolbox_item.icon-facebook href="#"
     a.post_toolbox_item.icon-twitter href="#"
