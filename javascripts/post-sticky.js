@@ -1,5 +1,5 @@
 (function() {
-  var $postShareToolbox, authorBlock, checkShareToolBoxPosition, currentStatus, getStatus, postHeader, postShareToolboxHeight, postShareToolboxOffsetTop;
+  var $postShareToolbox, authorBlock, checkShareToolBoxPosition, currentStatus, getStatus, postHeader, postShareToolboxHeight;
 
   if (isTouchDevice() || CSS.supports('(position: -webkit-sticky)')) {
     return;
@@ -17,13 +17,11 @@
 
   postShareToolboxHeight = $postShareToolbox.height();
 
-  postShareToolboxOffsetTop = 48;
-
   currentStatus = '';
 
   getStatus = function() {
-    if (postHeader.getBoundingClientRect().bottom - postShareToolboxOffsetTop < 0) {
-      if (authorBlock.getBoundingClientRect().top < postShareToolboxHeight + postShareToolboxOffsetTop + 48) {
+    if (postHeader.getBoundingClientRect().bottom < 0) {
+      if (authorBlock.getBoundingClientRect().top < postShareToolboxHeight + 48 + 36) {
         return 'bottom';
       }
       return 'sticky';
