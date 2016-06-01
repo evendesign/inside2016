@@ -1,16 +1,15 @@
 $postToolbox = $('.post_toolbox-sticky')
 return unless $postToolbox.length
 
-header = document.querySelectorAll('.js-header')[0]
+postHeader = document.querySelectorAll('.js-post_header')[0]
 
-checkLogoStatus = -> $postToolbox.toggleClass('is-logo-revealed', header.getBoundingClientRect().bottom < 0)
+checkLogoStatus = -> $postToolbox.toggleClass('is-logo-revealed', postHeader.getBoundingClientRect().bottom < 0)
 
 $window.on('scroll', checkLogoStatus)
 checkLogoStatus()
 
 return if isTouchDevice() || CSS.supports('(position: -webkit-sticky)')
 
-postHeader = document.querySelectorAll('.js-post_header')[0]
 authorBlock = document.querySelectorAll('.js-post_footer')[0]
 
 postToolboxDims =
