@@ -1,5 +1,5 @@
 (function() {
-  var $postToolbox, authorBlock, checkLogoStatus, checkShareToolBoxStatus, currentStatus, getStatus, header, postHeader, postToolboxDims;
+  var $postToolbox, authorBlock, checkLogoStatus, checkShareToolBoxStatus, currentStatus, getStatus, postHeader, postToolboxDims;
 
   $postToolbox = $('.post_toolbox-sticky');
 
@@ -7,10 +7,10 @@
     return;
   }
 
-  header = document.querySelectorAll('.js-header')[0];
+  postHeader = document.querySelectorAll('.js-post_header')[0];
 
   checkLogoStatus = function() {
-    return $postToolbox.toggleClass('is-logo-revealed', header.getBoundingClientRect().bottom < 0);
+    return $postToolbox.toggleClass('is-logo-revealed', postHeader.getBoundingClientRect().bottom < 0);
   };
 
   $window.on('scroll', checkLogoStatus);
@@ -20,8 +20,6 @@
   if (isTouchDevice() || CSS.supports('(position: -webkit-sticky)')) {
     return;
   }
-
-  postHeader = document.querySelectorAll('.js-post_header')[0];
 
   authorBlock = document.querySelectorAll('.js-post_footer')[0];
 
