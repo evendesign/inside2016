@@ -26,7 +26,6 @@
   display: inline-block
   vertical-align: top
   min-width: 60px
-  margin-right: 2px
   padding: 3px 12px
   text-align: center
   color: $color-gray
@@ -76,33 +75,30 @@
 
     &.is-logo-revealed
       .post_toolbox_action
-        +translateY(0)
+        +transform(none)
 
       .post_toolbox_logo
         opacity: 1
         +transition(margin-bottom 0.25s, opacity 0s)
 
+      .post_toolbox_item:first-child
+        +border-radius(0px)
+
     &.is-sticky
       position: fixed
       top: 36px
-
-      .post_toolbox_item:first-child
-        +border-radius(0px)
 
     &.is-bottom
       position: absolute
       top: auto
       bottom: 0
 
-      .post_toolbox_item:first-child
-        +border-radius(0px)
-
     .post_toolbox_action
-      +translateY(-50px)
+      +translateY(-48px)
       +transition(transform 0.25s)
 
     .post_toolbox_item
-      margin: 0 0 2px 0
+      margin: 0
       padding: 12px 0
       width: 100%
       min-width: 0
@@ -120,11 +116,11 @@
 
   .post_toolbox_logo
     display: block
-    margin-bottom: 2px
     padding: 0
     width: 48px
     height: 48px
     opacity: 0
+    background-color: $color-primary
     background-image: image-url("logo-small.svg")
     +border-radius(2px 2px 0 0)
     +transition(margin-bottom 0.25s, opacity 0s 0.25s)
