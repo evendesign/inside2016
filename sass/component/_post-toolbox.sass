@@ -74,16 +74,17 @@
     margin: 0px auto 0 -72px
     width: 48px
 
-    &.is-sticky
-      position: fixed
-      top: 36px
+    &.is-logo-revealed
+      .post_toolbox_action
+        +translateY(0)
 
       .post_toolbox_logo
         opacity: 1
         +transition(margin-bottom 0.25s, opacity 0s)
 
-      .post_toolbox_action
-        +translateY(0)
+    &.is-sticky
+      position: fixed
+      top: 36px
 
       .post_toolbox_item:first-child
         +border-radius(0px)
@@ -92,13 +93,6 @@
       position: absolute
       top: auto
       bottom: 0
-
-      .post_toolbox_logo
-        opacity: 1
-        +transition(margin-bottom 0.25s, opacity 0s)
-
-      .post_toolbox_action
-        +translateY(0)
 
       .post_toolbox_item:first-child
         +border-radius(0px)
@@ -131,8 +125,8 @@
     width: 48px
     height: 48px
     opacity: 0
-    +border-radius(2px 2px 0 0)
     background-image: image-url("logo-small.svg")
+    +border-radius(2px 2px 0 0)
     +transition(margin-bottom 0.25s, opacity 0s 0.25s)
 
 
