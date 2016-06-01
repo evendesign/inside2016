@@ -1,9 +1,15 @@
-return if isTouchDevice() || CSS.supports('(position: -webkit-sticky)')
-
 $postToolbox = $('.post_toolbox-sticky')
 return unless $postToolbox.length
 
 header = document.querySelectorAll('.js-header')[0]
+
+checkLogoStatus = -> $postToolbox.toggleClass('is-logo-revealed', header.getBoundingClientRect().bottom < 0)
+
+$window.on('scroll', checkLogoStatus)
+checkLogoStatus()
+
+return if isTouchDevice() || CSS.supports('(position: -webkit-sticky)')
+
 postHeader = document.querySelectorAll('.js-post_header')[0]
 authorBlock = document.querySelectorAll('.js-post_footer')[0]
 
@@ -31,10 +37,5 @@ checkShareToolBoxStatus = ->
     .removeClass('is-sticky is-bottom is-top')
     .addClass("is-#{currentStatus}")
 
-checkLogoStatus = ->
-  $postToolbox.toggleClass('is-logo-revealed', header.getBoundingClientRect().bottom < 0)
-
-$window
-  .on('scroll', checkShareToolBoxStatus)
-  .on('scroll', checkLogoStatus)
-  .triggerHandler('scroll')
+$window.on('scroll', checkShareToolBoxStatus)
+checkShareToolBoxStatus()
