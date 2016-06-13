@@ -14,8 +14,8 @@ ruby:
       {
         :title => fake_titles[i-1],
         :url => 'posts/',
-        :cover => "https://placeimg.com/640/480/#{rand(10)}",
-        # :cover => "https://placehold.it/640x480?text=cover",
+        # :cover => "https://placeimg.com/640/480/#{rand(10)}",
+        :cover => "https://placehold.it/640x480?text=cover",
         :date => lorem_date("%Y/%m/%d"),
         :tags => (rand(4)+1).times.map {
           OpenStruct.new({
@@ -53,9 +53,11 @@ ruby:
             a.badge class="badge-color#{post.category.color_id}" href="#{post.category.url}"= post.category.text
             a.hero_slide_title.js-auto_break_title href="#{post.url}"= post.title
             ul.post_meta.hero_slide_meta
-              li: span.post_date= post.date
-              li: a.post_author href="#{post.author.url}"= post.author.name
-              li= post.tags.map{ |tag| link_to(tag.text, tag.url, {:class => 'hero_slide_tag'})}.join(', ')
+              li.post_date: span= post.date
+              li.post_author: a href="#{post.author.url}"= post.author.name
+              li.post_tag
+                - (rand(4)+1).times do|i|
+                  a href="/tags/"= zh_lorem_words(2)
   .hero_pagination_wrapper
     .hero_pagination
       - hero_posts.each do |post|

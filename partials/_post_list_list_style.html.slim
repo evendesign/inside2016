@@ -21,8 +21,8 @@
         / 請由後端控制文章敘述為 100 字，後面有多的文字用省略符號「⋯」替代
         p.post_description.js-auto_break_text= zh_lorem_paragraph
         ul.post_meta
-          li: span.post_date= lorem_date("%Y/%m/%d")
-          li: a.post_author href="/authors/"= zh_lorem_name
-          li
+          li.post_date: span= lorem_date("%Y/%m/%d")
+          li.post_author: a href="/authors/"= zh_lorem_name
+          li.post_tag
             - (rand(4)+1).times do|i|
-              a.post_tag href="/tags/"= zh_lorem_words(2)
+              a href="/tags/"= zh_lorem_words(2)
