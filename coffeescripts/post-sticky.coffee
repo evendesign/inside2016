@@ -8,7 +8,7 @@ checkLogoStatus = -> $postToolbox.toggleClass('is-logo-revealed', postHeader.get
 $window.on('scroll', checkLogoStatus)
 checkLogoStatus()
 
-return if isTouchDevice() || CSS.supports('(position: -webkit-sticky)')
+return if CSS.supports('(position: -webkit-sticky)')
 
 authorBlock = document.querySelectorAll('.js-post_footer')[0]
 
