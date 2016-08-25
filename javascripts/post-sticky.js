@@ -17,7 +17,7 @@
 
   checkLogoStatus();
 
-  if (isTouchDevice() || CSS.supports('(position: -webkit-sticky)')) {
+  if (CSS.supports('(position: -webkit-sticky)')) {
     return;
   }
 
