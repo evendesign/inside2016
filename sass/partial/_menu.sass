@@ -111,11 +111,10 @@
     a
       display: block
       padding: 6px 24px
-      color: $text-gray
       +transition(color 0.25s)
       +adjust-font-size-to(15px, 1)
+      color: darken($color-primary, 5%)
       &:hover
-        color: darken($color-primary, 5%)
         text-decoration: none
 
   .header_subscribe_block
@@ -295,7 +294,6 @@
       a
         +adjust-font-size-to(15px, 1)
         padding: 12px 6px
-        color: $text-gray
 
     .header_subscribe_block
       float: right

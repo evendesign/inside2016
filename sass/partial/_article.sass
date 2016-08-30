@@ -84,6 +84,18 @@
       display: block
       font-style: normal
 
+  // 移除 ig 載入失敗時，呈現的內容樣式
+  blockquote.instagram-media-registered
+    margin: 2em auto
+    &:before
+      display: none
+    p
+      font-size: 1em
+
+  // 讓 iframe 水平置中
+  iframe, iframe.twitter-tweet, iframe.instagram-media
+    margin: 2em auto !important
+
   +at-breakpoint($pad)
     font-size: $article-modular-scale-base-font-size-pad
     line-height: $article-modular-scale-base-line-height-pad
