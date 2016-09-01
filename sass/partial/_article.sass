@@ -78,22 +78,26 @@
       font-size: pow($article-modular-scale-ratio, 3)
       line-height: 1.5
       margin: 0 auto 0.25em
-
     cite
       text-align: left
       display: block
       font-style: normal
 
+  // 讓 iframe、twitter-tweet、ig 嵌入的內容水平置中
+  iframe, .twitter-tweet, .instagram-media
+    margin: 2em auto !important
+
   // 移除 ig 載入失敗時，呈現的內容樣式
   blockquote.instagram-media-registered
+    margin: 2em auto !important
     &:before
       display: none
     p
       font-size: 1em
 
-  // 讓 iframe 水平置中
-  iframe, iframe.twitter-tweet, iframe.instagram-media
-    margin: 2em auto !important
+  // 設定 twitter 嵌入內容沒有成功顯示時的上下 margin
+  blockquote.twitter-tweet
+    margin: 2.5em auto !important
 
   +at-breakpoint($pad)
     font-size: $article-modular-scale-base-font-size-pad
